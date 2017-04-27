@@ -1,0 +1,9 @@
+<!-- Estilos especificos para las secciones mostradas en la pantalla principal -->
+
+#main ul{list-style: disc inside;}
+#news ul{list-style: disc inside;}
+#knewthat ul{list-style: disc inside;}
+
+#main ol{list-style: decimal inside;}
+#news ol{list-style: decimal inside;}
+#knewthat ol{list-style: decimal inside;}

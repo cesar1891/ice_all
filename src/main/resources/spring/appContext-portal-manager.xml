@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- CombosManager2 -->
+    <bean id="comboManagerJdbcTemplateImpl" class="mx.com.aon.portal.service.impl.ComboManagerJdbcTemplateImpl" parent="abstractManagerJdbcTemplateInvoke">
+        <property name="abstractDAO">
+            <ref bean="combosDAO"/>
+        </property>
+    </bean>
+    <!--CombosManager2 -->
+
+    <!-- UsuarioManager -->
+    <bean id="usuarioManager" class="mx.com.aon.portal.service.impl.UsuarioManagerImpl" parent="abstractManagerJdbcTemplateInvoke">
+        <property name="abstractDAO">
+            <ref bean="usuarioDAO"/>
+        </property>
+    </bean>
+    <!--UsuarioManager -->
+
+    <bean id="loginManager" class="mx.com.aon.portal.service.impl.LoginManagerImpl">
+	    <property name="Ldap_provider_url" value="${ldap.provider.url}"></property>
+	    <property name="Ldap_factory_initial" value="${ldap.factory.initial}"></property>
+	    <property name="Ldap_security_authentication" value="${ldap.security.authentication}"></property>
+	    <property name="Ldap_security_principal" value="${ldap.security.principal}"></property>
+	    <property name="Ldap_security_credentials" value="${ldap.security.credentials}"></property>
+	    <property name="Ldap_base_search" value="${ldap.base.search}"></property>
+    </bean>
+
+	<bean id="navigationManagerJdbcTemplate" class="mx.com.aon.portal.service.impl.NavigationManagerJdbcTemplateImpl" parent="abstractManagerJdbcTemplateInvoke">
+        <property name="abstractDAO">
+            <ref bean="usuarioDAO"/>
+        </property>
+    </bean>
+
+    <bean id="paginaPrincipalManager" class="mx.com.aon.portal.service.impl.PaginaPrincipalManagerImpl"  parent="abstractManagerJdbcTemplateInvoke">
+    	<property name="abstractDAO">
+            <ref bean="paginaPrincipalDAO"/>
+        </property>
+    </bean>
+    
+    <bean id="menuPrincipalManagerJdbcTemplate" class="mx.com.aon.portal.service.impl.MenuPrincipalManagerJdbcTemplateImpl" parent="abstractManagerJdbcTemplateInvoke">
+	    <property name="abstractDAO">
+	        <ref bean="menuPrincipalDAO"/>
+	    </property>
+	</bean>
+	
+	<bean id="principalManagerJdbcTemplate" class="mx.com.aon.portal.service.impl.principal.PrincipalManagerJdbcTemplateImpl" 
+	   parent="abstractManagerJdbcTemplateInvoke">
+        <property name="abstractDAO">
+            <ref bean="principalDAO"/>
+        </property>
+    </bean>
+    
+    <bean id="pantallasManagerImpl" class="mx.com.gseguros.portal.general.service.impl.PantallasManagerImpl">
+        <property name="pantallasDAO" ref="pantallasDAOImpl"/>
+    </bean>
+    
+    <bean id="navigationManagerImpl" class="mx.com.gseguros.portal.general.service.impl.NavigationManagerImpl">
+        <property name="usuarioDAO" ref="usuarioDAOImpl"/>
+    </bean>
+    
+</beans>

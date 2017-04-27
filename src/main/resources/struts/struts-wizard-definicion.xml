@@ -1,0 +1,118 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+	<include file="struts-default.xml" />
+
+	<package name="definicion" extends="json-default" namespace="/definicion">
+
+		<!--
+		Redireccionamiento de action a jsp 
+		-->
+		
+		<action name="PrincipalProductos" class="PrincipalProductosAction">
+			<result name="input">/WEB-INF/jsp/productos/definicion/principalProductos.jsp</result>
+			
+		</action>
+		<action name="Test" class="PrincipalProductosAction" method="test">
+			<result name="input">/WEB-INF/jsp/productos/definicion/combos.jsp</result>
+            <result name="success" type="json"/>
+		</action>
+		
+			<!-- XTemplate -->
+		<action name="Xtemplate" class="PrincipalProductosAction">
+			<result name="input">/WEB-INF/jsp/productos/definicion/xTemplateEx.jsp</result>                          
+		</action>
+		<!-- 
+		Configuracion del Action con tipo de respuesta JSON, esto generara a partir
+		de los atributos la respuesta en formato JSON para el Reader de ExtJs 
+		-->
+		
+		<action name="LoadVO" class="PrincipalProductosAction" method="loadVO">
+            <result name="success" type="json"/>
+		</action>
+		<action name="LimpiarSessionProducto" class="PrincipalProductosAction" method="clearSession">
+            <result name="success" type="json"/>
+		</action>
+		<action name="LimpiarSessionClausulasProducto" class="PrincipalProductosAction" method="clearClausulasSession">
+            <result name="success" type="json"/>
+        </action>
+        
+		<action name="TestCombo" class="PrincipalProductosAction" method="testCombo">
+            <result type="json"/>
+		</action>
+		<action name="TestComboHijo" class="PrincipalProductosAction" method="testComboHijo">
+            <result type="json"/>
+		</action>
+		<!-- <action name="CatalogoClausulas" class="PrincipalProductosAction" method="catalogoDeClausulasJSON">
+            <result type="json"/>
+		</action> -->
+		
+		<!-- Actions de Productos -->
+		<action name="InsertarProducto" class="PrincipalProductosAction" method="insertarProducto">
+			<result name="success" type="json"/>
+		</action>
+		<action name="EditarProducto" class="PrincipalProductosAction" method="editarProducto">
+			<result name="success" type="json"/>
+		</action>
+		<action name="CatalogoTipoProducto" class="PrincipalProductosAction" method="catalogoTipoProductoJSON">
+			<result name="success" type="json"/>                
+		</action>
+		<action name="CatalogoTipoRamo" class="PrincipalProductosAction" method="catalogoTipoRamoJSON">
+			<result name="success" type="json"/>                
+		</action>
+		<action name="CatalogoTipoPoliza" class="PrincipalProductosAction" method="catalogoTipoPolizaJSON">
+			<result name="success" type="json"/>                
+		</action>
+		<action name="CatalogoTipoSeguro" class="PrincipalProductosAction" method="catalogoTipoSeguroJSON">
+			<result name="success" type="json"/>                
+		</action>
+		
+		<!-- Actions de periodos -->
+
+		<action name="AsociarPeriodo" class="PrincipalProductosAction" method="asociarPeriodo">
+			<result name="success" type="json"/>
+		</action>		
+		<action name="PeriodoLista" class="PrincipalProductosAction" method="listaDePeriodosJSON">
+			<result name="success" type="json"/>                
+		</action>
+		<action name="EliminarPeriodo" class="PrincipalProductosAction" method="eliminarPeriodos">			
+            <result name="success" type="json"/>
+		</action>
+		<!-- Actions de clausulas -->
+		<action name="EditarClausula" class="PrincipalProductosAction" method="editarClausula">
+			<result name="success" type="json"/>
+		</action>			
+		<action name="AgregarClausula" class="PrincipalProductosAction" method="agregarClausula">
+			<result name="input">/WEB-INF/jsp/test.jsp</result>
+            <!--  result name="input">/WEB-INF/newIndex.jsp</result-->
+            <result name="success" type="json"/>
+		</action>
+		<action name="AsociarClausula" class="PrincipalProductosAction" method="asociarClausula">			
+            <result name="success" type="json"/>
+		</action>		
+		<action name="ClausulaLista" class="PrincipalProductosAction" method="listaDeClausulasJSON">
+			<result name="success" type="json"/>                
+		</action>
+		<action name="CatalogoClausulas" class="PrincipalProductosAction" method="catalogoDeClausulasJSON">
+			<result name="success" type="json"/>                
+		</action>		
+		<action name="EliminarClausula" class="PrincipalProductosAction" method="eliminarClausula">			
+            <result name="success" type="json"/>
+		</action>
+		
+		<action name="GenerarProducto" class="PrincipalProductosAction" method="generarProducto">
+			<result name="success" type="json" />
+		</action>
+		
+		<action name="ClonarProducto" class="PrincipalProductosAction" method="clonarProducto">
+			<result name="success" type="json" />
+		</action>
+		
+		<action name="GenerarProducto2" class="PrincipalProductosAction" method="generarProducto2">
+			<result name="success" type="json" />
+		</action>
+		
+	</package>
+
+</struts>

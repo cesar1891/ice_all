@@ -1,0 +1,90 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+	<include file="struts-default.xml" />
+
+	<package name="rol" extends="json-default" namespace="/rol">
+
+		<!--
+		Redireccionamiento de action a jsp 
+		-->
+
+
+		<!-- 
+		Configuracion del Action con tipo de respuesta JSON, esto generara a partir
+		de los atributos la respuesta en formato JSON para el Reader de ExtJs 
+		-->
+		<action name="Roles" class="RolesAction">
+			<result name="input">/WEB-INF/jsp/productos/rol/roles.jsp</result>
+		</action>
+		
+		<action name="CatalogoDeRoles" class="RolesAction" method="catalogoRoles">
+			<result name="input">/WEB-INF/jsp/productos/rol/roles.jsp</result>
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="CatalogoDeObligatorio" class="RolesAction" method="catalogoObligatorioJSON">
+			<result name="input">/WEB-INF/jsp/productos/rol/roles.jsp</result>
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="CatalogoDeAtributosVariables" class="RolesAction" method="catalogoAtributosVariablesJson">
+			<result name="input">/WEB-INF/jsp/productos/rol/roles.jsp</result>
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="CargaAtributosVariablesRol" class="RolesAction" method="listaAtributosVariablesJSON">
+			<result name="input">/WEB-INF/jsp/productos/rol/roles.jsp</result>
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="AgregaRolCatalogo" class="RolesAction" method="agregaRolCatalogo">
+			<result name="input">/WEB-INF/jsp/productos/rol/roles.jsp</result>
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="AgregaAtributoVariableRol" class="RolesAction" method="agregarAtributoVariableRol">
+			<result name="input">/WEB-INF/jsp/productos/rol/roles.jsp</result>
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="EliminaAtributoVariableRol" class="RolesAction" method="eliminarAtributoVariableRol">
+			<result name="input">/WEB-INF/jsp/productos/rol/roles.jsp</result>
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="ValidaHijosAtributoVariableRol" class="RolesAction" method="validaHijosAtributoVariableRol">
+            <result name="success" type="json"/>
+		</action>
+		
+		<action name="InsertaRolInciso" class="RolesAction" method="insertaRolInciso">
+			<result name="input">/WEB-INF/jsp/productos/rol/roles.jsp</result>
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="AgregaAtributoVariableCatalogo" class="RolesAction" method="insertaAtributoVariableCatalogo">
+			<result name="input">/WEB-INF/jsp/productos/rol/roles.jsp</result>
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="LimpiarSesionAtributosVariablesRol" class="RolesAction" method="borraSesionAtributosVariablesRol">
+			<result name="input">/WEB-INF/jsp/productos/rol/roles.jsp</result>
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="SubeRefreshSession" class="AtributosVariablesAction" method="subeRefreshSesion">
+            <result name="success" type="json"/>      
+        </action>
+		
+		<action name="CargaRolAsociado" class="RolesAction" method="cargaRolAsociadoInciso">
+			<result name="input">/WEB-INF/jsp/productos/rol/roles.jsp</result>
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="EliminaRol" class="RolesAction" method="eliminaRol">
+            <result name="success" type="json"/>      
+		</action>
+	</package>
+
+</struts>

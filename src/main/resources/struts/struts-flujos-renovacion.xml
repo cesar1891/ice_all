@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <package name="renovacion" namespace="/renovacion" extends="default">
+        <action name="principal" class="renovacionAction" method="pantallaRenovacion">
+            <result name="error">/jsp-script/general/errorPantalla.jsp</result>
+            <result name="success">/jsp-script/proceso/renovacion/pantallaRenovacion.jsp</result>
+        </action>
+        
+        <action name="buscarPolizasRenovables" class="renovacionAction" method="buscarPolizasRenovables">
+            <result type="json" />
+        </action>
+        <action name="renovarPolizas" class="renovacionAction" method="renovarPolizas">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result type="json" />
+        </action>
+        <action name="renovacionIndividual" class="renovacionAction" method="renovacionIndividual">
+            <result name="error">/jsp-script/general/errorPantalla.jsp</result>
+            <result name="success">/jsp-script/proceso/renovacion/pantallaRenovacionIndividual.jsp</result>
+        </action>
+         <action name="buscarPolizasIndividualesRenovables" class="renovacionAction" method="buscarPolizasIndividualesRenovables">
+            <result type="json" />
+        </action>
+         <action name="buscarPolizasIndividualesMasivasRenovables" class="renovacionAction" method="buscarPolizasIndividualesMasivasRenovables">
+            <result type="json" />
+        </action>
+        <action name="renovarPolizaIndividual" class="renovacionAction" method="renovarPolizaIndividual">
+            <result type="json" />
+        </action>
+        <action name="renovarPolizasMasivasIndividuales" class="renovacionAction" method="renovarPolizasMasivasIndividuales">
+        	<interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+        	<result type="json" />
+        </action>
+        <action name="actualizaValoresCotizacion" class="renovacionAction" method="actualizaValoresCotizacion">
+            <result type="json" />
+        </action>
+        <action name="confirmarPolizaIndividual" class="renovacionAction" method="confirmarPolizaIndividual">
+            <result type="json" />
+        </action>
+        <action name="obtenerItemsTvalopol" class="renovacionAction" method="obtenerItemsTvalopol">
+        	<result type="json" />
+        </action>
+        <action name="obtenerCondicionesRenovacionIndividual" class="renovacionAction" method="obtenerCondicionesRenovacionIndividual">
+        	<result type="json" />
+        </action>
+        <action name="movimientoCondicionesRenovacionIndividual" class="renovacionAction" method="movimientoCondicionesRenovacionIndividual">
+        	<result type="json" />
+        </action>
+        <action name="obtenerCalendarizacionRenovacionIndividual" class="renovacionAction" method="obtenerCalendarizacionRenovacionIndividual">
+        	<result type="json" />
+        </action>
+        <action name="movimientoCalendarizacionRenovacionIndividual" class="renovacionAction" method="movimientoCalendarizacionRenovacionIndividual">
+        	<result type="json" />
+        </action>
+        <action name="validaAgenteSIGS" class="renovacionAction" method="validaAgenteSIGS">
+            <result type="json" />
+        </action>
+        <action name="validateValueExclusion" class="renovacionAction" method="validateValueExclusion">
+            <result type="json" />
+        </action>
+        
+        <action name="renovarColectivos" class="renovacionAction" method="renovacionIndividual">
+            <result name="error">/jsp-script/general/errorPantalla.jsp</result>
+            <result name="success">/jsp-script/proceso/renovacion/renovacionColectiva.jsp</result>
+        </action>
+    </package>
+</struts>

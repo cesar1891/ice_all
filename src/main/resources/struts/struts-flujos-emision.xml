@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    
+    <package name="emision" namespace="/emision" extends="default" >
+        
+		<action name="cotizacion" class="CotizacionAction" method="pantallaCotizacion">
+            <result name="success">/jsp-script/proceso/emision/cotizacion.jsp</result>
+            <result name="success_mobile">/jsp-script/proceso/emision/cotizaciontouch.jsp</result>
+            <result name="error">/jsp-script/general/errorPantalla.jsp</result>
+            <result name="error_mobile">/jsp-script/general/errorPantalla.jsp</result>
+        </action>
+        
+        <action name="cotizacionGrupo" class="CotizacionAction" method="pantallaCotizacionGrupo">
+            <result name="error">/jsp-script/general/errorPantalla.jsp</result>
+            <result name="success">/jsp-script/proceso/emision/cotizacionGrupo.jsp</result>
+        </action>
+        
+        <action name="cotizacionGrupo2" class="CotizacionAction" method="pantallaCotizacionGrupo2">
+            <result name="error">/jsp-script/general/errorPantalla.jsp</result>
+            <result name="success">/jsp-script/proceso/emision/cotizacionGrupo2.jsp</result>
+        </action>
+        
+        <action name="includes/cotizacionGrupo" class="CotizacionAction" method="pantallaCotizacionGrupoEndoso">
+            <result name="error">/jsp-script/general/errorPantalla.jsp</result>
+            <result name="success">/jsp-script/proceso/emision/cotizacionGrupo3.jsp</result>
+        </action>
+        
+        <action name="mcotizacion" class="CotizacionAction" method="pantallaCotizacion">
+            <result name="success">/jsp-script/proceso/emision/cotizaciontouch.jsp</result>
+        </action>
+        
+        <action name="cotizar" class="CotizacionAction" method="cotizar">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result name="success" type="json" />
+        </action>
+       
+       <action name="cargarCotizacion" class="CotizacionAction" method="cargarCotizacion">
+           <result type="json" />
+       </action>
+       
+       <action name="webServiceNada" class="CotizacionAction" method="webServiceNada">
+           <result type="json" />
+       </action>
+       
+       <action name="webServiceNadaEndosos" class="CotizacionAction" method="webServiceNadaEndosos">
+           <result type="json" />
+       </action>
+       
+       <action name="guardarSituacionesAuto" class="CotizacionAction" method="guardarSituacionesAuto">
+           <interceptor-ref name="json">
+               <param name="enableSMD">true</param>
+               <param name="ignoreSMDMethodInterfaces">false</param>
+           </interceptor-ref>
+           <result type="json" />
+       </action>
+       
+       <action name="obtenerCoberturasPlan" class="CotizacionAction" method="obtenerCoberturasPlan">
+           <result type="json" />
+       </action>
+       
+       <action name="obtenerCoberturasPlanColec" class="CotizacionAction" method="obtenerCoberturasPlanColec">
+           <result type="json" />
+       </action>
+
+       <action name="obtienePlanDefinitivo" class="CotizacionAction" method="obtienePlanDefinitivo">
+           <interceptor-ref name="json">
+               <param name="enableSMD">true</param>
+               <param name="ignoreSMDMethodInterfaces">false</param>
+           </interceptor-ref>
+           <result type="json" />
+       </action>
+
+       <action name="lanzaAprobacionNombrePlan" class="CotizacionAction" method="lanzaAprobacionNombrePlan">
+           <result type="json" />
+       </action>
+       
+       <action name="obtieneNombresCoberturasPlan" class="CotizacionAction" method="obtieneNombresCoberturasPlan">
+           <result type="json" />
+       </action>
+       
+       <action name="obtenSumaAseguradosMedicamentos" class="CotizacionAction" method="obtenSumaAseguradosMedicamentos">
+           <result type="json" />
+       </action>
+       
+       <action name="obtenerTatrigarCoberturas" class="CotizacionAction" method="obtenerTatrigarCoberturas">
+           <result type="json" />
+       </action>
+       
+       <action name="subirCenso" class="CotizacionAction" method="subirCenso">
+           <result type="json" />
+       </action>
+       
+       <action name="subirCensoCompleto" class="CotizacionAction" method="subirCensoCompleto">
+           <interceptor-ref name="json">
+               <param name="enableSMD">true</param>
+               <param name="ignoreSMDMethodInterfaces">false</param>
+           </interceptor-ref>
+           <result type="json" />
+       </action>
+       
+       <action name="subirCensoCompleto2" class="CotizacionAction" method="subirCensoCompleto2">
+           <interceptor-ref name="json">
+               <param name="enableSMD">true</param>
+               <param name="ignoreSMDMethodInterfaces">false</param>
+           </interceptor-ref>
+           <result type="json" />
+       </action>
+       
+       <action name="subirCensoCompleto3" class="CotizacionAction" method="subirCensoCompleto3">
+           <interceptor-ref name="json">
+               <param name="enableSMD">true</param>
+               <param name="ignoreSMDMethodInterfaces">false</param>
+           </interceptor-ref>
+           <result type="json" />
+       </action>
+       
+       
+       <action name="generarTramiteGrupo" class="CotizacionAction" method="generarTramiteGrupo">
+           <interceptor-ref name="json">
+               <param name="enableSMD">true</param>
+               <param name="ignoreSMDMethodInterfaces">false</param>
+           </interceptor-ref>
+           <result type="json" />
+       </action>
+       
+       <action name="generarTramiteGrupo2" class="CotizacionAction" method="generarTramiteGrupo2">
+           <interceptor-ref name="json">
+               <param name="enableSMD">true</param>
+               <param name="ignoreSMDMethodInterfaces">false</param>
+           </interceptor-ref>
+           <result type="json" />
+       </action>
+       
+       <action name="obtenerDetalleCotizacionGrupo" class="CotizacionAction" method="obtenerDetalleCotizacionGrupo">
+           <result type="json" />
+       </action>
+       
+       <action name="cargarDatosCotizacionGrupo" class="CotizacionAction" method="cargarDatosCotizacionGrupo">
+           <result type="json" />
+       </action>
+       
+       <action name="cargarDatosCotizacionGrupo2" class="CotizacionAction" method="cargarDatosCotizacionGrupo2">
+           <result type="json" />
+       </action>
+       
+       <action name="cargarDatosCotizacionGrupoEndoso" class="CotizacionAction" method="cargarDatosCotizacionGrupoEndoso">
+           <result type="json" />
+       </action>
+       
+       <action name="cargarGruposCotizacion" class="CotizacionAction" method="cargarGruposCotizacion">
+           <result type="json" />
+       </action>
+       
+       <action name="cargarGruposCotizacion2" class="CotizacionAction" method="cargarGruposCotizacion2">
+           <result type="json" />
+       </action>
+
+       <action name="cargarGruposCotizacionReexpedicion" class="CotizacionAction" method="cargarGruposCotizacionReexpedicion">
+           <result type="json" />
+       </action>
+       
+       <action name="cargarDatosGrupoLinea" class="CotizacionAction" method="cargarDatosGrupoLinea">
+           <result type="json" />
+       </action>
+       
+       <action name="cargarTvalogarsGrupo" class="CotizacionAction" method="cargarTvalogarsGrupo">
+           <result type="json" />
+       </action>
+       
+       <action name="cargarTarifasPorEdad" class="CotizacionAction" method="cargarTarifasPorEdad">
+           <result type="json" />
+       </action>
+       
+       <action name="cargarTarifasPorCobertura" class="CotizacionAction" method="cargarTarifasPorCobertura">
+           <result type="json" />
+       </action>
+       
+       <action name="emitirColectivo" class="CotizacionAction" method="emitirColectivo">
+           <result type="json" />
+       </action>
+       
+       <action name="cargarAseguradosExtraprimas" class="CotizacionAction" method="cargarAseguradosExtraprimas">
+           <result type="json" />
+       </action>
+       
+       <action name="cargarAseguradosExtraprimas2" class="CotizacionAction" method="cargarAseguradosExtraprimas2">
+           <result type="json" />
+       </action>
+       
+       <action name="cargarAseguradosExtraprimas3" class="CotizacionAction" method="cargarAseguradosExtraprimas3">
+           <result type="json" />
+       </action>
+       
+       <action name="guardarExtraprimasAsegurados" class="CotizacionAction" method="guardarExtraprimasAsegurados">
+           <interceptor-ref name="json">
+               <param name="enableSMD">true</param>
+               <param name="ignoreSMDMethodInterfaces">false</param>
+           </interceptor-ref>
+           <result type="json" />
+       </action>
+       
+       <action name="guardarExtraprimasAseguradosEnd" class="CotizacionAction" method="guardarExtraprimasAseguradosEnd">
+           <interceptor-ref name="json">
+               <param name="enableSMD">true</param>
+               <param name="ignoreSMDMethodInterfaces">false</param>
+           </interceptor-ref>
+           <result type="json" />
+       </action>
+       
+       <action name="ejecutaSigsvalipol" class="CotizacionAction" method="ejecutaSigsvalipol">
+           <result type="json" />
+       </action>
+       
+       <action name="cargarAseguradosGrupo" class="CotizacionAction" method="cargarAseguradosGrupo">
+           <result type="json" />
+       </action>
+       <action name="cargarAseguradosGrupoPag" class="CotizacionAction" method="cargarAseguradosGrupoPag">
+           <result type="json" />
+       </action>
+       
+       <action name="guardarAseguradosCotizacion" class="CotizacionAction" method="guardarAseguradosCotizacion">
+           <interceptor-ref name="json">
+               <param name="enableSMD">true</param>
+               <param name="ignoreSMDMethodInterfaces">false</param>
+           </interceptor-ref>
+           <result type="json" />
+       </action>
+       
+       <action name="guardarValoresSituaciones" class="CotizacionAction" method="guardarValoresSituaciones">
+           <interceptor-ref name="json">
+               <param name="enableSMD">true</param>
+               <param name="ignoreSMDMethodInterfaces">false</param>
+           </interceptor-ref>
+           <result type="json" />
+       </action>
+       
+       <action name="guardarValoresSituacionesTitular" class="CotizacionAction" method="guardarValoresSituacionesTitular">
+           <interceptor-ref name="json">
+               <param name="enableSMD">true</param>
+               <param name="ignoreSMDMethodInterfaces">false</param>
+           </interceptor-ref>
+           <result type="json" />
+       </action>
+       
+       <action name="guardarReporteCotizacionGrupo" class="CotizacionAction" method="guardarReporteCotizacionGrupo">
+           <result type="json" />
+       </action>
+       
+       <action name="cargarCduniecoAgenteAuto" class="CotizacionAction" method="cargarCduniecoAgenteAuto">
+           <result type="json" />
+       </action>
+       
+       <action name="cargarCdagentePorFolio" class="CotizacionAction" method="cargarCdagentePorFolio">
+           <result type="json" />
+       </action>
+       
+       <action name="cargarNumeroPasajerosPorTipoUnidad" class="CotizacionAction" method="cargarNumeroPasajerosPorTipoUnidad">
+           <result type="json" />
+       </action>
+       
+       <action name="obtenerParametrosCotizacion" class="CotizacionAction" method="obtenerParametrosCotizacion">
+           <result type="json" />
+       </action>
+       
+       <action name="cargarAutoPorClaveGS" class="CotizacionAction" method="cargarAutoPorClaveGS">
+           <result type="json" />
+       </action>
+       
+       <action name="cargarClaveGSPorAuto" class="CotizacionAction" method="cargarClaveGSPorAuto">
+           <result type="json" />
+       </action>
+       
+       <action name="cargarSumaAseguradaAuto" class="CotizacionAction" method="cargarSumaAseguradaAuto">
+           <result type="json" />
+       </action>
+       
+       <action name="agregarClausulaICD" class="CotizacionAction" method="agregarClausulaICD">
+           <result type="json" />
+       </action>
+       
+       <action name="cargarClausulaICD" class="CotizacionAction" method="cargarClausulaICD">
+           <result type="json" />
+       </action>
+       
+       <action name="borrarClausulaICD" class="CotizacionAction" method="borrarClausulaICD">
+           <result type="json" />
+       </action>
+       
+       <action name="validarDescuentoAgente" class="CotizacionAction" method="validarDescuentoAgente">
+           <result type="json" />
+       </action>
+       
+       <action name="cargarClienteCotizacion" class="CotizacionAction" method="cargarClienteCotizacion">
+           <result type="json" />
+       </action>
+       
+       <action name="cargarConceptosGlobalesGrupo" class="CotizacionAction" method="cargarConceptosGlobalesGrupo">
+           <result type="json" />
+       </action>
+       
+       <action name="obtenerTiposSituacion" class="CotizacionAction" method="obtenerTiposSituacion">
+           <result type="json" />
+       </action>
+        
+        <action name="validarCambioZonaGMI" class="CotizacionAction" method="validarCambioZonaGMI">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="validarEnfermedadCatastGMI" class="CotizacionAction" method="validarEnfermedadCatastGMI">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="cotizacionAutoIndividual" class="cotizacionAutoAction" method="cotizacionAutoIndividual">
+            <result name="error">/jsp-script/general/errorPantalla.jsp</result>
+            <result name="success">/jsp-script/proceso/emision/cotizacionAutoIndividual.jsp</result>
+        </action>
+        
+        <action name="cargarRetroactividadSuplemento" class="cotizacionAutoAction" method="cargarRetroactividadSuplemento">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="cargarSumaAseguradaRamo5" class="cotizacionAutoAction" method="cargarSumaAseguradaRamo5">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="emisionAutoIndividual" class="cotizacionAutoAction" method="emisionAutoIndividual">
+            <result name="error">/jsp-script/general/errorPantalla.jsp</result>
+            <result name="success">/jsp-script/proceso/emision/emisionAutoIndividual.jsp</result>
+        </action>
+        
+        <action name="cargarDatosComplementariosAutoInd" class="cotizacionAutoAction" method="cargarDatosComplementariosAutoInd">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="cargarValoresSituacion" class="cotizacionAutoAction" method="cargarValoresSituacion">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="movimientoMpoliper" class="cotizacionAutoAction" method="movimientoMpoliper">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="guardarComplementariosAutoIndividual" class="cotizacionAutoAction" method="guardarComplementariosAutoIndividual">
+           <interceptor-ref name="json">
+               <param name="enableSMD">true</param>
+               <param name="ignoreSMDMethodInterfaces">false</param>
+           </interceptor-ref>
+           <result type="json" />
+       </action>
+       
+       <action name="guardarConfigCotizacion" class="cotizacionAutoAction" method="guardarConfigCotizacion">
+            <result name="success" type="json" />
+        </action>
+       
+       <action name="cargarConfigCotizacion" class="cotizacionAutoAction" method="cargarConfigCotizacion">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="recuperacionSimple" class="recuperacionSimpleAction" method="recuperacionSimple">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="cargarParamerizacionConfiguracionCoberturas" class="cotizacionAutoAction" method="cargarParamerizacionConfiguracionCoberturas">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="cotizacionAutoFlotilla" class="cotizacionAutoAction" method="cotizacionAutoFlotilla">
+            <result name="error">/jsp-script/general/errorPantalla.jsp</result>
+            <result name="success">/jsp-script/proceso/emision/cotizacionAutoFlotilla.jsp</result>
+        </action>
+        
+        <action name="cotizarAutosFlotilla" class="cotizacionAutoAction" method="cotizarAutosFlotilla">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result type="json" />
+        </action>
+        
+        <action name="cargarValidacionTractocamionRamo5" class="cotizacionAutoAction" method="cargarValidacionTractocamionRamo5">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="procesarCargaMasivaFlotilla" class="cotizacionAutoAction" method="procesarCargaMasivaFlotilla">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="cargarCotizacionAutoFlotilla" class="cotizacionAutoAction" method="cargarCotizacionAutoFlotilla">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="recuperacionSimpleLista" class="recuperacionSimpleAction" method="recuperacionSimpleLista">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="emisionAutoFlotilla" class="cotizacionAutoAction" method="emisionAutoFlotilla">
+            <result name="error">/jsp-script/general/errorPantalla.jsp</result>
+            <result name="success">/jsp-script/proceso/emision/emisionAutoFlotilla.jsp</result>
+        </action>
+        
+        <action name="guardarComplementariosAutoFlotilla" class="cotizacionAutoAction" method="guardarComplementariosAutoFlotilla">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result type="json" />
+        </action>
+        
+        <action name="recotizarAutoFlotilla" class="cotizacionAutoAction" method="recotizarAutoFlotilla">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="guardarContratanteColectivo" class="CotizacionAction" method="guardarContratanteColectivo">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result type="json" />
+        </action>
+        
+        <action name="cargarTramite" class="CotizacionAction" method="cargarTramite">
+            <result type="json" />
+        </action>
+        
+        <action name="cargarObligatorioTractocamionRamo5" class="cotizacionAutoAction" method="cargarObligatorioTractocamionRamo5">
+            <result type="json" />
+        </action>
+        
+        <action name="cargarDetalleNegocioRamo5" class="cotizacionAutoAction" method="cargarDetalleNegocioRamo5">
+            <result type="json" />
+        </action>
+        
+        <action name="aplicaDxn" class="cotizacionAutoAction" method="aplicaDxn">
+            <result type="json" />
+        </action>
+        
+        <action name="guardarPantallaBeneficiarios" class="cotizacionAutoAction" method="guardarPantallaBeneficiarios">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result type="json" />
+        </action>
+        
+        <action name="cargarTipoCambioWS" class="CotizacionAction" method="cargarTipoCambioWS">
+            <result type="json" />
+        </action>
+        
+        <action name   = "cargarParamerizacionConfiguracionCoberturasRol"
+                class  = "cotizacionAutoAction"
+                method = "cargarParamerizacionConfiguracionCoberturasRol">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="pantallaClausulasPoliza" class="emisionAction" method="pantallaClausulasPoliza">
+            <result name="error">/jsp-script/general/errorPantalla.jsp</result>
+            <result name="success">/jsp-script/proceso/emision/pantallaClausulasPoliza.jsp</result>
+        </action>
+        
+        <action name="includes/pantallaClausulasPoliza" class="emisionAction" method="pantallaClausulasPoliza">
+            <result name="error">/jsp-script/general/errorPantalla.jsp</result>
+            <result name="success">/jsp-script/proceso/emision/pantallaClausulasPoliza.jsp</result>
+        </action>
+        
+        <action name="recuperarTextoClausulaPoliza" class="emisionAction" method="recuperarTextoClausulaPoliza">
+            <result type="json" />
+        </action>
+        
+        <action name="guardarClausulasPoliza" class="emisionAction" method="guardarClausulasPoliza">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result type="json" />
+        </action>
+        
+        <action name="includes/cotizacionAutoFlotilla" class="cotizacionAutoAction" method="cotizacionAutoFlotilla">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result name="error">/jsp-script/general/errorPantalla.jsp</result>
+            <result name="success">/jsp-script/proceso/emision/cotizacionAutoFlotilla.jsp</result>
+        </action>
+        
+        <action name="recuperarDatosEndosoAltaIncisoAuto" class="endososAutoAction" method="recuperarDatosEndosoAltaIncisoAuto">
+            <result type="json" />
+        </action>
+        
+        <action name="complementoSaludGrupo" class="CotizacionAction" method="complementoSaludGrupo">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="guardarConfiguracionGarantias" class="CotizacionAction" method="guardarConfiguracionGarantias">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result name="success" type="json"/>
+        </action>
+        
+        <action name="obtieneValNumeroSerie" class="cotizacionAutoAction" method="obtieneValNumeroSerie"><!--cargarValoresSituacion -->
+            <result name="success" type="json" />
+        </action>
+ 
+        <action name="obtieneValidacionDescuentoR6" class="cotizacionAutoAction" method="obtieneValidacionDescuentoR6">
+            <result name="success" type="json" />
+        </action>
+       
+       <action name="cargarPoliza" class="emisionAction" method="cargarPoliza"><!--Buscar por poliza -->
+            <result name="success" type="json" />
+       </action>
+       
+        <action name="obtieneIdUsu" class="emisionAction" method="obtieneIdUsu"><!--Buscar por poliza -->
+            <result name="success" type="json" />
+       </action>
+        
+        <action name="restaurarRespaldoCenso" class="CotizacionAction" method="restaurarRespaldoCenso">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="borrarRespaldoCenso" class="CotizacionAction" method="borrarRespaldoCenso">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="consultaExtraprimaOcup" class="CotizacionAction" method="consultaExtraprimaOcup">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="obtieneFormaPago" class="cotizacionAutoAction" method="obtieneFormaPago">
+           <result type="json" />
+       	</action>
+       	
+       	<action name="guardaDxn" class="cotizacionAutoAction" method="guardaDxn">
+           <result type="json" />
+       	</action>
+       	
+       	<action name="buscarEmpleados" class="CotizacionAction" method="buscarEmpleados">
+           <result type="json" />
+       </action>
+       
+       <action name="guardaEmpleados" class="CotizacionAction" method="guardaEmpleados">
+           <result type="json" />
+       </action>
+       <action name="obtieneAdminRet" class="cotizacionAutoAction" method="obtieneAdminRet">
+           <result type="json" />
+       </action>  
+       
+       <action name="datosFlujo" class="cotizacionAutoAction" method="datosFlujo">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result type="json" />
+        </action>
+        
+        <action name="refrescarCensoColectivo" class="CotizacionAction" method="refrescarCensoColectivo">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="cargarAseguradosFiltroGrupoPag" class="CotizacionAction" method="cargarAseguradosFiltroGrupoPag">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="cargarAseguradosFiltroExtraprimas" class="CotizacionAction" method="cargarAseguradosFiltroExtraprimas">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="cargarAseguradosFiltroExtraprimas2" class="CotizacionAction" method="cargarAseguradosFiltroExtraprimas2">
+            <result name="success" type="json" />
+        </action>
+        <action name="obtieneRangoPeriodoGraciaAgente" class="cotizacionAutoAction" method="obtieneRangoPeriodoGraciaAgente">
+            <result name="success" type="json" />
+        </action>       
+        
+       <action name="cargaMasivaFlotillaEmision" class="cotizacionAutoAction" method="cargaMasivaFlotillaEmision">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="procesarCargaMasivaFlotillaEmision" class="CotizacionAction" method="procesarCargaMasivaFlotillaEmision">
+           <interceptor-ref name="json">
+               <param name="enableSMD">true</param>
+               <param name="ignoreSMDMethodInterfaces">false</param>
+           </interceptor-ref>
+           <result type="json" />
+       </action>
+        
+    </package>
+    
+</struts>

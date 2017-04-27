@@ -1,0 +1,38 @@
+[
+    {
+        name: 'Formulario',
+        thumb: 'Formulario.png',
+        url: 'formulario',
+        type: 'Example'
+    },{
+        name: 'Columnas',
+        thumb: 'Columnas.png',
+        url: 'columnas',
+        type: 'Example'
+    },{
+        name: 'Tabs',
+        thumb: 'Tabs.png',
+        url: 'tabs',
+        type: 'Example'
+    },{
+        name: 'Acordion',
+        thumb: 'Acordion.png',
+        url: 'acordion',
+        type: 'Example'
+    },{
+        name: 'Tablas',
+        thumb: 'Tablas.png',
+        url: 'tablas',
+        type: 'Example'
+    },{
+        name: 'Border',
+        thumb: 'Border.png',
+        url: 'border',
+        type: 'Example'
+    },{
+        name: 'Ventana',
+        thumb: 'Ventana.png',
+        url: 'ventana',
+        type: 'Example'
+    }
+]

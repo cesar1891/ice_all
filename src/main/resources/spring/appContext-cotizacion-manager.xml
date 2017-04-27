@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+	<bean id="kernelManagerSustituto" class="mx.com.aon.kernel.service.impl.KernelManagerSustitutoImpl" parent="abstractManagerJdbcTemplateInvoke">
+	    <property name="abstractDAO">
+	        <ref bean="procesoDao"/>
+	    </property>
+	</bean>
+	
+	<bean id="cotizacionManagerImpl" class="mx.com.gseguros.portal.cotizacion.service.impl.CotizacionManagerImpl">
+        <property name="cotizacionDAO"  ref="cotizacionDAOImpl"  />
+        <property name="pantallasDAO"   ref="pantallasDAOImpl"   />
+        <property name="personasDAO"    ref="personasDAOImpl"    />
+        <property name="mesaControlDAO" ref="mesaControlDAOImpl" />
+        <property name="consultasDAO"   ref="consultasDAOImpl"   />
+    </bean>
+    
+    <bean id="cotizacionAutoManagerImpl" class="mx.com.gseguros.portal.cotizacion.service.impl.CotizacionAutoManagerImpl">
+        <property name="cotizacionDAO"   ref="cotizacionDAOImpl"  />
+        <property name="validacionesCotizacionDAOSIGS"  ref="validacionesCotizacionDAOSIGSImpl"  />
+        <property name="pantallasDAO"   ref="pantallasDAOImpl"   />
+        <property name="consultasDAO"   ref="consultasDAOImpl"   />
+        <property name="personasDAO"    ref="personasDAOImpl"    />
+        <property name="mesaControlDAO" ref="mesaControlDAOImpl" />
+        <property name="endososDAO"     ref="endososDAOImpl"     />
+    </bean>
+	
+</beans>

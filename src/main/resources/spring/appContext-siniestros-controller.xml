@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+ 	  
+    <bean id="siniestrosAction" class="mx.com.gseguros.portal.siniestros.controller.SiniestrosAction" scope="prototype">
+        <property name="siniestrosManager" ref="siniestrosManagerImpl"/>
+        <property name="kernelManagerSustituto" ref="kernelManagerSustituto"/>
+        <property name="pantallasManager"   ref="pantallasManagerImpl"></property>
+        <property name="catalogosManager"   ref="catalogosManagerImpl"></property>
+        <property name="ice2sigsService"    ref="ice2sigsServiceImpl"></property>
+    </bean>
+    
+    <bean id="detalleSiniestroAction" class="mx.com.gseguros.portal.siniestros.controller.DetalleSiniestroAction" scope="prototype">
+        <property name="siniestrosManager" ref="siniestrosManagerImpl"/>
+        <property name="pantallasManager"  ref="pantallasManagerImpl"></property>
+        <property name="kernelManager"     ref="kernelManagerSustituto"/>
+    </bean>
+    
+    <bean id="ajustesMedicosSiniestrosAction" class="mx.com.gseguros.portal.siniestros.controller.AjustesMedicosSiniestrosAction" scope="prototype">
+        <property name="siniestrosManager" ref="siniestrosManagerImpl"/>
+        <property name="kernelManager"     ref="kernelManagerSustituto"/>
+        <property name="pantallasManager"  ref="pantallasManagerImpl"></property>
+        <property name="catalogosManager"  ref="catalogosManagerImpl"></property>
+    </bean>
+    
+    <bean id="autorizacionServiciosAction" class="mx.com.gseguros.portal.siniestros.controller.AutorizacionServiciosAction" scope="prototype">
+        <property name="siniestrosManager" ref="siniestrosManagerImpl"/>
+        <property name="kernelManagerSustituto" ref="kernelManagerSustituto"/>
+        <property name="pantallasManager"   ref="pantallasManagerImpl"></property>
+        <property name="catalogosManager"   ref="catalogosManagerImpl"></property>
+        <property name="ice2sigsService"    ref="ice2sigsServiceImpl"></property>
+    </bean>
+    
+    <bean id="tramiteSiniestroAction" class="mx.com.gseguros.portal.siniestros.controller.TramiteSiniestroAction" scope="prototype">
+        <property name="siniestrosManager" ref="siniestrosManagerImpl"/>
+        <property name="kernelManagerSustituto" ref="kernelManagerSustituto"/>
+        <property name="pantallasManager"   ref="pantallasManagerImpl"></property>
+        <property name="catalogosManager"   ref="catalogosManagerImpl"></property>
+        <property name="ice2sigsService"    ref="ice2sigsServiceImpl"></property>
+    </bean>
+    <bean id="configuracionLayoutAction" class="mx.com.gseguros.portal.siniestros.controller.ConfiguracionLayoutAction" scope="prototype">
+        <property name="siniestrosManager" ref="siniestrosManagerImpl"/>
+        <property name="kernelManagerSustituto" ref="kernelManagerSustituto"/>
+        <property name="pantallasManager"   ref="pantallasManagerImpl"></property>
+        <property name="catalogosManager"   ref="catalogosManagerImpl"></property>
+        <property name="ice2sigsService"    ref="ice2sigsServiceImpl"></property>
+    </bean>
+</beans>

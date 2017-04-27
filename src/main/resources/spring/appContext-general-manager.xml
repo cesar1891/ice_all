@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="recibosManagerImpl" class="mx.com.gseguros.portal.general.service.impl.RecibosManagerImpl">
+        <property name="recibosDAO" ref="recibosDAOImpl"/>
+    </bean>
+    
+    <bean id="reportesManagerImpl" class="mx.com.gseguros.portal.general.service.impl.ReportesManagerImpl">
+        <property name="reportesDAO" ref="reportesDAOImpl"/>
+    </bean>
+
+    <bean id="webServicesManagerImpl" class="mx.com.gseguros.portal.general.service.impl.WebServicesManagerImpl">
+        <property name="webServicesDAO" ref="webServicesDAOImpl"/>
+    </bean>
+    
+    <!-- Envio de correos -->
+    <bean id="mailServiceImpl" class="mx.com.gseguros.portal.general.service.impl.MailServiceImpl">
+        <property name="from" value="${mail.from}" />
+        <property name="fromAlias" value="${mail.from.alias}" />
+        <property name="mailSender" ref="mailSender" />
+        <property name="defaultMailMessage" ref="defaultMailMessage" />
+    </bean>
+    
+    <bean id="mailServiceForSmsImpl" class="mx.com.gseguros.portal.general.service.impl.MailServiceForSmsImpl">
+        <property name="from" value="sisa@gsalud.com.mx" />
+        <property name="fromAlias" value="General de Seguros" />
+        <property name="mailSender" ref="mailSenderForSms" />
+        <property name="defaultMailMessage" ref="defaultMailMessage" />
+    </bean>
+    
+</beans>

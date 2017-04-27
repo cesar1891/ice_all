@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="catalogosManagerImpl" class="mx.com.gseguros.portal.general.service.impl.CatalogosManagerImpl">
+        <property name="catalogosDAO" ref="catalogosDAOImpl"/>
+    </bean>
+
+    <bean id="clausuladoManagerImpl" class="mx.com.gseguros.portal.catalogos.service.impl.ClausuladoManagerImpl">
+        <property name="clausuladoDAO" ref="clausuladoDAOImpl"/>
+    </bean>
+    
+    <bean id="usuarioManagerImpl" class="mx.com.gseguros.portal.general.service.impl.UsuarioManagerImpl">
+        <property name="usuarioDAO" ref="usuarioDAOImpl"/>
+    </bean>
+
+    <bean id="menuManagerImpl" class="mx.com.gseguros.portal.general.service.impl.MenuManagerImpl">
+        <property name="menuDAO" ref="menuDAOImpl"/>
+    </bean>
+    
+   <!--  <bean id="personasManagerImpl" class="mx.com.gseguros.portal.catalogos.service.impl.PersonasManagerImpl">
+        <property name="pantallasDAO" ref="pantallasDAOImpl" />
+        <property name="personasDAO"  ref="personasDAOImpl"  />
+        <property name="endososDAO"   ref="endososDAOImpl"   />
+    </bean> -->
+    
+</beans>

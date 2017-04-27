@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    
+    <package name="peritaje" namespace="/peritaje" extends="struts-default, json-default">
+    
+       <action name="principal" class="peritajeAction">
+           <result>/jsp/peritaje/peritaje.jsp</result>
+       </action>
+       
+       <action name="obtenerListaOrdenesInspeccion" class="peritajeAction" method="obtenerListaOrdenesInspeccion">
+           <result type="json" />
+       </action>
+       
+       <action name="obtenerListaOrdenesAjuste" class="peritajeAction" method="obtenerListaOrdenesAjuste">
+           <result type="json" />
+       </action>
+       
+       <action name="obtenerDetalleOrdenInspeccion" class="peritajeAction" method="obtenerDetalleOrdenInspeccion">
+           <result type="json" />
+       </action>
+       
+       <action name="obtenerDetalleOrdenAjuste" class="peritajeAction" method="obtenerDetalleOrdenAjuste">
+           <result type="json" />
+       </action>
+       
+       <action name="obtenerDatosVehiculo" class="peritajeAction" method="obtenerDatosVehiculo">
+           <result type="json" />
+       </action>
+       
+       <action name="guardarDatosVehiculo" class="peritajeAction" method="guardarDatosVehiculo">
+           <interceptor-ref name="json">
+               <param name="enableSMD">true</param>
+               <param name="ignoreSMDMethodInterfaces">false</param>
+           </interceptor-ref>
+           <result type="json" />
+       </action>
+       
+       <action name="obtenerDatosSeguridad" class="peritajeAction" method="obtenerDatosSeguridad">
+           <result type="json" />
+       </action>
+       
+       <action name="guardarDatosSeguridad" class="peritajeAction" method="guardarDatosSeguridad">
+           <interceptor-ref name="json">
+               <param name="enableSMD">true</param>
+               <param name="ignoreSMDMethodInterfaces">false</param>
+           </interceptor-ref>
+           <result type="json" />
+       </action>
+    
+       <action name="obtenerDetalleAccesorios" class="peritajeAction" method="obtenerDetalleAccesorios">
+           <result type="json" />
+       </action>
+       
+       <action name="guardarDetalleAccesorios" class="peritajeAction" method="guardarDetalleAccesorios">
+           <interceptor-ref name="json">
+               <param name="enableSMD">true</param>
+               <param name="ignoreSMDMethodInterfaces">false</param>
+           </interceptor-ref>
+           <result type="json" />
+       </action>
+       
+       <action name="guardarDetalleInspeccion" class="peritajeAction" method="guardarDetalleInspeccion">
+           <interceptor-ref name="json">
+               <param name="enableSMD">true</param>
+               <param name="ignoreSMDMethodInterfaces">false</param>
+           </interceptor-ref>
+           <result type="json" />
+       </action>
+       
+       <action name="obtenerListaRepuestosDisponibles" class="peritajeAction" method="obtenerListaRepuestosDisponibles">
+           <result type="json" />
+       </action>
+       
+       <action name="obtenerDetalleAjuste" class="peritajeAction" method="obtenerDetalleAjuste">
+           <result type="json" />
+       </action>
+       
+       <action name="obtenerListaManoObra" class="peritajeAction" method="obtenerListaManoObra">
+           <result type="json" />
+       </action>
+       
+       <action name="descargaDocumento" class="peritajeAction" method="descargaDocumento">
+            <result name="success" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment; filename="${filename}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+        
+        <action name="guardarRepuestosAjuste" class="peritajeAction" method="guardarRepuestosAjuste">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result type="json" />
+        </action>
+        
+        <action name="guardarManoObraAjuste" class="peritajeAction" method="guardarManoObraAjuste">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result type="json" />
+        </action>
+        
+        <action name="obtenerDatosPresupuesto" class="peritajeAction" method="obtenerDatosPresupuesto">
+            <result type="json" />
+        </action>
+    
+    </package>
+    
+</struts>

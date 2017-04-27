@@ -1,0 +1,17 @@
+{
+    tiposConsulta: [{
+		"key": "1",
+		"value": "Datos Generales"
+	},{
+        "key": "2",
+        "value": "Plan y Coberturas"
+    },{
+        "key": "3",
+        "value": "Hist\u00F3rico"
+    }
+    ,{
+        "key": "4",
+        "value": "Vigencia"
+    }
+    ]
+}

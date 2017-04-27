@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="consultasSiniestroAction" class="mx.com.gseguros.portal.consultas.controller.ConsultasSiniestroAction" scope="prototype">
+        <property name="consultaSiniestrosManager" ref="consultasSiniestroManagerImpl"/>
+        <property name="siniestrosManager" ref="siniestrosManagerImpl"/>
+    </bean>
+    
+    <bean id="consultasAction" class="mx.com.gseguros.portal.consultas.controller.ConsultasAction" scope="prototype">
+        <property name="consultasManager" ref="consultasManagerImpl"/>
+        <property name="pantallasManager" ref="pantallasManagerImpl"/>
+    </bean>
+    
+    <bean id="recuperacionSimpleAction" class="mx.com.gseguros.portal.consultas.controller.RecuperacionSimpleAction" scope="prototype">
+        <property name="recuperacionSimpleManager" ref="recuperacionSimpleManagerImpl"/>
+    </bean>
+    
+</beans>

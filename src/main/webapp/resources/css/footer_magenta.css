@@ -1,0 +1,36 @@
+/* magenta footer */
+body.footer-magenta{
+	background: /*#840C2C*/transparent;
+}
+
+#footer {
+	background: #840C2C url(../images/footer/magenta/footer-bg.png) repeat-x;
+}
+
+#footer li {
+	border-bottom: 1px dotted #77848C;
+}
+
+#footer div.moduletable {
+	color: #FFFFFF;
+}
+
+#the-footer {
+	color: #77848F;
+}
+
+body.footer-magenta #footer a {
+	color: #FFFFFF;
+}
+
+body.footer-magenta #footer a:visited {
+	color: #FFFFFF;
+}
+
+body.footer-magenta #footer a:hover {
+	color: #000000;
+}
+
+body.footer-magenta #footer h3 {
+	color: #000000;
+}

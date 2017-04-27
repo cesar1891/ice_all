@@ -1,0 +1,47 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-default.xml" />
+
+	<package name="planes" extends="json-default" namespace="/planes">
+		<!-- action de redireccionamiento de la pantalla -->
+		<action name="planesAction" class="ConfiguracionPlanesAction">
+			<result name="success">/resources/scripts/jsp/productos/planes/planes.jsp</result>
+			<result name="input">/resources/scripts/jsp/productos/planes/planes.jsp</result>			
+		</action>
+		
+		<action name="ListaPlanes" class="ConfiguracionPlanesAction" method="cargaPlanesConfiguracion">
+			<result name="success" type="json"/>			
+		</action>
+		
+		<action name="ListaCoberturas" class="ConfiguracionPlanesAction" method="cargaCoberturasPlanes">
+			<result name="success" type="json"/>			
+		</action>
+		
+		<action name="GuardaPlan" class="ConfiguracionPlanesAction" method="guardaPlanes">
+			<result name="success" type="json"/>			
+		</action>
+		
+		<action name="EditaPlan" class="ConfiguracionPlanesAction" method="editaPlan">
+			<result name="success" type="json"/>
+		</action>
+		
+		<action name="asociaCoberturaPlan" class="ConfiguracionPlanesAction" method="guardaCoberturasPlanes">
+			<result name="success" type="json"/>			
+		</action>
+		
+		<action name="EliminaPlan" class="ConfiguracionPlanesAction" method="eliminaPlan">
+			<result name="success" type="json"/>
+		</action>
+		
+		<action name="eliminaCoberturasPlan" class="ConfiguracionPlanesAction" method="eliminaCoberturasPlanes">
+			<result name="success" type="json"/>
+		</action>
+		
+		
+        <action name="ModificaCoberturaPlan" class="ConfiguracionPlanesAction" method="modificaCoberturaPlan">  
+           <result name="success" type="json"/>
+		</action>
+		
+		
+	</package>
+</struts>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/jee     http://www.springframework.org/schema/jee/spring-jee.xsd
+           http://www.springframework.org/schema/tx      http://www.springframework.org/schema/tx/spring-tx.xsd">
+	
+    
+    <context:component-scan base-package="mx.com.gseguros" />
+    
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                 <!-- <value>file:/u01/wlserver/wldomain/gseguros/properties/mail.properties</value> -->
+                 <value>file:/RES/ice_all/properties/global.properties</value>
+                 <value>classpath:mail.properties</value>
+                 <value>classpath:portal.properties</value>
+                 <value>classpath:reportes.properties</value>
+            </list>
+        </property> 
+	</bean>
+	
+	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+        <property name="url" value="jdbc:oracle:thin:@10.142.74.240:1521/ice"/>
+        <property name="username" value="ice"/>
+        <property name="password" value="welcome1"/>
+        <!--
+        <property name="maxActive" value="30"/>
+        <property name="maxIdle" value="10"/>
+        <property name="maxWait" value="1000"/>
+        <property name="defaultAutoCommit" value="true"/>
+        -->
+    </bean>
+    
+    <!--bean id="dataSourceSISA" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+        <property name="url" value="jdbc:sqlserver://192.168.5.26\\RESPALDO:1434;databaseName=SISA"/>
+        <property name="username" value="sa"/>
+        <property name="password" value="sa4925"/>
+    </bean-->
+     
+    <!--bean id="dataSourceSIGS" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.informix.jdbc.IfxDriver"/>
+        <property name="url" value="jdbc:informix-sqli://10.101.1.167:1001/dbsigs:INFORMIXSERVER=infdss"/>
+        <property name="username" value="sadgdl"/>
+        <property name="password" value="1salud"/>
+    </bean-->
+    
+    
+    <!-- ******************** Manejo de transacciones para Spring JDBC ******************** -->
+    <!-- Enable Annotation based Declarative Transaction Management -->
+    <tx:annotation-driven proxy-target-class="true" transaction-manager="transactionManager"/>
+    
+    <!-- Creating TransactionManager Bean, since JDBC we are creating of type DataSourceTransactionManager -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <!-- ******************** Fin de Manejo de transacciones para Spring JDBC ******************** -->
+
+
+    <!-- ******************** Beans de Viejo Patron de Spring JDBC: ******************** -->
+    <bean id="processResultDAO" class="mx.com.aon.portal.dao.ProcessResultDAO">
+       <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <bean id="processResultManagerJdbcTemplate" class="mx.com.aon.portal.service.ProcessResultManagerJdbcTemplate">
+        <property name="abstractDAO">
+            <ref bean="processResultDAO"/>
+        </property>
+    </bean>
+
+    <bean id="abstractManagerJdbcTemplateInvoke" abstract="true" class="mx.com.aon.portal.service.impl.AbstractManagerJdbcTemplateInvoke">
+        <property name="processResultManager">
+            <ref bean="processResultManagerJdbcTemplate"/>
+        </property>
+    </bean>
+    <!-- ******************** Fin de Beans de Viejo Patron de Spring JDBC ******************** -->
+    
+    
+    <!-- ******************** Beans de Nuevo patron de Spring JDBC: ******************** -->
+    <bean id="abstractJdbcDAO" abstract="true" class="org.springframework.jdbc.core.support.JdbcDaoSupport">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <bean id="procesoResultadoDAO" class="mx.com.gseguros.portal.dao.impl.ProcesoResultadoDAOImpl" parent="abstractManagerDAO"/>
+    
+    <bean id="abstractManagerDAO" abstract="true" class="mx.com.gseguros.portal.dao.AbstractManagerDAO" parent="abstractJdbcDAO">
+        <property name="procesoResultadoDAO" ref="procesoResultadoDAO"/>
+    </bean>
+    
+    <!-- Para SISA: -->
+    <bean id="abstractJdbcDAOSISA" abstract="true" class="org.springframework.jdbc.core.support.JdbcDaoSupport">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <!-- <bean id="procesoResultadoDAOSISA" class="mx.com.gseguros.portal.dao.impl.ProcesoResultadoDAOImpl" parent="abstractManagerDAO"/> -->
+    
+    <bean id="abstractManagerDAOSISA" abstract="true" class="mx.com.gseguros.portal.dao.AbstractManagerDAO" parent="abstractJdbcDAOSISA">
+        <property name="procesoResultadoDAO" ref="procesoResultadoDAO"/>
+    </bean>
+    
+    <!-- Para SIGS: -->
+    <bean id="abstractJdbcDAOSIGS" abstract="true" class="org.springframework.jdbc.core.support.JdbcDaoSupport">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <bean id="abstractManagerDAOSIGS" abstract="true" class="mx.com.gseguros.portal.dao.AbstractManagerDAO" parent="abstractJdbcDAOSIGS">
+        <property name="procesoResultadoDAO" ref="procesoResultadoDAO"/>
+    </bean>
+    <!-- ******************** Fin de Beans de Nuevo patron de Spring JDBC ******************** -->
+	
+</beans>

@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="consultasPoliza" namespace="/consultasPoliza" extends="default">
+	
+		<action name="busquedaPoliza" class="ConsultasPolizaAction">
+	        <result name="success">/jsp/consultas/consultasPolizas.jsp</result>
+	    </action>
+
+		<action name="consultaDatosPoliza" class="ConsultasPolizaAction"
+			method="consultaDatosPoliza">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+					datosPoliza.*,
+					success
+				</param>
+			</result>
+		</action>
+
+		<action name="consultaDatosPolizaTvalopol" class="ConsultasPolizaAction"
+			method="consultaDatosPolizaTvalopol">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+					loadList.*,
+					success
+				</param>
+			</result>
+		</action>
+		
+		<action name="consultaDatosComplementarios" class="ConsultasPolizaAction"
+            method="consultaDatosComplementarios">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosComplementarios.*,
+                    success
+                </param>
+            </result>
+        </action>
+		
+		<action name="consultaDatosSuplemento" class="ConsultasPolizaAction"
+			method="consultaDatosSuplemento">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+                    datosSuplemento.*,
+                    mensajeRes,
+                    success
+                </param>
+			</result>
+		</action>
+		
+		<action name="consultaDatosHistorico" class="ConsultasPolizaAction"
+            method="consultaDatosHistorico">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosHistorico.*,
+                    mensajeRes,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="consultaDatosContratante" class="ConsultasPolizaAction"
+            method="consultaDatosContratante">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosContratante.*,
+                    success
+                </param>
+            </result>
+        </action>
+
+		<action name="consultaPolizasAsegurado" class="ConsultasPolizaAction"
+			method="consultaPolizasAsegurado">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+                    polizasAsegurado.*,
+                    success
+                </param>
+			</result>
+		</action>
+
+		<action name="consultaDatosTarifaPoliza" class="ConsultasPolizaAction"
+			method="consultaDatosTarifaPoliza">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+                    datosTarifa.*,
+                    success
+                </param>
+			</result>
+		</action>
+		
+        <action name="consultaAgentesPoliza" class="ConsultasPolizaAction"
+            method="consultaAgentesPoliza">            
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                     agentesPoliza.*,
+                     success
+                </param>
+            </result>
+        </action>
+		
+		<action name="consultaRecibosAgente" class="ConsultasPolizaAction"
+			method="consultaRecibosAgente">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+                    recibosAgente.*,
+                    success
+                </param>
+			</result>
+		</action>
+		
+        <action name="consultaDatosAsegurado" class="ConsultasPolizaAction"
+            method="consultaDatosAsegurado">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosAsegurados.*,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="consultaDatosAsegurados" class="ConsultasPolizaAction"
+            method="consultaDatosAsegurados">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosAsegurados.*,
+                    success,
+                    totalCount
+                </param>
+            </result>
+        </action>
+        
+        <action name="consultaPerfiles" class="ConsultasPolizaAction"
+            method="consultarPerfiles">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosAsegurados.*,
+                    success,
+                    totalCount
+                </param>
+            </result>
+        </action>
+        
+        <action name="consultaCopagosPoliza" class="ConsultasPolizaAction"
+            method="consultaCopagosPoliza">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosCopagosPoliza.*,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="consultaCoberturasPoliza" class="ConsultasPolizaAction"
+            method="consultaCoberturasPoliza">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosCoberturas.*,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="consultaCoberturasBasicas" class="ConsultasPolizaAction"
+            method="consultaCoberturasBasicas">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosCoberturasBasicas.*,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="consultaDatosPlan" class="ConsultasPolizaAction"
+            method="consultaDatosPlan">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosPlan.*,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="consultaEndososPoliza" class="ConsultasPolizaAction" method="consultaEndososPoliza">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosEndososPoliza.*,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="consultaAseguradoDetalle" class="ConsultasPolizaAction" method="consultaAseguradoDetalle">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includePropeties">
+                    resultados.*,
+                    success
+                </param>
+            
+            </result>
+        </action>
+        
+        <!-- <action name="consultaClausulasPoliza" class="ConsultasPolizaAction" method="consultaClausulasPoliza">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">clausulasPoliza.*,success</param>
+            </result>
+        </action> -->
+        
+        <action name="includes/verCoberturasPoliza" class="ConsultasPolizaAction" method="verCoberturas">
+            <result>/jsp/consultas/polizas/includes/verCoberturasPoliza.jsp</result>
+        </action>
+        
+        <action name="includes/verClausulas" class="ConsultasPolizaAction" method="verClausulasPoliza">
+            <result>/jsp/consultas/clausulas/includes/verClausulasPoliza.jsp</result>
+        </action>
+        
+        <action name="includes/verFarmacia" class="ConsultasPolizaAction" method="verHistoricoFarmacia">
+            <result>/jsp/consultas/historico/includes/verHistoricoFarmacia.jsp</result>
+        </action>
+        
+        <action name="includes/verVigencia" class="ConsultasPolizaAction" method="verPeriodosVigencia">
+            <result>/jsp/consultas/historico/includes/verVigencia.jsp</result>
+        </action>
+        
+        <action name="includes/avisoHospitalizacion" class="ConsultasPolizaAction" method="darAvisoHospitalizacion">
+            <result>/jsp/consultas/avisos/includes/avisoHospitalizacion.jsp</result>
+        </action>
+        
+        <action name="includes/ventanaDatosPoliza" class="ConsultasPolizaAction">
+		    <result>/jsp/consultas/polizas/includes/datosGeneralesPoliza.jsp</result>
+		</action>
+		
+        <action name="includes/ventanaAseguradosPoliza" class="ConsultasPolizaAction">
+		    <result>/jsp/consultas/polizas/includes/aseguradosPoliza.jsp</result>
+		</action>
+		
+		<action name="includes/verDatosTatrisit" class="ConsultasPolizaAction" method="obtenerDatosTatrisit">
+            <result>/jsp/consultas/polizas/includes/datosTatrisit.jsp</result>
+        </action>
+        
+        <action name="includes/verDatosTatrisit2" class="ConsultasPolizaAction" method="entradaDetalleAsegurado">
+            <result name="origen_ice">/jsp/consultas/polizas/includes/datosTatrisit.jsp</result>
+            <result name="origen_sisa">/jsp/consultas/polizas/includes/datosAseguradoSISA.jsp</result>
+        </action>
+        
+        <action name="consultaAvisos" class="ConsultasPolizaAction"
+			method="obtieneAvisos">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+                    mensajeRes,
+                    mensajeConv,
+                    success
+                </param>
+			</result>
+		</action>
+		
+		<action name="obtenerPantallaOperacionBD" class="ConsultasPolizaAction" method="obtenerPantallaOperacionBD">
+            <result name="success">/jsp/consultas/editorConsultaBD.jsp</result>
+            <result name="error">/jsp-script/general/errroPantalla.jsp</result>
+        </action>
+        
+        <action name="ejecutaQuery" class="ConsultasPolizaAction" method="ejecutaQuery">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="consultaIncisosPoliza" class="ConsultasPolizaAction" method="consultaIncisosPoliza">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    loadList.*,
+                    success
+                </param>
+            </result>
+        </action>
+        <action name="obtenerDatosRecibosSISA" class="ConsultasPolizaAction"
+            method="obtenerDatosRecibosSISA">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    loadList.*,
+                    success
+                </param>
+            </result>
+        </action>
+	</package>
+
+</struts>

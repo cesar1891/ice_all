@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <package name="consultas" namespace="/consultas" extends="default">
+    
+        <action name="pantallaConsultaProveedores" class="consultasAction" method="pantallaConsultaProveedores">
+            <result name="success">/jsp/consultas/proveedores/consultaProveedores.jsp</result>
+        </action>
+        
+        <action name="consultarProveedores" class="consultasAction" method="consultarProveedores">
+            <result type="json" />
+        </action>
+        
+        <action name="pantallaConsultaFacturas" class="consultasAction" method="pantallaConsultaFacturas">
+            <result name="success">/jsp/consultas/facturas/consultaFacturas.jsp</result>
+        </action>
+        
+        <action name="consultarFacturas" class="consultasAction" method="consultarFacturas">
+            <result type="json" />
+        </action>
+        
+        <action name="consultaDinamica" class="consultasAction" method="consultaDinamica">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result type="json" />
+        </action>
+        
+        <action name="consultaFeNacContratanteAuto" class="consultasAction" method="consultaFeNacContratanteAuto">
+            <result type="json" />
+        </action>
+        <action name="descargaLayout" class="explotacionDocumentosAction" method="descargaLayout">
+            <result name="success" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment; filename="${filename}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+        <action name="descargarLote" class="explotacionDocumentosAction" method="descargarLote">
+            <result name="success" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment; filename="${filename}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+        <action name="descargarLoteDplx" class="explotacionDocumentosAction" method="descargarLoteDplx">
+            <result name="success" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment; filename="${filename}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+        
+        <action name="descargaListaError" class="explotacionDocumentosAction" method="descargaListaError">
+            <result name="success" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment; filename="${filename}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+        
+        <action name="modificaPermisosEdicionCoberturas" class="consultasAction" method="modificaPermisosEdicionCoberturas">
+            <result type="json" />
+        </action>
+        
+        <action name="consultaPermisosEdicionCoberturas" class="consultasAction" method="consultaPermisosEdicionCoberturas">
+            <result type="json" />
+        </action>
+        
+        <action name="iniciarPantallaTrafudoc" class="documentosPolizaAction" method="iniciarPantallaTrafudoc">
+            <result name="success">/jsp/consultas/consultaTrafudoc.jsp</result>
+        </action>
+        
+        <action name="obtenerCursorTrafudoc" class="documentosPolizaAction" method="obtenerCursorTrafudoc">
+            <result name="success" type="json" />
+        </action>
+    </package>
+
+</struts>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <!-- <bean id="endososManagerImpl" class="mx.com.gseguros.portal.endosos.service.impl.EndososManagerImpl">
+        <property name="endososDAO"     ref="endososDAOImpl"     />
+        <property name="cotizacionDAO"  ref="cotizacionDAOImpl"  />
+        <property name="pantallasDAO"   ref="pantallasDAOImpl"   />
+        <property name="mesaControlDAO" ref="mesaControlDAOImpl" />
+        <property name="personasDAO"    ref="personasDAOImpl"    />
+    </bean> -->
+    
+    <bean id="endososGrupoManagerImpl" class="mx.com.gseguros.portal.endosos.service.impl.EndososGrupoManagerImpl">
+        <property name="endososGrupoDAO" ref="endososGrupoDAOImpl" />
+        <property name="pantallasDAO"    ref="pantallasDAOImpl"    />
+    </bean>
+    
+</beans>

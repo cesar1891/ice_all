@@ -1,0 +1,32 @@
+/* orange footer */
+body.footer-orange{
+	background: #b98300;
+}
+
+#footer {
+	background: #b98300 url(../images/footer/orange/footer-bg.png) repeat-x;
+}
+
+#footer li {
+	border-bottom: 1px dotted #F2AC05;
+}
+
+#footer div.moduletable {
+	color: #fff;
+}
+
+#the-footer {
+	color: #ccc;
+}
+
+body.footer-orange #footer a {
+	color: #fff;
+}
+
+body.footer-orange #footer a:hover {
+	color: #000;
+}
+
+body.footer-orange #footer h3 {
+	color: #333;
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       
+    <bean id="environmentAction" class="mx.com.gseguros.portal.general.controller.EnvironmentAction" scope="prototype"/>
+       
+    <bean id="recibosAction" class="mx.com.gseguros.portal.general.controller.RecibosAction" scope="prototype">
+    	<property name="recibosManager" ref="recibosManagerImpl"/>
+    </bean>
+    
+    <bean id="reportesAction" class="mx.com.gseguros.portal.general.controller.ReportesAction" scope="prototype" >
+        <property name="reportesManager" ref="reportesManagerImpl" />
+    </bean>
+
+    <bean id="webServicesAction" class="mx.com.gseguros.portal.general.controller.WebServicesAction" scope="prototype" >
+        <property name="webServicesManager" ref="webServicesManagerImpl"></property>
+        <property name="ice2sigsService"    ref="ice2sigsServiceImpl"></property>
+        <property name="recibosSigsService" ref="recibosSigsServiceImpl"></property>
+    </bean>
+    
+    <bean id="mailAction" class="mx.com.gseguros.portal.general.util.MailAction" scope="prototype">
+        <property name="mailService" ref="mailServiceImpl"/>
+    </bean>
+    
+	
+</beans>

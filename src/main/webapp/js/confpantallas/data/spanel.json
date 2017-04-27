@@ -1,0 +1,8 @@
+[
+    {
+        idPadre: 'superpanel',
+        idHijo: 'superpanel',
+        name: 'superpanel_1',
+        order: '0'
+    }
+]

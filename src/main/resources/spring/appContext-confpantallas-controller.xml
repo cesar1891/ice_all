@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="generadorPantallasAction" class="mx.com.gseguros.confpantallas.action.GeneradorPantallasAction" scope="prototype">
+        <property name="generadorPantallasManager" ref="generadorPantallasManagerImpl"></property>
+    </bean>
+    
+    <bean id="cargaInfoAction" class="mx.com.gseguros.confpantallas.action.CargaInfoAction" scope="prototype">
+        <property name="cargaPanelesManager" ref="cargaPanelesManagerImpl"></property>
+    </bean>
+    
+    <bean id="pintaPanelAction" class="mx.com.gseguros.confpantallas.action.PintaPanelAction" scope="prototype">
+        <property name="cargaPanelesManager" ref="cargaPanelesManagerImpl"></property>
+    </bean>
+    
+    <bean id="buscaControlAction" class="mx.com.gseguros.confpantallas.action.BuscaControlAction" scope="prototype">
+        <property name="buscaControlManager" ref="buscaControlManagerImpl"></property>
+    </bean>
+
+    <bean id="pintaTreePanelAction" class="mx.com.gseguros.confpantallas.action.PintaTreePanelAction" scope="prototype">
+        <property name="controlesPredeterminadosManager" ref="controlesPredeterminadosManagerImpl"></property>
+    </bean>
+    
+    
+    
+</beans>

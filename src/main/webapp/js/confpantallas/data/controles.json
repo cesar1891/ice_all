@@ -1,0 +1,84 @@
+[
+    {
+        name: 'Texto',
+        thumb: 'Texto.png',
+        url: 'texto',
+        type: 'Controles'
+    },{
+        name: 'Numeric',
+        thumb: 'Numeric.png',
+        url: 'numeric',
+        type: 'Controles'
+    },{
+        name: 'Picker',
+        thumb: 'Picker.png',
+        url: 'picker',
+        type: 'Controles'
+    },{
+        name: 'Check',
+        thumb: 'Check.png',
+        url: 'check',
+        type: 'Controles'
+    },{
+        name: 'Radio',
+        thumb: 'Radio.png',
+        url: 'radio',
+        type: 'Controles'
+    },{
+        name: 'Boton',
+        thumb: 'Boton.png',
+        url: 'boton',
+        type: 'Controles'
+    },{
+        name: 'Combo',
+        thumb: 'Combo.png',
+        url: 'combo',
+        type: 'Controles'
+    },{
+        name: 'Label',
+        thumb: 'Label.png',
+        url: 'label',
+        type: 'Controles'
+    },{
+        name: 'Imagen',
+        thumb: 'Imagen.png',
+        url: 'imagen',
+        type: 'Controles'
+    },{
+        name: 'Hidden',
+        thumb: 'Hidden.png',
+        url: 'hidden',
+        type: 'Controles'
+    },{
+        name: 'Grid',
+        thumb: 'Grid.png',
+        url: 'grid',
+        type: 'Controles'
+    }
+    
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

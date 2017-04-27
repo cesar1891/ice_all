@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="catalogos" namespace="/catalogos" extends="default">
+	
+	   <action name="obtieneCatalogo" class="catalogoAction" method="obtieneCatalogo">
+	       <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    lista.*,
+                    params.*,
+                    success
+                </param>
+            </result>
+	   </action>
+
+        <action name="clausulas">
+          <result>/jsp/catalogos/clausulas.jsp</result>
+        </action>
+
+        <action name="cargaClausulas" class="clausuladoAction" method="cargaClausulas">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    listaGenerica.*,
+                    success
+                </param>
+            </result>
+        </action>
+
+        <action name="consultaClausulas" class="clausuladoAction" method="consultaClausulas">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    listaGenerica.*,
+                    success
+                </param>
+            </result>
+        </action>
+
+        <action name="insertaClausula" class="clausuladoAction" method="insertaClausula">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    success
+                </param>
+            </result>
+        </action>
+        <action name="consultaClausulaDetalle" class="clausuladoAction" method="consultaClausulaDetalle">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    msgResult.*,
+                    success
+                </param>
+            </result>
+        </action>
+        <action name="actualizaClausula" class="clausuladoAction" method="actualizaClausula">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    success
+                </param>
+            </result>
+        </action>
+        
+        
+        <action name="codigosPostales" class="usuarioAction">
+            <result>/jsp-script/catalogos/codigosPostales.jsp</result>
+        </action>
+
+        <action name="descCortaCoberturas" class="catalogoAction">
+            <result>/jsp-script/catalogos/descCortaCoberturas.jsp</result>
+        </action>
+        
+        <action name="actualizaDescCoberturas" class="catalogoAction" method="actualizaDescCoberturas">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result name="success" type="json" />
+        </action>
+        
+        
+        <action name="includes/agregaUsuarios" class="usuarioAction">
+            <result>/jsp/catalogos/includes/agregaUsuarios.jsp</result>
+        </action>
+
+        <action name="includes/editarRolesUsuario" class="usuarioAction">
+            <result>/jsp/catalogos/includes/editarRolesUsuario.jsp</result>
+        </action>
+        
+        <action name="includes/nuevaImpresora" class="usuarioAction">
+            <result>/jsp/catalogos/includes/nuevaImpresora.jsp</result>
+        </action>
+        
+        <action name="includes/asignarImpresorasUsuario" class="usuarioAction">
+            <result>/jsp/catalogos/includes/asignarImpresoraUsuario.jsp</result>
+        </action>
+
+        <action name="includes/editarDomicilioAsegurado" class="personasAction">
+            <result>/jsp/consultas/editarDomicilioAsegurado.jsp</result>
+        </action>
+ 
+        <action name="includes/editarProductosAgente" class="usuarioAction">
+            <result>/jsp/catalogos/includes/editarProductosAgente.jsp</result>
+        </action>
+
+        <action name="gestionUsuarios" class="usuarioAction" method="cargaPantallaUsuarios">
+            <result>/jsp-script/catalogos/usuarios.jsp</result>
+        </action>
+        
+        <action name="busquedaUsuarios" class="usuarioAction" method="obtieneUsuarios">
+   			<result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                	usuarios.*,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="obtienerRolesPorPrivilegio" class="usuarioAction" method="obtienerRolesPorPrivilegio">
+	       <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    lista.*,
+                    success
+                </param>
+            </result>
+	   </action>
+        
+        <action name="obtieneRolesUsuario" class="usuarioAction" method="obtieneRolesUsuario">
+            <result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+					loadList.*,
+					success
+				</param>
+			</result>
+        </action>
+        
+        <action name="obtieneImpresorasUsuario" class="usuarioAction" method="obtieneImpresorasUsuario">
+            <result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+					loadList.*,
+					success
+				</param>
+			</result>
+        </action>
+        
+        <action name="guardaRolesUsuario" class="usuarioAction" method="guardaRolesUsuario">
+			<interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result name="success" type="json" />
+		</action>
+		
+		<action name="guardaImpresorasUsuario" class="usuarioAction" method="guardaImpresorasUsuario">
+			<interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result name="success" type="json" />
+		</action>
+		
+		<action name="guardaEditaImpresora" class="usuarioAction" method="guardaEditaImpresora">
+			<interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result name="success" type="json" />
+		</action>
+		
+		<action name="habilitaDeshabilitaImpresora" class="usuarioAction" method="habilitaDeshabilitaImpresora">
+			<interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result name="success" type="json" />
+		</action>
+
+        <action name="obtieneProductosAgente" class="usuarioAction" method="obtieneProductosAgente">
+            <result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+					loadList.*,
+					success
+				</param>
+			</result>
+        </action>
+        
+        <action name="guardaProductosAgente" class="usuarioAction" method="guardaProductosAgente">
+			<interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result name="success" type="json" />
+		</action>
+        
+        <action name="guardaUsuario" class="usuarioAction" method="guardaUsuario">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    success,
+                    errorMessage
+                </param>
+            </result>
+        </action>
+        
+        <action name="cambiarPasswordUsuario" class="usuarioAction" method="cambiarPasswordUsuarioLDAP">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    success,
+                    errorMessage
+                </param>
+            </result>
+        </action>
+
+        <action name="eliminaUsuarioLDAP" class="usuarioAction" method="eliminaUsuarioLDAP">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    success,
+                    errorMessage
+                </param>
+            </result>
+        </action>
+        
+        <action name="activaDesactivaUsuario" class="usuarioAction" method="activaDesactivaUsuario">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    success,
+                    errorMessage
+                </param>
+            </result>
+        </action>
+        
+        <action name="adminMenus" class="menuAction">
+            <result name="input">/jsp-script/catalogos/configuracionMenus.jsp</result>
+        </action>
+        
+        <action name="obtieneOpcionesLiga" class="menusAction" method="obtieneOpcionesLiga">
+            <result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+					loadList.*,
+					success
+				</param>
+			</result>
+        </action>
+
+        <action name="obtieneMenusPorRol" class="menusAction" method="obtieneMenusPorRol">
+            <result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+					loadList.*,
+					success
+				</param>
+			</result>
+        </action>
+
+        <action name="obtieneOpMenu" class="menusAction" method="obtieneOpcionesMenu">
+            <result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+					loadList.*,
+					success
+				</param>
+			</result>
+        </action>
+
+        <action name="obtieneOpSubMenu" class="menusAction" method="obtieneOpcionesSubMenu">
+            <result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+					loadList.*,
+					success
+				</param>
+			</result>
+        </action>
+        
+        <action name="guardaOpcionLiga" class="menusAction" method="guardaOpcionLiga">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    errorMessage,
+                    success
+                </param>
+            </result>
+        </action>
+
+        <action name="guardaMenu" class="menusAction" method="guardaMenu">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    errorMessage,
+                    success
+                </param>
+            </result>
+        </action>
+
+        <action name="guardaOpMenu" class="menusAction" method="guardaOpcionMenu">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    errorMessage,
+                    success
+                </param>
+            </result>
+        </action>
+
+        <action name="eliminaOpcionLiga" class="menusAction" method="eliminaOpcionLiga">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    errorMessage,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="eliminaMenu" class="menusAction" method="eliminaMenu">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    errorMessage,
+                    success
+                </param>
+            </result>
+        </action>
+
+        <action name="eliminaOpMenu" class="menusAction" method="eliminaOpcionMenu">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    errorMessage,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="creaEditaRolSistema" class="usuarioAction" method="creaEditaRolSistema">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    errorMessage,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="personas" class="personasAction" method="pantallaPersonas">
+            <result name="success">/jsp-script/catalogos/personas.jsp</result>
+            <result name="error">/jsp-script/general/errorPantalla.jsp</result>
+        </action>
+        
+        <action name="includes/personasLoader" class="personasAction" method="pantallaPersonas">
+            <result name="success">/jsp-script/catalogos/personas.jsp</result>
+            <result name="error">/jsp-script/general/errorPantalla.jsp</result>
+        </action>
+        
+        <action name="obtenerPersonasPorRFC" class="personasAction" method="obtenerPersonasPorRFC">
+            <result type="json" />
+        </action>
+
+        <action name="importaPersonaExtWS" class="personasAction" method="importaPersonaExtWS">
+            <result type="json" />
+        </action>
+        
+        <action name="obtenerPersonaPorCdperson" class="personasAction" method="obtenerPersonaPorCdperson">
+            <result type="json" />
+        </action>
+        
+        <action name="guardarPantallaPersonas" class="personasAction" method="guardarPantallaPersonas">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result type="json" />
+        </action>
+
+        <action name="guardarClienteCompania" class="personasAction" method="guardarClienteCompania">
+            <result type="json" />
+        </action>
+        
+        <action name="obtenerDomicilioContratante" class="personasAction" method="obtenerDomicilioContratante">
+            <result type="json" />
+        </action>
+        
+        <action name="obtenerDomicilioPorCdperson" class="personasAction" method="obtenerDomicilioPorCdperson">
+            <result type="json" />
+        </action>
+
+        <action name="obtenerDomiciliosPorCdperson" class="personasAction" method="obtenerDomiciliosPorCdperson">
+            <result type="json" />
+        </action>
+
+        <action name="guardarDomicilioAsegurado" class="personasAction" method="guardarDomicilioAsegurado">
+            <result type="json" />
+        </action>
+        
+        <action name="obtenerTatriperTvaloperPorCdperson" class="personasAction" method="obtenerTatriperTvaloperPorCdperson">
+            <result type="json" />
+        </action>
+        
+        <action name="guardarDatosTvaloper" class="personasAction" method="guardarDatosTvaloper">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result type="json" />
+        </action>
+        
+        <action name="pantallaDocumentosPersona" class="personasAction" method="pantallaDocumentosPersona">
+            <result name="success">/jsp/extjs4/ventanaDocumentosPersona.jsp</result>
+        </action>
+        
+        <action name="cargarDocumentosPersona" class="personasAction" method="cargarDocumentosPersona">
+            <result type="json" />
+        </action>
+        
+        <action name="cargarNombreDocumentoPersona" class="personasAction" method="cargarNombreDocumentoPersona">
+            <result type="json" />
+        </action>
+
+        <action name="obtieneAccionistas" class="personasAction" method="obtieneAccionistas">
+            <result type="json" />
+        </action>
+
+        <action name="eliminaAccionistas" class="personasAction" method="eliminaAccionistas">
+            <result type="json" />
+        </action>
+
+        <action name="actualizaStatusPersona" class="personasAction" method="actualizaStatusPersona">
+            <result type="json" />
+        </action>
+
+        <action name="guardaAccionista" class="personasAction" method="guardaAccionista">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result name="success" type="json" />
+        </action>
+        
+        
+        <action name="obtieneMunicipiosEstado" class="catalogoAction" method="obtieneMunicipiosEstado">
+	       <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    lista.*,
+                    success
+                </param>
+            </result>
+	   </action>
+	   
+	   <action name="agregaCodigoPostal" class="catalogoAction" method="agregaCodigoPostal">
+            <result type="json" />
+       </action>
+
+	   <action name="asociaZonaCodigoPostal" class="catalogoAction" method="asociaZonaCodigoPostal">
+            <result type="json" />
+       </action>
+
+		<action name="tablasDeApoyo" class="catalogoAction">
+            <result>/jsp-script/catalogos/tablasDeApoyo.jsp</result>
+        </action>
+        
+        <action name="obtieneTablasApoyo" class="catalogoAction" method="obtieneTablasApoyo">
+	       <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    loadList.*,
+                    msgRespuesta,,
+                    success
+                </param>
+            </result>
+	   </action>
+
+	   <action name="includes/agregaTablaApoyo" class="catalogoAction">
+            <result>/jsp-script/catalogos/includes/agregaTablaApoyo.jsp</result>
+        </action>
+        
+        <action name="guardaTablaApoyo" class="catalogoAction" method="guardaTablaApoyo">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result name="success" type="json" />
+        </action>
+
+        <action name="guardaValoresTablaApoyo" class="tablasApoyoAction" method="guardaValoresTablaApoyo">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result name="success" type="json" />
+        </action>
+       
+       <action name="obtieneClavesTablaApoyo" class="catalogoAction" method="obtieneClavesTablaApoyo">
+	       <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    loadList.*,
+                    msgRespuesta,
+                    success
+                </param>
+            </result>
+	   </action>
+
+       <action name="obtieneAtributosTablaApoyo" class="catalogoAction" method="obtieneAtributosTablaApoyo">
+	       <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    loadList.*,
+                    msgRespuesta,
+                    success
+                </param>
+            </result>
+	   </action>
+	   
+	   
+	   <action name="includes/tablaApoyo5claves" class="tablasApoyoAction">
+           <result>/jsp/catalogos/includes/valoresTablasDeApoyo.jsp</result>
+       </action>
+	   
+	   <action name="obtieneValoresTablaApoyo5claves" class="tablasApoyoAction" method="obtieneValoresTablaApoyo5claves">
+	       <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    loadList.*,
+                    msgRespuesta,
+                    success
+                </param>
+            </result>
+	   </action>
+	   
+	   <action name="obtieneValoresTablaApoyo1clave" class="tablasApoyoAction" method="obtieneValoresTablaApoyo1clave">
+	       <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    loadList.*,
+                    msgRespuesta,
+                    success
+                </param>
+            </result>
+	   </action>
+	   
+        <action name="pantallaBeneficiarios" class="personasAction" method="pantallaBeneficiarios">
+            <result name="success">/jsp-script/catalogos/pantallaBeneficiarios.jsp</result>
+            <result name="error">/jsp-script/general/errorPantalla.jsp</result>
+        </action>
+        
+        <action name="includes/pantallaBeneficiariosSMD" class="personasAction" method="pantallaBeneficiarios">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result name="success">/jsp-script/catalogos/pantallaBeneficiarios.jsp</result>
+            <result name="error">/jsp-script/general/includes/errorPantalla.jsp</result>
+        </action>
+        
+        <action name="includes/pantallaBeneficiarios" class="personasAction" method="pantallaBeneficiarios">
+            <result name="success">/jsp-script/catalogos/pantallaBeneficiarios.jsp</result>
+            <result name="error">/jsp-script/general/includes/errorPantalla.jsp</result>
+        </action>
+        
+        <action name="importaPersonaExtWSNoSicaps" class="personasAction" method="importaPersonaExtWSNoSicaps">
+            <result type="json" />
+        </action>
+        
+        <action name="obtieneConfPatallaCli" class="personasAction" method="obtieneConfPatallaCli">
+            <result type="json" />
+        </action>
+        
+        <action name="adminCelulasMC" class="menuAction">
+            <result name="input">/jsp-script/catalogos/adminCelulasMC.jsp</result>
+        </action>
+        
+        <action name="pantallaEjecutaGenerarProducto" class="catalogoAction">
+            <result>/jsp-script/catalogos/pantallaEjecutaGenerarProducto.jsp</result>
+        </action>
+        
+    </package>
+</struts>

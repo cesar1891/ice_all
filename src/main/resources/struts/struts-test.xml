@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <package name="test" namespace="/test" extends="struts-default, json-default">
+    
+		<action name="invocaServicioCotizacionAutos" class="testAction" method="invocaServicioCotizacionAutos">
+			<result type="json"/>
+		</action>
+		
+		<action name="invocaServiciosFolioAutos" class="testAction" method="invocaServiciosFolioAutos">
+            <result type="json"/>
+        </action>
+        
+        <action name="consultaPolizas" class="testActionSISA" method="consultaPolizas">
+            <result type="json"/>
+        </action>
+		
+		<action name="consultaHistorico" class="testActionSISA" method="consultaHistorico">
+			<result type="json"/>
+		</action>
+		
+		<action name="consultaDatosPoliza" class="testActionSISA" method="consultaDatosPoliza">
+			<result type="json"/>
+		</action>
+		
+		<action name="consultaCopagos" class="testActionSISA" method="consultaCopagos">
+			<result type="json"/>
+		</action>
+		
+		<action name="consultaAseguradoDetalle" class="testActionSISA" method="consultaAseguradoDetalle">
+		  <result type = "json" />		  
+		</action>
+		
+    </package>
+    
+</struts>

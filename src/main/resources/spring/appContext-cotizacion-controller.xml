@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    
+    <bean id="principalCotizacion" class="mx.com.aon.flujos.cotizacion.web.PrincipalCotizacionAction" abstract="true"/>
+  
+    <!-- <bean id="comboAction" class="mx.com.aon.flujos.cotizacion.web.ComboAction" scope="prototype" parent="principalCotizacion">
+        <property name="catalogManager" ref="catalogManager"/>
+        <property name="catalogServiceJdbcTemplate" ref="catalogServiceJdbcTemplate"/>
+   </bean>
+    
+    <bean id="gridTestingAction" class="mx.com.aon.flujos.cotizacion.web.GridTestingAction" scope="prototype" parent="principalCotizacion"/>
+  
+    <bean id="resultadoCotizacion" class="mx.com.aon.flujos.cotizacion.web.ResultadoCotizacionAction" scope="prototype" parent="principalCotizacion"/> -->
+    
+    <bean id="cotizacionVital" class="mx.com.aon.flujos.cotizacion4.web.ResultadoCotizacion4Action" scope="prototype" parent="principalCotizacion">
+        <property name="kernelManagerSustituto" ref="kernelManagerSustituto" />
+        <property name="catalogosManager"       ref="catalogosManagerImpl"   />
+        <property name="cotizacionManager"      ref="cotizacionManagerImpl"  />
+        <property name="ice2sigsService"         ref="ice2sigsServiceImpl"         />
+    </bean>
+    
+    <bean id="CotizacionAction" class="mx.com.gseguros.portal.emision.controller.CotizacionAction" scope="prototype">
+        <property name="catalogosManager"        ref="catalogosManagerImpl"        />
+        <property name="consultasManager"        ref="consultasManagerImpl"        />
+        <property name="kernelManager"           ref="kernelManagerSustituto"      />
+        <property name="pantallasManager"        ref="pantallasManagerImpl"        />
+        <property name="storedProceduresManager" ref="storedProceduresManagerImpl" />
+        <property name="nadaService"             ref="nadaServiceImpl"             />
+        <property name="ice2sigsService"         ref="ice2sigsServiceImpl"         />
+        <property name="tipoCambioService"       ref="tipoCambioServiceImpl"       />
+        <property name="cotizacionManager"       ref="cotizacionManagerImpl"       />
+        <property name="siniestrosManager"       ref="siniestrosManagerImpl"       />
+        <property name="agentePorFolioService"   ref="agentePorFolioServiceImpl"   />
+    </bean>
+    
+    <bean id="cotizacionAutoAction" class="mx.com.gseguros.portal.cotizacion.controller.CotizacionAutoAction" scope="prototype">
+        <property name="cotizacionAutoManager" ref="cotizacionAutoManagerImpl" />
+    </bean>
+    
+    <!-- <bean id="beanCatalogosAction" class="mx.com.gseguros.portal.general.util.CatalogosAction" scope="prototype" parent="principalCotizacion">
+        <property name="kernelManager" ref="kernelManagerSustituto"/>
+    </bean> -->
+    
+    <bean id="beanSubirArchivo" class="mx.com.gseguros.portal.general.util.SubirArchivoAction" scope="prototype">
+        <property name="kernelManager"      ref="kernelManagerSustituto" />
+        <property name="mesaControlManager" ref="mesaControlManagerImpl" />
+    </bean>
+    
+    <bean id="beanDatosComplementarios" class="mx.com.gseguros.portal.cotizacion.controller.ComplementariosAction" scope="prototype">
+        <property name="kernelManager"           ref="kernelManagerSustituto"      />
+        <property name="ice2sigsService"         ref="ice2sigsServiceImpl"         />
+        <property name="recibosSigsService"      ref="recibosSigsServiceImpl"      />
+        <property name="emisionAutosService"     ref="emisionAutosServiceImpl"     />
+        <property name="catalogosManager"        ref="catalogosManagerImpl"        />
+        <property name="consultasManager"        ref="consultasManagerImpl"        />
+        <property name="pantallasManager"        ref="pantallasManagerImpl"        />
+        <property name="storedProceduresManager" ref="storedProceduresManagerImpl" />
+        <property name="cotizacionManager"       ref="cotizacionManagerImpl"       />
+        <property name="emisionManager"          ref="emisionManagerImpl"          />
+    </bean>
+    
+    <bean id="beanDatosComplementariosCoberturas" class="mx.com.gseguros.portal.cotizacion.controller.ComplementariosCoberturasAction" scope="prototype">
+        <property name="kernelManager"     ref="kernelManagerSustituto" />
+        <property name="pantallasManager"  ref="pantallasManagerImpl"   />
+        <property name="endososManager"    ref="endososManagerImpl"     />
+    </bean>
+    
+    <!-- datos de Agentes -->
+    <bean id="agentesAction" class="mx.com.gseguros.portal.cotizacion.controller.AgentesAction" scope="prototype">
+        <property name="kernelManager" ref="kernelManagerSustituto"/>
+    </bean>
+    
+</beans>

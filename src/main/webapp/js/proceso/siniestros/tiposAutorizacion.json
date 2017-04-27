@@ -1,0 +1,7 @@
+{
+    tiposAutorizacion: [
+            {"key":"1",  "value":"Nuevo"},
+            {"key":"2",  "value":"Reemplazar"},
+            {"key":"3",  "value":"complemento"}
+    ]
+}

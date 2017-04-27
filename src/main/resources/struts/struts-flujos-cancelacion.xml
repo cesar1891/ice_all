@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    
+    <package name="cancelacion" namespace="/cancelacion" extends="default">
+        
+        <action name="principal" class="CancelacionAction" method="marcoCancelacion">
+            <result name="success">/jsp-script/proceso/cancelacion/marcoCancelacion.jsp</result>
+        </action>
+        
+        <action name="pantallaCancelar" class="CancelacionAction" method="pantallaCancelar">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result name="success">/jsp-script/proceso/cancelacion/pantallaCancelar.jsp</result>
+        </action>
+        
+        <action name="buscarPolizas" class="CancelacionAction" method="buscarPolizas">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="cancelacionUnica" class="CancelacionAction" method="cancelacionUnica">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="pantallaCancelarAuto" class="CancelacionAction" method="pantallaCancelarAuto">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result name="success">/jsp-script/proceso/cancelacion/pantallaCancelarAuto.jsp</result>
+        </action>
+        
+        <action name="cancelacionAutoManual" class="CancelacionAction" method="cancelacionAutoManual">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="obtenerDetalleCancelacion" class="CancelacionAction" method="obtenerDetalleCancelacion">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="validaCancelacionAProrrata" class="CancelacionAction" method="validaCancelacionAProrrata">
+            <result name="success" type="json" />
+        </action>
+
+        <action name="validaRazonCancelacion" class="CancelacionAction" method="validaRazonCancelacion">
+            <result name="success" type="json" />
+        </action>
+        
+    </package>
+
+</struts>

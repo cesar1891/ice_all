@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <package name="consultasAsegurado" namespace="/consultasAsegurado" extends="default">
+        
+        <action name="pantallaConsultasAsegurado" class="ConsultasAseguradoAction"
+        	method="pantallaConsultasAsegurado">
+            <result name="success">/jsp/consultas/consultasAsegurados.jsp</result>
+        </action>
+        
+        <action name="consultaResultadosAsegurado" class="ConsultasAseguradoAction"
+            method="consultaResultadosAsegurado">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    resultadosAsegurado.*,
+                    success
+                </param>
+            </result>
+        </action>
+    
+        <action name="consultaPolizaActual" class="ConsultasAseguradoAction"
+            method="consultaPolizaActual">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosPolizaActual.*,
+                    mensajeRes,
+                    success
+                </param>
+            </result>
+        </action>  
+        
+        <action name="consultaDatosComplementarios" class="ConsultasAseguradoAction"
+            method="consultaDatosComplementarios">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosComplementarios.*,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="consultaDatosPoliza" class="ConsultasAseguradoAction"
+            method="consultaDatosPoliza">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosPoliza.*,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="consultaDatosTitular" class="ConsultasAseguradoAction"
+            method="consultaDatosTitular">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosTitular.*,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="consultaDatosContratante" class="ConsultasAseguradoAction"
+            method="consultaDatosContratante">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosContratante.*,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="consultaDatosAsegurado" class="ConsultasAseguradoAction"
+            method="consultaDatosAsegurado">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosAsegurados.*,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="consultaDatosEndosos" class="ConsultasAseguradoAction" method="consultaDatosEndosos">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosEndosos.*,
+                    success
+                </param>
+            </result>
+        </action>
+            
+        <action name="consultaDatosEnfermedades" class="ConsultasAseguradoAction" method="consultaDatosEnfermedades">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosEnfermedades.*,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="consultaDatosPlan" class="ConsultasAseguradoAction"
+            method="consultaDatosPlan">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosPlan.*,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="consultaCopagosPoliza" class="ConsultasAseguradoAction"
+            method="consultaCopagosPoliza">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosCopagosPoliza.*,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="consultaCoberturasPoliza" class="ConsultasAseguradoAction"
+            method="consultaCoberturasPoliza">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosCoberturas.*,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="consultaCoberturasBasicas" class="ConsultasAseguradoAction"
+            method="consultaCoberturasBasicas">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosCoberturasBasicas.*,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="consultaDatosHistorico" class="ConsultasAseguradoAction"
+            method="consultaDatosHistorico">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosHistorico.*,
+                    mensajeRes,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="consultaDatosHistoricoFarmacia" class="ConsultasAseguradoAction"
+            method="consultaDatosHistoricoFarmacia">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    historicoFarmacia.*,                    
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="consultaPeriodosVigencia" class="ConsultasAseguradoAction"
+            method="consultaPeriodosVigencia">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    periodosVigencia.*,                    
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="consultaHospitales" class="ConsultasAseguradoAction"
+            method="consultaHospitales">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosHospitales.*,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="consultaAseguradoDetalle" class="ConsultasAseguradoAction" method="consultaAseguradoDetalle">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includePropeties">
+                    datosAseguradoDetalle.*,
+                    success
+                </param>
+            
+            </result>
+        </action>
+        
+        <action name="includes/enviarAvisoHospitalizacion" class="ConsultasAseguradoAction" method="enviarAvisoHospitalizacion">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includePropeties">
+                    success
+                </param>
+            
+            </result>
+        </action>
+        
+        <action name="includes/avisosAnteriores" class="ConsultasAseguradoAction" method="consultaAvisosAnteriores">
+        	<result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    datosAvisosAnteriores.*,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="includes/consultaECD"  class="ConsultasAseguradoAction" >
+            <result name="success">/jsp/consultas/consultaECD.jsp</result>
+        </action>
+           		
+    </package>
+    
+</struts>

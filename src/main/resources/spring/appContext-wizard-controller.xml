@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- librerias -->    
+    <bean id="PrincipalLibreriasAction" class="mx.com.gseguros.wizard.configuracion.producto.librerias.web.PrincipalLibreriasAction" scope="prototype" parent="PadreExpresionesAction">
+	    <property name="reglaNegocioManager" ref="ReglaNegocioManager" />
+    </bean>
+    
+    <bean id="PadreAction" class="mx.com.gseguros.wizard.configuracion.producto.web.Padre" abstract="true">
+		<property name="tablasManager" ref="AplicacionManager" />
+	</bean>
+    
+	<bean id="PadreExpresionesAction" class="mx.com.gseguros.wizard.controller.ExpresionesPadre" abstract="true">
+        <property name="expresionesManager" ref="ExpresionesManager"/>
+    </bean>
+    
+    
+    <bean id="ExpresionesAction" class="mx.com.gseguros.wizard.configuracion.producto.expresiones.web.PrincipalExpresionesAction" scope="prototype" parent="PadreExpresionesAction"/>
+	   
+   <bean id="ListaDeValoresAction" class="mx.com.gseguros.wizard.controller.ListaDeValoresAction" scope="prototype" parent="PadreAction">
+<!-- 	    <property name="listaDeValoresManager" ref="ListaDeValoresManagerJdbcTemplate" /> -->
+	    <property name="listaDeValoresManagerJdbcTemplate" ref="ListaDeValoresManagerJdbcTemplate" />
+	    
+    </bean>
+    
+    <bean id="PrincipalCoberturasAction" class="mx.com.gseguros.wizard.configuracion.producto.coberturas.web.PrincipalCoberturasAction" scope="prototype" parent="PadreAction">        
+        <property name="coberturaManager" ref="CoberturaManager" />
+	 </bean>
+
+	
+	<!-- Atributos Variables -->
+
+	<bean id="AtributosVariablesAction" class="mx.com.gseguros.wizard.configuracion.producto.atributosVariables.web.AtributosVariablesAction" scope="prototype" parent="PadreExpresionesAction">
+	    <property name="atributosVariablesManager" ref="AtributosVariablesManager" />
+	    <property name="catalogManager" ref="catalogManager" />
+    </bean>
+    <bean id="ArbolProductosAction" class="mx.com.gseguros.wizard.configuracion.producto.general.ArbolProductosAction" scope="prototype" parent="PadreAction">
+	    <property name="treeManager" ref="TreeManager" />
+    </bean>
+    
+    <bean id="PrincipalProductosAction" class="mx.com.gseguros.wizard.configuracion.producto.definicion.web.PrincipalProductosAction" scope="prototype" parent="PadreAction">
+	    <property name="productoManager" ref="ProductoManager" />
+	    <property name="treeManager" ref="TreeManager" />
+    </bean>
+	
+	<bean id="ConfiguracionPlanesAction" class="mx.com.gseguros.wizard.configuracion.producto.planes.web.ConfiguracionPlanesAction" scope="prototype" parent="PadreAction">
+	    <property name="planesConfiguracionManager" ref="planesConfiguracionManager" />
+	    <property name="catalogManager" ref="catalogManager" />
+    </bean>  
+    
+    <bean id="PrincipalIncisosAction" class="mx.com.gseguros.wizard.configuracion.producto.incisos.web.PrincipalIncisosAction" scope="prototype" parent="PadreAction">
+	    <property name="incisoManager" ref="IncisoManager" />
+    </bean>
+    
+    <!-- Tipo de objetos -->    
+    <bean id="SumaAseguradaAction" class="mx.com.gseguros.wizard.configuracion.producto.sumaAsegurada.web.SumaAseguradaAction" scope="prototype" parent="PadreAction">
+	    <property name="sumaAseguradaManagerJdbcTemplateImpl" ref="sumaAseguradaManagerJdbcTemplateImpl" />
+    </bean>
+    
+    <!-- definicion -->    
+    <bean id="ConceptosCoberturaAction" class="mx.com.gseguros.wizard.configuracion.producto.conceptosCobertura.web.ConceptosCoberturaAction" scope="prototype" parent="PadreAction">
+	    <property name="conceptosCoberturaManager" ref="ConceptosCoberturaManager" />
+    </bean>
+    
+    <bean id="RolesAction" class="mx.com.gseguros.wizard.configuracion.producto.rol.web.RolAction" scope="prototype" parent="PadreAction">
+	    <property name="rolManager" ref="RolManager" />
+    </bean>
+    
+    <!-- Tipo de objetos -->    
+    <bean id="TipoObjetoAction" class="mx.com.gseguros.wizard.configuracion.producto.tipoObjeto.web.TipoObjetoAction" scope="prototype" parent="PadreAction">
+	    <property name="tipoObjetoManager" ref="TipoObjetoManager" />
+	    <property name="catalogManager" ref="catalogManager" />
+    </bean>
+    
+    <!-- Coberturas -->    
+    <bean id="DatosFijosAction" class="mx.com.gseguros.wizard.configuracion.producto.datosFijos.web.DatosFijosAction" scope="prototype" parent="PadreExpresionesAction">        
+        <property name="datosFijosManager" ref="DatosFijosManager" />
+    </bean>
+    
+    <!-- definicion -->    
+    <bean id="ReglaValidacionAction" class="mx.com.gseguros.wizard.configuracion.producto.reglaValidacion.web.ReglaValidacionAction" scope="prototype" parent="PadreAction">
+	    <property name="reglaValidacionManager" ref="ReglaValidacionManager" />
+    </bean>
+    
+    <bean id="TablaCincoClavesAction" class="mx.com.gseguros.wizard.configuracion.producto.tablaCincoClaves.web.TablaCincoClavesAction" scope="prototype" parent="PadreAction">
+    	    <property name="listaDeValoresManager" ref="ListaDeValoresManagerJdbcTemplate" />
+    	    <property name="tablaCincoClavesManager" ref="TablaCincoClavesManagerJdbcTemplateImpl" />
+    </bean>
+
+    <bean id="ValoresTablaCincoClavesAction" class="mx.com.gseguros.wizard.configuracion.producto.tablaCincoClaves.web.ValoresTablaCincoClavesAction" scope="prototype" parent="PadreAction">
+    	    <property name="tablaCincoClavesManagerJdbcTemplate" ref="TablaCincoClavesManagerJdbcTemplateImpl" />
+    </bean>
+    
+    
+</beans>

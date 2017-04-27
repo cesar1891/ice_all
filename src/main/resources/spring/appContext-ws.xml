@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- WS ice2sigs -->
+	<bean id="ice2sigsServiceImpl" class="mx.com.gseguros.ws.ice2sigs.service.impl.Ice2sigsServiceImpl">
+	    <property name="kernelManager" ref="kernelManagerSustituto"/>
+	    <property name="siniestrosManager" ref="siniestrosManagerImpl"/>
+	    <property name="endpoint" value="${ws.ice2sigs.url}"></property>
+	    <property name="urlImpresionRecibos" value="${recibos.impresion.url}"></property>
+	</bean>
+	
+	<!--bean id="emisionAutosServiceImpl" class="mx.com.gseguros.ws.autosgs.service.impl.EmisionAutosServiceImpl">
+        <property name="endpointCotiza"          value = "${ws.cotizacion.autos.url}"          />
+        <property name="endpointEmite"           value = "${ws.emision.autos.url}"          />
+	    <property name="storedProceduresManager" ref   = "storedProceduresManagerImpl" />
+    </bean-->
+	
+	<!-- Callback handler para el WS ice2sigs. Ya que se usa como modelo de datos usamos el scope "prototype" -->
+	<bean id="servicioGSServiceCallbackHandlerImpl" class="mx.com.gseguros.ws.ice2sigs.client.axis2.callback.impl.ServicioGSServiceCallbackHandlerImpl" scope="prototype">
+	    <property name="kernelManager" ref="kernelManagerSustituto"/>
+	</bean>
+	
+	
+	<!-- WS recibossigs -->
+	<bean id="recibosSigsServiceImpl" class="mx.com.gseguros.ws.recibossigs.service.impl.RecibosSigsServiceImpl">
+	    <property name="kernelManager" ref="kernelManagerSustituto"/>
+        <property name="endpoint" value="${ws.recibossigs.url}"></property>
+	    <property name="urlImpresionRecibos" value="${recibos.impresion.url}"></property>
+	</bean>
+	
+	<!-- Callback handler para el WS recibossigs. Ya que se usa como modelo de datos usamos el scope "prototype" -->
+	<bean id="generadorReciboDxnWsServiceCallbackHandlerImpl" class="mx.com.gseguros.ws.recibossigs.client.axis2.callback.impl.GeneradorReciboDxnWsServiceCallbackHandlerImpl" scope="prototype">
+        <property name="kernelManager" ref="kernelManagerSustituto"/>
+    </bean>
+    
+    <!-- WS NADA -->
+	<bean id="nadaServiceImpl" class="mx.com.gseguros.ws.nada.service.impl.NadaServiceImpl">
+        <property name="endpoint"      value="${ws.nada.vehicle.url}"></property>
+        <property name="endpointToken" value="${ws.nada.login.url}"></property>
+        <property name="user"          value="${ws.nada.login.user}"></property>
+        <property name="password"      value="${ws.nada.login.pass}"></property>
+	</bean>
+
+    <!-- WS TIPO CAMBIO -->
+	<bean id="tipoCambioServiceImpl" class="mx.com.gseguros.ws.tipocambio.service.impl.TipoCambioDolarGSServiceImpl">
+        <property name="endpoint"      value="${ws.tipocambio.url}"></property>
+	</bean>
+
+    <!-- WS AGENTE POR FOLIO Y SUCURSAL / AUTOS SERVICIO PUBLICO -->
+	<bean id="agentePorFolioServiceImpl" class="mx.com.gseguros.ws.folioserviciopublico.service.impl.AgentePorFolioServiceImpl">
+        <property name="endpoint"      value="${ws.agenteporfolio.autos.serviciopublico.url}"></property>
+	</bean>
+	
+	
+</beans>

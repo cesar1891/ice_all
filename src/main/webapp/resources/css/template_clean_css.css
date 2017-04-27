@@ -1,0 +1,189 @@
+/* styles to define the actual styles *custom stuff */
+
+html {height: 100%; margin-bottom: 1px;}
+body {margin: 0; padding: 0;}
+p {margin-top: 0; margin-bottom: 5px;}
+fieldset {border: 0; padding: 5px 0;}
+span.pathway {display: block; height: 16px;	line-height: 16px; vertical-align: middle; margin-top: 5px;	margin-bottom: 10px; font-weight: bold;}
+span.pathway img {margin: 0px 10px;	vertical-align: middle;}
+div#pathway { margin-bottom: 10px;	padding-left: 8px; }
+a.readon {display: block; float: left; padding-left: 20px; margin-top: 10px; line-height: 14px;	height: 16px; background: url(../images/default/play.png) no-repeat;}
+
+/*** fonts ***/
+body {line-height: 125%; font-family: "Lucida Grande", Tahoma, Helvetica, sans-serif; color: #444;}
+
+/* size attributes */
+
+body.f-smaller {font-size: 10px;}
+body.f-default {font-size: 12px;}
+body.f-larger {	font-size: 13px;}
+
+.small,
+.modifydate,
+.createdate,
+div.mosimage_caption {font-size: 100%;}
+
+#nav a,
+#inset a {font-size: 110%;}
+
+div.moduletable h3,
+.contentheading,
+.componentheading {	font-size: 130%; color: #222;}
+.componentheading { margin-bottom: 15px;}
+td.componentheading {padding-bottom: 15px;}
+
+/* font family */
+h3,
+.contentheading,
+.componentheading,
+#nav,
+.sectiontableheader,
+span.pathway,
+.small,
+.createdate,
+.modifydate,
+#inset {font-family: Arial, Helvetica, sans-serif;font-weight: bold;}
+a:link,
+a:visited {text-decoration: none;}
+
+a:hover {text-decoration: none;}
+/* module settings */
+div.moduletable h3 {margin-top: 5px; margin-bottom: 10px; padding-bottom: 0;}
+div.moduletable {margin-bottom: 10px;}
+td.left div.moduletable,
+td.right div.moduletable  {	margin-bottom: 15px;}
+div.moduletable ul {margin: 5px 0; padding: 0 2em;}
+div.moduletable ul li {	padding-bottom: 3px;}
+/* default menu link styles */
+a.mainlevel {display: block;}
+a.sublevel {}
+a.mainlevel:hover {text-decoration: none;}
+a.sublevel:hover {text-decoration: none;}
+#inset a.mainlevel {display: inline; background: none; padding: 0 15px;}
+/** regular joomla menu **/
+a.mainlevel {display: block; height: 16px; line-height: 15px; padding: 0; padding-left: 20px; background: url(../images/default/play.png) no-repeat; margin-bottom: 3px;}
+a#active_menu:link,
+a#active_menu:visited { color: #333;}
+li.active_menu a:link,
+li.active_menu a:visited { color: #333;}
+a.sublevel:link,
+a.sublevel:visited {font-weight: bold;}
+/* headings */
+h1 {padding-bottom: 5px;}
+h2 {padding-bottom: 5px;}
+h3 {padding-bottom: 5px;}
+h4 {padding-bottom: 5px;}
+.small {font-weight: bold; color: #999;}
+.modifydate {height: 20px;	vertical-align: bottom;	font-weight: bold;	color: #999;}
+.createdate {height: 20px; vertical-align: top;	font-weight: bold;	vertical-align: top; padding-bottom: 5px; padding-top: 0px; color: #999;}
+/** some joomla class stuff */
+table.contenttoc { margin: 5px; padding: 5px;}
+table.contenttoc td { padding: 0 5px;}
+td.buttonheading {vertical-align: middle;}
+td.buttonheading img {margin-right: 5px;}
+table.mainbody td.mainbody td.sectiontableheader {font-weight: bold; padding: 4px; line-height: 20px; background: #f6f6f6; border-bottom: 1px solid #ddd;}
+table.mainbody td.mainbody tr.sectiontableentry1 td, 
+table.mainbody td.mainbody tr.sectiontableentry2 td {padding: 4px; border-bottom: 1px solid #efefef;}
+table.mainbody td.mainbody td.sectiontableentry1, 
+table.mainbody td.mainbody td.sectiontableentry2{padding: 4px; border-bottom: 1px solid #efefef;}
+table.contentpaneopen, table.contentpane {border-collapse: collapse; padding: 0; margin: 0; width: 100%;}
+div.contentpane, div.contentpaneopen {width: 100%;}
+.clr {clear: both;}
+div.mosimage { margin: 5px;}
+table.adminform textarea {width: auto; color: #666;}
+/** width stuff **/
+.w-wide div.wrapper {width: 98%;}
+.w-thin div.wrapper {width: 650px;}
+.w-fluid div.wrapper {margin: 0 20px;}
+/* showcase */
+#showcase {	border-bottom: 1px none; border-top: 1px none; background: #FFF;}
+/** template layout stuff **/
+#page_bg {height: 100%; padding: 0;	margin-bottom: 1px;}
+div.wrapper {margin: auto; /*position: relative;*/}
+#header {height: 25px; overflow: hidden;display: block;}
+#access {position: absolute; z-index: 10000; top: 0; right: 25px; width: 200px; height: 20px; overflow: hidden;}
+#access #selectors {position: relative;	height: 8px;}
+#access span {	background-repeat: no-repeat;}
+#access a {	text-decoration: none;}
+.font-selector,
+.width-selector {display: block; position: absolute; top: 0; width: 12px; height: 6px; }
+.f-smaller #selectors .font-selector {right: 159px;}
+.f-default #selectors .font-selector {right: 129px;}
+.f-larger #selectors .font-selector {right: 99px;}
+.w-thin #selectors .width-selector {right: 70px;}
+.w-wide #selectors .width-selector {right: 40px;}
+.w-fluid #selectors .width-selector {right: 10px;}
+#access #buttons {float: right;}
+#access .button {display: block; float: right; width: 20px;	height: 12px; margin: 0 5px; background-repeat: no-repeat}
+#logo_left {position: absolute; top: 35px; left: 0; display: block; width:200px; height: 66px;}
+#top {height: 60px; padding-top: 35px; overflow: hidden; margin-left: 245px; margin-bottom: 10px; margin-right: 245px;}
+#logo_right {position: absolute; top: 35px;	left: 1020px; display: block; width:200px; height: 66px;}
+#toolbar {height: 0px;}
+#showcase ul,
+td.left ul,
+td.right ul,
+#footer ul {list-style: none; margin: 0; padding: 0; }
+#showcase li,
+td.left li,
+td.right li,
+#footer li { border-bottom: 1px dotted #999; padding-bottom: 0;	margin-bottom: 2px;}
+#showcase .padding,
+#footer .padding {padding: 5px 25px;}
+#mainbody   {background: #fff ; float: left;}
+#mainbody-2 {background: transparent ;}
+#mainbody-3 {background: transparent ;}
+#mainbody-4 {background: transparent ;}
+#mainbody-5 {background: transparent ; }
+#mainbody-padding {	background: #fff; }
+#inset { color: #ccc; text-align: center; margin: 15px 0;}
+#inset table {width: auto; margin: 0 auto; }
+#footer { padding-top: 10px;}
+#the-footer {text-align: center;margin: 20px 0;}
+table.showcase,
+table.mainbody,
+table.headlines,
+table.footer { width: 100%;	padding: 0;}
+table.headlines {margin-top: -5px;}
+table.showcase tr,
+table.mainbody tr,
+table.headlines tr,
+table.footer tr {vertical-align: top;}
+table.showcase td.showcase,
+table.footer td.footer,
+table.headlines td.headlines {width: 33%;}
+table.showcase td.showcase,
+table.footer td.footer,
+table.mainbody td.left,
+table.mainbody td.right,
+table.headlines td.headlines {padding: 0 10px;}
+table.headlines td.headlines {margin-bottom: 10px;}
+table.headlines td.headlines h3 {margin-top: 10px; margin-bottom: 5px; font-size: 130%;	color: #222;}
+table.mainbody.padding h3{margin-top: 10px; margin-bottom: 5px; font-size: 130%; color: #222;}
+table.mainbody td.mainbody {padding: 0;}
+#mainbody td.mainbody .padding {padding: 0 15px;}
+table.mainbody td.left,
+table.mainbody td.right {width: 11%;}
+table.mainbody td.left {border-right: 1px solid #e6e6e6;}
+table.mainbody td.right {border-left: 1px solid #e6e6e6;}
+table.headlines td.headlines {border: 0px solid #e6e6e6;}
+
+/*****************************
+ ****       splitmenu     ****
+ *****************************/
+#nav {margin: 0 0 0 20px; padding: 0; height: 31px; overflow: hidden;}
+#nav ul {padding: 0; margin: 0;	margin-left: 2px;}
+#nav li {margin: 0;	padding: 0;	float: left; display: block;}
+#nav a {text-decoration: none; cursor: pointer;	font-weight: bold;}
+#nav li.on li.on a {text-decoration: underline;}
+#nav li a {	display: block;	float: left; height: 31px; line-height: 31px; padding: 0 15px;}
+ul.subemenu {padding: 0; margin: 0;}
+ul.submenu li {	border: 0; margin: 0px;	height: 16px; line-height: 15px; padding: 0; padding-left: 20px; background: url(../images/default/play.png) no-repeat;}
+ul.submenu ul li { margin-left: 10px; background: none;}
+ul.submenu ul ul li { margin-left: 20px;  background: none;}
+/* some page content things */
+.hide {	display: none;}
+form {	border: 0;	margin: 0;	padding: 0;}
+table.blog span.article_seperator {	display: block;	height: 20px;}
+table.pollstableborder td {	text-align: left;	padding: 2px 0;}
+input#mod_search_searchword {	width: 120px;}
+.highlight {  background-color: #ffc;}

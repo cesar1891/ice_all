@@ -1,0 +1,21 @@
+/** IE6 is a hunk of crap!!! don't ask me why this is needed **/
+
+#mainbody {
+	float: left;
+}
+
+#mainbody-2 {
+	float: left;
+}
+
+.w-fluid #mainbody-2 {
+	float: none;
+}
+
+#selectors {
+	margin-right: 4px;
+}
+
+#access a {
+	cursor: hand;
+}

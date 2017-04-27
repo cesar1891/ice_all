@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="autosDAOSIGSImpl" class="mx.com.gseguros.ws.autosgs.dao.impl.AutosSIGSDAOImpl" parent="abstractManagerDAOSIGS"/>
+
+    <bean id="cancelacionDAOImpl" class="mx.com.gseguros.portal.cancelacion.dao.impl.CancelacionDAOImpl" parent="abstractManagerDAO"></bean>
+
+    <bean id="catalogosDAOImpl" class="mx.com.gseguros.portal.general.dao.impl.CatalogosDAOImpl" parent="abstractManagerDAO"/>
+
+    <bean id="clausuladoDAOImpl" class="mx.com.gseguros.portal.catalogos.dao.impl.ClausuladoDAOImpl" parent="abstractManagerDAO"/>
+    
+    <bean id="consultasSiniestroDAOImpl" class="mx.com.gseguros.portal.consultas.dao.impl.ConsultasSiniestroDAOImpl" parent="abstractManagerDAO"/>
+    
+    <bean id="consultasDAOImpl" class="mx.com.gseguros.portal.consultas.dao.impl.ConsultasDAOImpl" parent="abstractManagerDAO"/>
+    
+    <bean id="consultasDAOICEImpl" class="mx.com.gseguros.portal.consultas.dao.impl.ConsultasPolizaDAOImpl" parent="abstractManagerDAO"/>
+    
+    <bean id="consultasDAOSISAImpl" class="mx.com.gseguros.portal.consultas.dao.impl.ConsultaPolizasDAOSISAImpl" parent="abstractManagerDAOSISA"/>
+    
+    <bean id="consultasAseguradoDAOSISAImpl" class="mx.com.gseguros.portal.consultas.dao.impl.ConsultasAseguradoDAOSISAImpl" parent="abstractManagerDAOSISA"/>
+    
+    <bean id="consultasAseguradoDAOICEImpl" class="mx.com.gseguros.portal.consultas.dao.impl.ConsultasAseguradoDAOICEImpl" parent="abstractManagerDAO"/>
+    
+    <bean id="consultasAseguradoDAOSIGSImpl" class="mx.com.gseguros.portal.consultas.dao.impl.ConsultasAseguradoDAOSIGSImpl" parent="abstractManagerDAOSIGS"/>
+
+    <bean id="cotizacionDAOImpl" class="mx.com.gseguros.portal.cotizacion.dao.impl.CotizacionDAOImpl" parent="abstractManagerDAO"></bean>
+
+    <bean id="dinamicDao" class="mx.com.gseguros.confpantallas.base.dao.DinamicDao" parent="abstractManagerDAO"/>
+    
+    <bean id="dinamicDAOImpl" class="mx.com.gseguros.confpantallas.base.dao.DinamicDao" parent="abstractManagerDAO"/>
+    
+    <bean id="endososDAOImpl" class="mx.com.gseguros.portal.endosos.dao.impl.EndososDAOImpl" parent="abstractManagerDAO"></bean>
+    
+    <bean id="endososGrupoDAOImpl" class="mx.com.gseguros.portal.endosos.dao.impl.EndososGrupoDAOImpl" parent="abstractManagerDAO" />
+
+    <bean id="generadorPantallasDAOImpl" class="mx.com.gseguros.confpantallas.dao.impl.GeneradorPantallasDAOImpl" parent="abstractManagerDAO"></bean>
+
+    <bean id="menuDAOImpl" class="mx.com.gseguros.portal.general.dao.impl.MenuDAOImpl" parent="abstractManagerDAO"/>
+
+    <bean id="mesaControlDAOImpl" class="mx.com.gseguros.portal.mesacontrol.dao.impl.MesaControlDAOImpl" parent="abstractManagerDAO"/>
+
+    <bean id="pantallasDAOImpl" class="mx.com.gseguros.portal.general.dao.impl.PantallasDAOImpl" parent="abstractManagerDAO"/>
+
+    <bean id="peritajeDaoImpl" class="com.peritaje.siniestro.dao.impl.PeritajeDAOImpl" parent="abstractManagerDAO"/>
+
+    <bean id="personasDAOImpl" class="mx.com.gseguros.portal.catalogos.dao.impl.PersonasDAOImpl" parent="abstractManagerDAO"/>
+
+    <bean id="recibosDAOImpl" class="mx.com.gseguros.portal.general.dao.impl.RecibosDAOImpl" parent="abstractManagerDAO"/>
+
+    <bean id="reclamoExpressDAOSIGSImpl" class="mx.com.gseguros.portal.reclamoExpress.dao.impl.ReclamoExpressDAOSIGSImpl" parent="abstractManagerDAOSIGS"/>
+    
+    <bean id="reexpedicionDocumentosDAOImpl" class="mx.com.gseguros.portal.reexpedicionDocumentos.dao.impl.ReexpedicionDocumentosDAOImpl" parent="abstractManagerDAO"></bean>
+
+    <bean id="rehabilitacionDAOImpl" class="mx.com.gseguros.portal.rehabilitacion.dao.impl.RehabilitacionDAOImpl" parent="abstractManagerDAO"></bean>
+
+    <bean id="renovacionDAOImpl" class="mx.com.gseguros.portal.renovacion.dao.impl.RenovacionDAOImpl" parent="abstractManagerDAO" />
+    
+    <bean id="reportesDAOImpl" class="mx.com.gseguros.portal.general.dao.impl.ReportesDAOImpl" parent="abstractManagerDAO"/>
+
+    <bean id="siniestrosDaoImpl" class="mx.com.gseguros.portal.siniestros.dao.impl.SiniestrosDAOImpl" parent="abstractManagerDAO"/>
+
+    <bean id="storedProceduresDAOImpl" class="mx.com.gseguros.externo.dao.impl.StoredProceduresDAOImpl" parent="abstractManagerDAO" />
+
+    <bean id="tablasApoyoDAOImpl" class="mx.com.gseguros.wizard.dao.impl.TablasApoyoDAOImpl" parent="abstractManagerDAO"/>    
+    
+    <bean id="usuarioDAOImpl" class="mx.com.gseguros.portal.general.dao.impl.UsuarioDAOImpl" parent="abstractManagerDAO"/>
+
+    <bean id="webServicesDAOImpl" class="mx.com.gseguros.portal.general.dao.impl.WebServicesDAOImpl" parent="abstractManagerDAO"/>
+
+    <bean id="WizardDAOImpl" class="mx.com.gseguros.wizard.dao.impl.WizardDAOImpl" parent="abstractManagerDAO"/>
+    
+    <bean id="aseguradoDAOImpl" class="mx.com.gseguros.portal.general.dao.impl.AseguradoDAOImpl" parent="abstractManagerDAO"/>
+    
+    <bean id="emisionDAOImpl" class="mx.com.gseguros.portal.emision.dao.impl.EmisionDAOImpl" parent="abstractManagerDAO"/>
+    
+    <bean id="validacionesCotizacionDAOSIGSImpl" class="mx.com.gseguros.portal.cotizacion.dao.impl.ValidacionesCotizacionDAOSIGSImpl" parent="abstractManagerDAOSIGS"/>
+    
+    <bean id="flujoMesaControlDAOImpl" class="mx.com.gseguros.mesacontrol.dao.impl.FlujoMesaControlDAOImpl" parent="abstractManagerDAO"/>
+    
+    <bean id="clienteDAOSIGSImpl" class="mx.com.gseguros.portal.catalogos.dao.impl.ClienteDAOSIGSImpl" parent="abstractManagerDAOSIGS"/>
+    
+    <bean id="indicadoresDAOImpl" class="mx.com.gseguros.portal.general.dao.impl.IndicadoresDAOImpl" parent="abstractManagerDAO"/>
+    
+    <bean id="despachadorDAOImpl" class="mx.com.gseguros.portal.despachador.dao.impl.DespachadorDAOImpl" parent="abstractManagerDAO"/>
+    
+    <bean id="templateDAOImpl" class="mx.com.gseguros.portal.general.dao.impl.TemplateDAOImpl" parent="abstractManagerDAO"/>
+    
+    <bean id="consultasPerfilMedicoDAOICEImpl" class="mx.com.gseguros.portal.consultas.dao.impl.ConsultasPerfilMedicoDAOICEImpl" parent="abstractManagerDAO"/>
+    
+    <bean id="consultasPerfilMedicoDAOSISAImpl" class="mx.com.gseguros.portal.consultas.dao.impl.ConsultasPerfilMedicoDAOSISAImpl" parent="abstractManagerDAOSISA"/>
+    
+</beans>

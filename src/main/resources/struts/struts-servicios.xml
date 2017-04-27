@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <package name="servicios" namespace="/servicios" extends="struts-default, json-default">
+
+        <interceptors>
+            <interceptor name="authenticationInterceptor" class="authenticationInterceptor" />
+            <interceptor name="deviceInterceptor"         class="deviceInterceptor"/>
+            <interceptor-stack name="loggingStack">
+                <interceptor-ref name="deviceInterceptor"/>
+                <interceptor-ref name="authenticationInterceptor" />
+                <interceptor-ref name="defaultStack" />
+            </interceptor-stack>
+        </interceptors>
+        
+        
+        <!-- TODO: Eliminar estos actions temporales y quitar el interceptor de autenticacion a los originales: -->
+        
+        <!-- Namespace original "/": -->
+        <action name="emitir" class="beanDatosComplementarios" method="emitir">
+            <result name="success" type="json" />
+        </action>
+        
+        
+        <!-- Namespace original "catalogos": -->
+        <action name="obtieneCatalogo" class="catalogoAction" method="obtieneCatalogo">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    lista.*,
+                    params.*,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        
+        <!-- Namespace original "consultas": -->
+        <action name="marcarImpresionOperacion" class="explotacionDocumentosAction" method="marcarImpresionOperacion">
+            <result name="success" type="json" />
+        </action>
+        
+        
+        <!-- Namespace original "emision": -->
+        <action name="cargarConfigCotizacion" class="cotizacionAutoAction" method="cargarConfigCotizacion">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="cotizar" class="CotizacionAction" method="cotizar">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="guardarComplementariosAutoIndividual" class="cotizacionAutoAction" method="guardarComplementariosAutoIndividual">
+           <interceptor-ref name="json">
+               <param name="enableSMD">true</param>
+               <param name="ignoreSMDMethodInterfaces">false</param>
+           </interceptor-ref>
+           <result type="json" />
+        </action>
+        
+        
+        <!-- Namespace original "flujocotizacion": -->
+        <action name="comprarCotizacion4" class="cotizacionVital" method="comprarCotizacion">
+            <result name="success" type="json" />
+        </action>
+        
+        
+        <action name="descargaReporte" class="documentosPolizaAction" method="descargaReporte">
+            <result name="success" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">inline; filename="${filename}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+        
+    </package>
+</struts>

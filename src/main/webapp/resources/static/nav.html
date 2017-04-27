@@ -1,0 +1,38 @@
+<html>
+<head>
+
+<script type="text/javascript">
+	function actual( componente ){
+		//alert(navigator.appName);
+		// Se limpian la pestaña de donde este
+		var lista = document.getElementById("nav_lista");
+		for(var i = 0 ; i<lista.childNodes.length; i++){
+			var node = lista.childNodes[i];
+			if ( node.nodeName == "LI" ) {
+				//alert(node + ' : ' + i + ' : ' + node.nodeName + ' : ' + node.getAttribute("class"));
+				// Ext.isOpera , Ext.isIE
+				// class			className
+				node.setAttribute("class","");
+			}
+		}
+		var actual = document.getElementById("nav_" + componente);
+		actual.setAttribute("class","active_menu");
+	}
+
+	function salir(){
+		window.location.replace(_CONTEXT);
+	}
+</script>
+
+</head>
+<body>
+    <ul id="nav_lista">
+        <li id="nav_1" class="active_menu" ><a href="#" onClick="actual(1);">Item 1</a></li>
+        <li id="nav_2"><a href="#" onClick="actual(2);">Item 2</a></li>
+        <li id="nav_3"><a href="#" onClick="actual(3);">Item 3</a></li>
+        <li id="nav_4"><a href="#" onClick="actual(4);">Item 4</a></li>
+        <li id="nav_5"><a href="#" onClick="actual(5);">Item 5</a></li>
+        <li><a href="#" onClick="salir();">Salir</a></li>
+    </ul>
+</body>
+</html>

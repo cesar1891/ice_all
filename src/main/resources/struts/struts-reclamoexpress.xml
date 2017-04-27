@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <package name="reclamoExpress" namespace="/reclamoExpress" extends="default">
+        <action name="consultaReclamos" class="ReclamoExpressAction" method="consultaReclamos">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includePropeties">
+                    datosReclamos.*,
+                    success
+                </param>
+            
+            </result>
+        </action>
+        <action name="consultaSecuenciales" class="ReclamoExpressAction" method="consultaSecuenciales">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includePropeties">
+                    datosSecuenciales.*,
+                    success
+                </param>
+            
+            </result>
+        </action>
+        <action name="consultaReclamoExpress" class="ReclamoExpressAction" method="consultaReclamoExpress">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includePropeties">
+                    reclamoExpress.*,
+                    success
+                </param>
+            
+            </result>
+        </action>
+        <action name="guardaReclamoExpress" class="ReclamoExpressAction" method="guardaReclamoExpress">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includePropeties">                    
+                    success
+                </param>
+            
+            </result>
+        </action>
+        <action name="guardaDetalleExpress" class="ReclamoExpressAction" method="guardaDetalleExpress">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result name="success" type="json"/>
+        </action>
+    </package>
+</struts>

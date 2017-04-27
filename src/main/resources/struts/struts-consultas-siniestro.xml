@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="consultasSiniestro" namespace="/consultasSiniestro" extends="default">
+
+		<action name="consultaSiniestros">
+    		<result>/jsp/consultas/siniestros/consultasSiniestros.jsp</result>
+		</action>
+
+		<action name="detalleSiniestrosInicial" class="consultasSiniestroAction" method="detalleSiniestrosInicial">
+            <result type="json"></result>
+        </action>
+        
+		<action name="includes/revAdmin" class="detalleSiniestroAction" method= "entradaRevisionAdminConsulta">
+    		<result>/jsp/consultas/siniestros/includes/revisionAdministrativa.jsp</result>
+		</action>
+		
+		
+		<action name="includes/loadInfoGeneralReclamacion" class="detalleSiniestroAction" method="loadInfoGeneralReclamacion">
+            <result>/jsp/consultas/siniestros/includes/informacionGeneral.jsp</result>
+        </action>
+        
+        <action name="includes/calculoSiniestros" class="siniestrosAction" method="calculoSiniestros"> <!-- consultasSiniestros.jsp y detalleReclamion.jsp -->
+            <result name="success">/jsp-script/proceso/siniestros/calculos.jsp</result>
+        </action>
+        
+		<action name="obtieneDatosGeneralesSiniestro" class="detalleSiniestroAction" method="obtieneDatosGeneralesSiniestro">
+            <result type="json"></result>
+        </action>
+        
+        
+        <action name="afiliadosAfectados" class="siniestrosAction" method="afiliadosAfectadosConsulta">
+		    <result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+					slist1.*,
+					success
+				</param>
+			</result>
+		</action>
+		
+        <action name="consultaAseguradosPagoReembolso" class="consultasSiniestroAction"
+			method="consultaAseguradosPagoReembolso">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+					datosSiniestroAsegurado.*,
+					success
+				</param>
+			</result>
+		</action>
+		
+		<action name="consultaProveedorPDirecto" class="consultasSiniestroAction"
+			method="consultaProveedorPDirecto">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+					datosProveedorPDirecto.*,
+					success
+				</param>
+			</result>
+		</action>
+		
+		<action name="consultaFacturasPagoDirecto" class="consultasSiniestroAction"
+			method="consultaFacturasPagoDirecto">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+					datosFacturaPagoDirecto.*,
+					success
+				</param>
+			</result>
+		</action>
+		
+		
+	</package>
+
+</struts>

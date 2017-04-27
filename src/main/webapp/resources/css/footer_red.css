@@ -1,0 +1,32 @@
+/* red footer */
+body.footer-red{
+	background: #9c270a;
+}
+
+#footer {
+	background: #9c270a url(../images/footer/red/footer-bg.png) repeat-x;
+}
+
+#footer li {
+	border-bottom: 1px dotted #D6513B;
+}
+
+#footer div.moduletable {
+	color: #fff;
+}
+
+#the-footer {
+	color: #ccc;
+}
+
+body.footer-red #footer a {
+	color: #fff;
+}
+
+body.footer-red #footer a:hover {
+	color: #000;
+}
+
+body.footer-red #footer h3 {
+	color: #333;
+}

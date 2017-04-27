@@ -1,0 +1,32 @@
+/* blue footer */
+body.footer-blue{
+	background: #3d6993;
+}
+
+#footer {
+	background: #3d6993 url(../images/footer/blue/footer-bg.png) repeat-x;
+}
+
+#footer li {
+	border-bottom: 1px dotted #87C1F2;
+}
+
+#footer div.moduletable {
+	color: #fff;
+}
+
+#the-footer {
+	color: #ccc;
+}
+
+body.footer-blue #footer a {
+	color: #fff;
+}
+
+body.footer-blue #footer a:hover {
+	color: #000;
+}
+
+body.footer-blue #footer h3 {
+	color: #333;
+}

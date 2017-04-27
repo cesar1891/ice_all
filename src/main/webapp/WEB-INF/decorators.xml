@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<decorators defaultdir="/decorators">
+
+	<!-- URLs que no usaran decorator -->
+	<excludes>
+		<pattern>/nodecorate/*</pattern>
+		<pattern>/resources/*</pattern>
+		<pattern>/styles/*</pattern>
+		<pattern>/scripts/*</pattern>
+		<pattern>/images/*</pattern>
+		<pattern>/struts/*</pattern>
+		<pattern>/jsp/portal/portal.jsp</pattern>
+		<pattern>/jsp/menu/menu.jsp</pattern>
+		<pattern>/load.action</pattern>
+		<pattern>/jsp-script/general/includes/errorPantalla.jsp</pattern>
+		
+		<pattern>/cancelacion/pantallaCancelar.action</pattern>
+		<pattern>/cancelacion/pantallaCancelarAuto.action</pattern>
+		<pattern>/rehabilitacion/pantallaRehabilitacionUnica.action</pattern>
+		<pattern>/endosos/pantallaEndosoCoberturas.action</pattern>
+		<pattern>/endosos/pantallaEndosoDomicilio.action</pattern>
+		<pattern>/endosos/pantallaEndosoDomicilioSimple.action</pattern>
+		<pattern>/endosos/pantallaEndosoNombres.action</pattern>
+		<pattern>/endosos/pantallaEndosoNombresSimple.action</pattern>
+		<pattern>/endosos/entrarEndosoValositBasico.action</pattern>
+		<pattern>/endosos/entrarEndosoParentescoAntiguedad.action</pattern>
+		<pattern>/endosos/entrarEndosoValositBasicoSimple.action</pattern>
+		<pattern>/endosos/pantallaEndosoClausulas.action</pattern>
+		<pattern>/endosos/pantallaEndosoAltaBajaAsegurado.action</pattern>
+		<pattern>/endosos/endosoEdad.action</pattern>
+		<pattern>/endosos/endosoSexo.action</pattern>
+		<pattern>/endosos/endosoDomicilioFull.action</pattern>
+		<pattern>/endosos/endosoDomicilioAuto.action</pattern>
+		<pattern>/endosos/endosoDomicilioAutoFull.action</pattern>
+		<pattern>/endosos/errorEndosoAnterior.action</pattern>
+		<pattern>/endosos/endosoDeducible.action</pattern>
+		<pattern>/endosos/endosoCopago.action</pattern>
+		<pattern>/endosos/endosoReexpedicion.action</pattern>
+		<pattern>/endosos/endosoExtraprima.action</pattern>
+		<pattern>/endosos/endosoExtraprimaIndividual.action</pattern>
+		<pattern>/endosos/endosoFormaPago.action</pattern>
+		<pattern>/endosos/endosoAgente.action</pattern>
+		<pattern>/endosos/endosoRehabilitacionEnd.action</pattern>
+		<pattern>/endosos/endosoContratante.action</pattern>
+		<pattern>/endosos/endosoNombreCliente.action</pattern>
+		<pattern>/endosos/endosoRfcCliente.action</pattern>
+		<pattern>/endosos/endosoContratanteAuto.action</pattern>
+		<pattern>/emision/mcotizacion.action*</pattern>
+        
+		<pattern>/*/includes/*.action*</pattern>
+        
+		<pattern>/*/servicios/*.action*</pattern>
+        
+	</excludes>
+
+
+	<!-- decorator que solo contiene la estructura HTML, HEAD y BODY -->
+	<decorator name="clean" page="decorator_clean.jsp">
+		<pattern>/seguridad/*</pattern>
+		<pattern>/jsp/portal/login.jsp</pattern>
+		<pattern>/editarAsegurados.action</pattern>
+		<pattern>/jsp/extjs4/editarAsegurados.jsp</pattern>
+		<pattern>/editarAseguradosAuto.action</pattern>
+		<pattern>/jsp/extjs4/editarAseguradosAuto.jsp</pattern>
+		<pattern>/editarCoberturas.action</pattern>
+		<pattern>/jsp/extjs4/aseguradoCoberturas.jsp</pattern>
+		<pattern>/pantallaDomicilio.action</pattern>
+		<pattern>/jsp/extjs4/aseguradoDomicilio.jsp</pattern>
+		<pattern>/pantallaExclusion.action</pattern>
+		<pattern>/jsp/extjs4/aseguradoExclusion.jsp</pattern>
+		<pattern>/pantallaValosit.action</pattern>
+		<pattern>/jsp/extjs4/pantallaValosit.jsp</pattern>
+		<pattern>/documentos/ventanaDocumentosPoliza</pattern>
+		<pattern>/catalogos/pantallaDocumentosPersona.action*</pattern>
+		<pattern>/documentos/ventanaDocumentosPolizaClon</pattern>
+		<pattern>/jsp/extjs4/ventanaDocumentosPoliza.jsp</pattern>
+		<pattern>/jsp/extjs4/ventanaDocumentosPersona.jsp</pattern>
+		<pattern>/jsp-script/proceso/siniestros/subirDocumentosSiniestros.jsp</pattern>
+		<pattern>/flujocotizacion/principal.action</pattern>
+		<pattern>/jsp/consultas/agentes/consultaAgentes.jsp</pattern>
+		<pattern>/jsp-script/proceso/emision/cotizaciontouch.jsp</pattern>
+       
+        
+	</decorator>
+    
+    
+	<!-- decorator que incluye taglibs, framework UI, utilerias JS -->
+	<decorator name="default" page="decorator_default.jsp">
+		<pattern>/seguridad/accesoDirecto.action</pattern>
+		<pattern>/cotizacionVital.action</pattern>
+		<pattern>/jsp/extjs4/asegurados.jsp</pattern>
+		<pattern>/jsp/extjs4/aseguradosGB.jsp</pattern>
+
+		<pattern>/dinosaurio.action</pattern>
+		<pattern>/jsp/extjs4/denegado.jsp</pattern>
+
+		<pattern>/datosComplementarios.action</pattern>
+		<pattern>/jsp/extjs4/complementarios.jsp</pattern>
+
+		<pattern>/subirArchivoMostrarPanel.action</pattern>
+		<pattern>/jsp/extjs4/testFileUpload.jsp</pattern>
+
+		<pattern>/subirArchivo.action</pattern>
+		<pattern>/subirArchivoPersona.action</pattern>
+		<pattern>/jsp/extjs4/subirArchivoReceptor.jsp</pattern>
+
+		<pattern>/subirArchivoMostrarBarra.action</pattern>
+		<pattern>/jsp/extjs4/subirArchivoBarra.jsp</pattern>
+		
+		<!-- mesa de control -->
+		<pattern>/mesacontrol/principal.action</pattern>
+		<pattern>/jsp/extjs4/mesacontrol/principal.jsp</pattern>
+		<pattern>/mesacontrol/mcdinamica.action</pattern>
+		<pattern>/jsp/extjs4/mesacontrol/mcdinamica.jsp</pattern>
+		<!-- fin de mesa de control -->
+        
+		<pattern>/catalogos/*.action</pattern>
+		<pattern>/jsp/catalogos/*.jsp</pattern>
+		<pattern>/jsp-script/catalogos/*.jsp</pattern>
+        
+		<pattern>/cancelacion/*.action</pattern>
+		<pattern>/jsp-script/proceso/cancelacion/*.jsp</pattern>
+		<pattern>/rehabilitacion/*.action</pattern>
+		<pattern>/jsp-script/proceso/rehabilitacion/*.jsp</pattern>
+		<pattern>/endosos/*.action</pattern>
+		<pattern>/jsp-script/proceso/endosos/*.jsp</pattern>
+		<pattern>/jsp-script/proceso/emision/cotizacion.jsp</pattern>
+		<pattern>/jsp-script/proceso/emision/cotizacionGrupo.jsp</pattern>
+		<pattern>/jsp-script/proceso/emision/cotizacionGrupo2.jsp</pattern>
+		<pattern>/jsp-script/proceso/emision/cotizacionAutoIndividual.jsp</pattern>
+		<pattern>/jsp-script/proceso/emision/cotizacionAutoFlotilla.jsp</pattern>
+        
+		<pattern>/jsp-script/proceso/emision/cargarExcel.jsp</pattern>
+        
+		<pattern>/jsp-script/proceso/emision/emisionAutoIndividual.jsp</pattern>
+		<pattern>/jsp-script/proceso/emision/emisionAutoFlotilla.jsp</pattern>
+		<pattern>/emision/cotizacion.action</pattern>
+		<pattern>/emision/cotizacionGrupo.action</pattern>
+		<pattern>/emision/cotizacionGrupo2.action</pattern>
+		<pattern>/emision/cotizacionAutoIndividual.action</pattern>
+		<pattern>/emision/cargarExcel.action</pattern>
+        
+		<pattern>/emision/cotizacionAutoFlotilla.action</pattern>
+        
+		<pattern>/emision/emisionAutoIndividual.action</pattern>
+		<pattern>/emision/emisionAutoFlotilla.action</pattern>
+        
+		<pattern>/siniestros/*.action</pattern>
+		<pattern>/jsp-script/proceso/siniestros/*.jsp</pattern>
+		
+		<pattern>/consultasAsegurado/*.action</pattern>
+		
+		<pattern>/consultasPoliza/*.action</pattern>
+		<pattern>/jsp/consultas/*.jsp</pattern>
+		<pattern>/consultas/*.action</pattern>
+        
+		<pattern>/consultasSiniestro/*.action</pattern>
+		<pattern>/jsp/consultas/siniestros/*.jsp</pattern>
+        
+		<pattern>/reclamoExpress/*.action</pattern>
+		<pattern>/jsp/reclamoExpress/*.jsp</pattern>
+        
+		<pattern>/reportes/*.action</pattern>
+		<pattern>/jsp-script/reportes/*.jsp</pattern>
+
+		<pattern>/general/*.action</pattern>
+		<pattern>/jsp-script/general/*.jsp</pattern>
+        
+		<pattern>/cobranza/*.action</pattern>
+		<pattern>/jsp-script/proceso/cobranza/*.jsp</pattern>
+        
+		<pattern>/confpantallas/cotizacionDemo.action</pattern>
+		<pattern>/jsp-script/proceso/emision/cotizacionDemo.jsp</pattern>
+        
+		<pattern>/jsp-script/proceso/reexpedicionDocumentos/marcoReexpedicionDocumentos.jsp</pattern>
+        
+		<!-- >tomcat -->
+		<pattern>/reexpediciondocumentos/principal.action*</pattern>
+		<!-- <tomcat -->
+        
+		<pattern>/renovacion/*.action</pattern>
+		<pattern>/jsp-script/proceso/renovacion/*.jsp</pattern>
+        
+		<pattern>/emision/pantallaClausulasPoliza.action</pattern>
+		<pattern>/jsp-script/proceso/emision/pantallaClausulasPoliza.jsp</pattern>
+        
+		<pattern>/estadisticas/*.action</pattern>
+		<pattern>/jsp-script/proceso/estadisticas/*.jsp</pattern>
+        
+		<pattern>/indicadores/*.action</pattern>
+		<pattern>/jsp-script/proceso/indicadores/*.jsp</pattern>
+        
+		<pattern>/persona/*.action*</pattern>
+        
+		<pattern>/jsp-script/consultas/*.jsp</pattern>
+        
+		<pattern>/flujomesacontrol/*.action*</pattern>
+		<pattern>/jsp-script/proceso/flujoMesaControl/*.jsp</pattern>
+        
+		<pattern>/emision/*.action*</pattern>
+		<pattern>/jsp-script/proceso/emision/*.jsp</pattern>
+        
+		<pattern>/demo/*.action*</pattern>
+		<pattern>/jsp-script/proceso/demo/*.jsp</pattern>
+        
+		<pattern>/tvalosit/*.action*</pattern>
+        
+		<pattern>/mesacontrol/*.action*</pattern>
+        
+		<pattern>/erickjaime/*.action*</pattern>
+        
+		<pattern>/convenios/*.action*</pattern>
+		<pattern>/jsp-script/proceso/convenios/*.jsp</pattern>
+        
+		<pattern>/despachador/*.action*</pattern>
+<!--
+		<pattern>/documentos/*.action</pattern>
+		<pattern>/jsp-script/proceso/documentos/*.jsp</pattern>
+-->
+	</decorator>
+	
+	<decorator name="senchatouch" page="decorator_sencha_touch.jsp">
+		<pattern>/peritaje/*.action</pattern>
+		<pattern>/jsp/peritaje/*.jsp</pattern>
+	</decorator>
+    
+	<decorator name="roles" page="decorator_roles.jsp">
+		<pattern>/seguridad/ArbolRolCliente.action</pattern>
+		<pattern>/seleccionaRolCliente.action</pattern>
+		<pattern>/jsp/portal/treeRolElemento.jsp</pattern>
+	</decorator>
+    
+	<decorator name="extjs2" page="default2_deprecated.jsp">
+		<!-- Wizard de Parametrizacion -->
+		<pattern>/wizard/parametrizador.action</pattern>
+		<pattern>/jsp/wizard/indexWithIframe.jsp</pattern>		
+		<pattern>/jsp/wizard/agregarCoberturas.jsp</pattern>
+		<pattern>/indexWithIframe.jsp</pattern>		
+	</decorator>
+    
+    
+	<decorator name="mainbody" page="decorator_mainbody.jsp">
+		<pattern>/jsp/portal/mainBody.jsp</pattern>
+	</decorator>
+
+
+</decorators>

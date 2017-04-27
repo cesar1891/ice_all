@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    
+    <package name="reportes" namespace="/reportes" extends="struts-default, json-default">
+        
+        <action name="principal" class="reportesAction">
+           <result>/jsp-script/reportes/reportes.jsp</result>
+        </action>
+        
+        <action name="obtenerListaReportes" class="reportesAction" method="obtenerListaReportes">
+            <result type="json">
+                <param name="ignoreHierarchy">false</param>
+                <param name="includeProperties">
+                    reportes.*,
+                    success
+                </param>
+            </result>
+        </action>
+        
+        <action name="includes/obtenerComponentesReporte" class="reportesAction" method="obtenerComponentesReporte">
+            <result>/jsp-script/reportes/includes/componentesReporte.jsp</result>
+        </action>
+        
+        <action name="procesoObtencionReporte" class="reportesAction" method="procesoObtencionReporte">
+            <result name="success" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment; filename="${filename}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+        <action name="procesoObtencionReporte2" class="reportesAction" method="procesoObtencionReporte">
+            <result name="success" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment; filename="${filename}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+        <action name="exportaTablaApoyo" class="reportesAction" method="exportaTablaApoyo">
+            <result name="success" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment; filename="${filename}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+        
+        
+        <action name="testDescargaArchivo" class="reportesAction" method="generaBytesArchivo">
+            <result name="success" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment; filename="${filename}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+    
+    </package>
+    
+</struts>

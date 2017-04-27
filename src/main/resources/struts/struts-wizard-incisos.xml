@@ -1,0 +1,56 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+	<include file="struts-default.xml" />
+
+	<package name="incisos" extends="json-default" namespace="/incisos">
+
+		<!--
+		Redireccionamiento de action a jsp 
+		-->
+
+
+		<!-- 
+		Configuracion del Action con tipo de respuesta JSON, esto generara a partir
+		de los atributos la respuesta en formato JSON para el Reader de ExtJs 
+		-->
+		
+		<action name="PrincipalIncisos" class="PrincipalIncisosAction">
+			<result name="input">/WEB-INF/jsp/productos/incisos/principalIncisos.jsp</result>
+		</action>		
+
+		
+		<action name="EditarInciso" class="PrincipalIncisosAction" method="editarInciso">
+            <result name="success" type="json"/>                
+		</action>
+		
+		<action name="IncisosLista" class="PrincipalIncisosAction" method="listaDeIncisosJSON">
+			<result name="input">/WEB-INF/jsp/productos/incisos/principalIncisos.jsp</result>
+            <!--  result name="input">/WEB-INF/newIndex.jsp</result-->
+            <result name="success" type="json"/>
+                
+		</action>
+		
+		<action name="agregarInciso" class="PrincipalIncisosAction" method="agregarNuevoInciso">
+			<result name="input">/WEB-INF/jsp/productos/incisos/principalIncisos.jsp</result>
+            <!--  result name="input">/WEB-INF/newIndex.jsp</result-->
+            <result name="success" type="json"/>
+                
+		</action>
+		
+		<action name="eliminarInciso" class="PrincipalIncisosAction" method="eliminarInciso">
+			<result name="input">/WEB-INF/jsp/productos/incisos/principalIncisos.jsp</result>
+            <result name="success" type="json"/>
+		</action>
+		
+		<action name="asociarInciso" class="PrincipalIncisosAction" method="asociarIncisoSeleccionado">
+			<result name="input">/WEB-INF/jsp/productos/incisos/principalIncisos.jsp</result>
+            <!--  result name="input">/WEB-INF/newIndex.jsp</result-->
+            <result name="success" type="json"/>                
+		</action>
+		
+		
+	</package>
+
+</struts>

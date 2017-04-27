@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="catalogoAction" class="mx.com.gseguros.portal.general.util.CatalogosAction" scope="prototype">
+        <property name="catalogosManager"        ref="catalogosManagerImpl"/>
+        <property name="kernelManager"           ref="kernelManagerSustituto"/>
+        <property name="endososManager"          ref="endososManagerImpl"/>
+        <property name="siniestrosManager"       ref="siniestrosManagerImpl"/>
+        <property name="storedProceduresManager" ref="storedProceduresManagerImpl"/>
+    </bean>
+
+    <bean id="clausuladoAction" class="mx.com.gseguros.portal.catalogos.controller.ClausuladoAction" scope="prototype">
+        <property name="clausuladoManager" ref="clausuladoManagerImpl"/>
+    </bean>
+    
+    <bean id="personasAction" class="mx.com.gseguros.portal.catalogos.controller.PersonasAction" scope="prototype">
+        <property name="personasManager" ref="personasManagerImpl"/>    
+    </bean>
+    
+    <bean id="usuarioAction" class="mx.com.gseguros.portal.catalogos.controller.UsuarioAction" scope="prototype">
+        <property name="usuarioManager" ref="usuarioManagerImpl"></property>
+        <property name="pantallasManager" ref="pantallasManagerImpl"></property>
+        <property name="loginManager" ref="loginManager"></property>
+    </bean>
+
+    <bean id="menusAction" class="mx.com.gseguros.portal.catalogos.controller.MenuAction" scope="prototype">
+        <property name="menuManager" ref="menuManagerImpl"></property>
+    </bean>
+
+</beans>

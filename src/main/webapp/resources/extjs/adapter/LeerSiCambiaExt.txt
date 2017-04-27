@@ -1,0 +1,14 @@
+Se modificó la ruta para s.gif asignado a la variable Ext.BLANK_IMAGE_URL el valor de /acw/images/app/default/s.gif
+
+Estas deben ser modificadas dependiendo de la localizacion de la localizcion de este gif en el server 
+
+Los valores originales son:
+
+Ext.drasill2.js  ---  "/images/s.gif"
+ext-base.js - Aon-integracion/src/main/webapp/resources/extjs/adapter/ext      ---    http:/"+"/extjs.com/s.gif
+
+ext-jquery-adapter.js - Aon-integracion/src/main/webapp/resources/extjs/adapter/jquery      ---    http:/"+"/extjs.com/s.gif
+
+ext-prototype-adapter.js - Aon-integracion/src/main/webapp/resources/extjs/adapter/prototype 4     ---    http:/"+"/extjs.com/s.gif
+
+ext-yui-adapter.js - Aon-integracion/src/main/webapp/resources/extjs/adapter/yui      ---    http:/"+"/extjs.com/s.gif

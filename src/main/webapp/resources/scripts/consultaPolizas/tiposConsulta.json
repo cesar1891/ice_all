@@ -1,0 +1,15 @@
+{
+    tiposConsulta: [{
+		"key": "1",
+		"value": "Datos Generales"
+	},{
+        "key": "2",
+        "value": "Agentes"
+    }/*,{
+        "key": "3",
+        "value": "Coberturas"
+    },{
+        "key": "4",
+        "value": "Situaciones"
+    }*/]
+}

@@ -1,0 +1,111 @@
+{
+"attrBasico":[
+    {
+        '(id)': 'superpanel'
+    }],
+"attrFormulario":[{titulo: 'titulo',tipo: 'FormPanel',nombre: 'nombre panel',height: '200',width: '350'}],
+"attrWindow":[{titulo: 'titulo',tipo: 'Win'}],
+"attrBorder":[{tipo: 'Border'}],
+"attrBorderSur":[{tipo: 'Column'}],
+"attrColumnas":[{titulo: 'titulo',tipo: 'Column',nombre: 'nombre panel',height: '200',width: '350'}],
+"attrTabs":[{titulo: 'titulo',tipo: 'Tabs',nombre: 'nombre panel',height: '200',width: '350'}],
+"attrTabsIn":[{tipo: 'Column'}],
+"attrAcordion":[{titulo: 'titulo',tipo: 'Acordion',nombre: 'nombre panel'}],
+"attrAcordionIn":[{tipo: 'Column'}],
+"attrText":[{nombre: 'Texto',etiqueta: 'texto',isRequerido: 'false',tipo: 'TextField',isAnchor:'95',width : 0,etiqueta_width:100,isBloqueado:false,textoSugerido:'',textoMaxMsg:'',textoMax:0,textoMinMsg:'',textoMin:0,soloLectura:false,toolTip:'',texto:''}],
+"attrNumeric":[{nombre: 'Texto',etiqueta: 'texto',etiqueta_width:100,height: '200',isAnchor:'95',isBloqueado:false,tipo: 'NumberField',texto:'0',valorMax:0,valorMin:0,isFlechas:true}],
+"attrPicker":[
+        {
+        nombre: 'Texto',
+        etiqueta: 'texto',
+        tipo: 'DateField',
+        textoMax:10,
+        textoMaxMsg:'Verifica el formato de la fecha',
+        textoMin:10,
+        textoMinMsg:'Verifica el formato de la fecha'        
+    }],
+"attrCheck":[{
+        tipo: 'CheckboxField'
+    }],
+"attrRadio":[{
+        tipo: 'RadioField'
+    }],
+"attrBoton":[{
+        tipo: 'FileButton'
+    }],
+"attrCombo":[{tipo: 'ComboBox'}],
+"lista_etiqueta_Aling":[
+		{key: 'left', value:'left'},
+		{key: 'top', value:'top'},
+		{key: 'right', value:'right'}
+	],
+"lista_IconCls":[
+		{key: 'icon_accept', value:'icon_accept'},
+		{key: 'icon_cancel', value:'icon_cancel'},
+		{key: 'icon_copy', value:'icon_copy'},
+		{key: 'icon_paste', value:'icon_paste'},
+		{key: 'icon_save', value:'icon_save'}
+	],
+"lista_IconAling":[
+		{key: 'top', value:'top'},
+		{key: 'right', value:'right'},
+		{key: 'bottom', value:'bottom'},
+		{key: 'left', value:'left'}
+	],
+"lista_titulo_Posicion":[
+		{key: 'top', value:'top'},
+		{key: 'right', value:'right'},
+		{key: 'bottom', value:'bottom'},
+		{key: 'left', value:'left'}
+	],
+"lista_Modo":[{key: 'local', value:'local'},{key: 'remote', value:'remote'}],   
+"lista_SelectAction":[{key: 'all', value:'all'},{key: 'last', value:'last'},{key: 'query', value:'query'}],    
+"lista_ValorDisplay":[{key: 'key', value:'key'},{key: 'value', value:'value'}],   
+"lista_ValorId":[{key: 'key', value:'key'},{key: 'value', value:'value'}],  
+"lista_TituloAling":[{key: 'left', value:'left'},{key: 'right', value:'right'},{key: 'center', value:'center'}],
+"lista_Estilo":[{key: 'normal', value:'normal'},{key: 'submit', value:'submit'},{key: 'reset', value:'reset'}],
+"lista_WinEstilo":[{key: 'normal', value:'normal'},{key: 'pregunta', value:'pregunta'}],
+"lista_Escala":[{key: 'small', value:'small'},{key: 'medium', value:'medium'},{key: 'large', value:'large'}],
+"attrLabel":[{tipo: 'Label'}],
+"attrImagen":[{tipo: 'Imagen'}],
+"attrHidden":[{tipo: 'Hidden'}],
+"attrGrid":[{tipo: 'gridpanel'}],
+"lista_TipoDatos":[{key: 'string', value:'string'},{key: 'date', value:'date'},{key: 'float', value:'float'},
+{key: 'int', value:'int'},{key: 'boolean', value:'boolean'}],
+"attrGridDeff":[{texto: 'Columna A',width:80,tipoG:'string',dataIndex:'titulo'},{texto: 'Columna B',width:80,tipoG:'string',dataIndex:'titulo'}]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

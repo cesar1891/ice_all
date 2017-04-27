@@ -1,0 +1,66 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+	<include file="struts-default.xml" />
+
+	<package name="tablaCincoClaves" extends="json-default" namespace="/tablaCincoClaves">
+
+		<!-- 
+		Configuracion del Action con tipo de respuesta JSON, esto generara a partir
+		de los atributos la respuesta en formato JSON para el Reader de ExtJs 
+		-->
+		<action name="CatalogoClnatura" class="TablaCincoClavesAction" method="catalogoClnaturaJson">
+			<result name="success" type="json"/>
+		</action>
+		<action name="EditaTabla5ClavesCabecera" class="TablaCincoClavesAction" method="editaTabla5ClavesCabecera">
+			<result name="success" type="json"/>
+		</action>
+		<action name="ListaCincoClaves" class="TablaCincoClavesAction" method="listaCincoClavesJson">
+			<result name="success" type="json"/>
+		</action>
+		<action name="ListaAtributos" class="TablaCincoClavesAction" method=" listaAtributosJson">
+			<result name="success" type="json"/>
+		</action>
+		<action name="InsertarTabla" class="TablaCincoClavesAction" method="insertarTabla">
+			<result name="success" type="json"/>
+		</action>
+		<action name="InsertarClave" class="TablaCincoClavesAction" method="insertarClave">
+			<result name="success" type="json"/>
+		</action>
+		<action name="InsertarAtributo" class="TablaCincoClavesAction" method="insertarAtributo">
+			<result name="success" type="json"/>
+		</action>
+		<action name="EliminarClave" class="TablaCincoClavesAction" method="eliminarClave">
+			<result name="success" type="json"/>
+		</action>
+		<action name="EliminarAtributo" class="TablaCincoClavesAction" method="eliminarAtributo">
+			<result name="success" type="json"/>
+		</action>
+		<!-- Actions de consulta y asociacion de valores -->
+		<action name="ListaClavesEditable" class="ValoresTablaCincoClavesAction" method="listaDescripcionCincoClavesJson">
+			<result name="success" type="json"/>
+		</action>
+		<action name="ListaAtributosEditable" class="ValoresTablaCincoClavesAction" method="listaAtributosEditableJson">
+			<result name="success" type="json"/>
+		</action>
+		<action name="InsertarValoresTablaEditable" class="ValoresTablaCincoClavesAction" method="insertarValoresTablaEditable">
+			<result name="success" type="json"/>
+		</action>
+		<action name="GuardarCambiosClaves" class="ValoresTablaCincoClavesAction" method="guardarCambiosClaves">
+			<result name="success" type="json"/>
+		</action>
+		<action name="InsertarValoresTablaCincoClaves" class="ValoresTablaCincoClavesAction" method="insertarValoresTablaCincoClaves">
+			<result name="success" type="json"/>
+		</action>
+		<action name="BorrarValoresTablaCincoClaves" class="ValoresTablaCincoClavesAction" method="borrarValoresTablaCincoClaves">
+			<result name="success" type="json"/>
+		</action>
+		<action name="LimpiarSesionTablaCincoClaves" class="ValoresTablaCincoClavesAction" method="limpiarSesionTablaCincoClaves">
+			<result name="success" type="json"/>
+		</action>
+		
+	</package>
+
+</struts>
+

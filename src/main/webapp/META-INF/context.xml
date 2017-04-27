@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context crossContext="true" path="/gseguros" reloadable="true">
+    <!-- DESARROLLO
+    <Resource name="jdbc/OracleDS" auth="Container" type="javax.sql.DataSource" 
+        maxActive="20" maxIdle="30" maxWait="10000" username="newice" password="newice"
+        driverClassName="oracle.jdbc.driver.OracleDriver"
+        url="jdbc:oracle:thin:@192.168.1.190:1527:acwqa">
+    </Resource-->
+    <!-- CALIDAD -->
+    <!-- <Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="20" maxIdle="30" maxWait="10000" name="jdbc/OracleDS" password="ice_configuring" type="javax.sql.DataSource" url="jdbc:oracle:thin:@192.168.1.190:1527:acwqa" username="ice_configuring">
+    </Resource> -->
+</Context>

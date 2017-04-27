@@ -1,0 +1,13 @@
+{
+    pagoDirecto: [{
+		"key": "1",
+		"value": "N\u00FAmero de tr\u00E1mite"
+	},{
+        "key": "2",
+        "value": "Factura"
+    },{
+        "key": "3",
+        "value": "Proveedor"
+    }
+    ]
+}

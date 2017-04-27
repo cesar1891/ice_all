@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       
+    <bean id="authenticationInterceptor" class="mx.com.gseguros.interceptors.AuthenticationInterceptor"/>
+    
+    <bean id="deviceInterceptor" class="mx.com.gseguros.interceptors.DeviceInterceptor"/>
+    
+    
+    <bean id="paginaPrincipalAction" class="mx.com.aon.portal.web.PaginaPrincipalAction" scope="prototype">
+    	<property name="paginaPrincipalManager" ref="paginaPrincipalManager"/>
+    </bean>
+    
+    <bean id="autenticacionAction" class="mx.com.aon.portal.web.AutenticacionAction" scope="prototype">
+    	<property name="loginManager" ref="loginManager"></property>
+    	<property name="navigationManager" ref="navigationManagerJdbcTemplate"></property>
+    </bean>
+    
+    <bean id="menuAction" class="mx.com.aon.portal.web.MenuAction" scope="prototype">
+    	<property name="menuPrincipalManagerJdbcTemplate" ref="menuPrincipalManagerJdbcTemplate"></property>
+    </bean>
+     <bean id="loadClientesRolesAction" class="mx.com.aon.portal.web.LoadClientesRolesAction" scope="prototype">
+         <property name="navigationManager" ref="navigationManagerJdbcTemplate"></property>
+		 <property name="principalManagerJdbcTemplate" ref="principalManagerJdbcTemplate" />
+         <property name="usuarioManager" ref="usuarioManager"></property>
+         <property name="navigationManagerNuevo" ref="navigationManagerImpl"></property>
+    </bean>
+
+     <!-- Acceso directo desde la Oficina Virtual de GS para acceder sin el login: -->
+     <bean id="accesoDirectoAction" class="mx.com.gseguros.portal.general.controller.AccesoDirectoAction" scope="prototype">
+         <property name="navigationManager" ref="navigationManagerJdbcTemplate"></property>
+		 <property name="principalManagerJdbcTemplate" ref="principalManagerJdbcTemplate" />
+         <property name="usuarioManager" ref="usuarioManager"></property>
+         <property name="loginManager" ref="loginManager"></property>
+    </bean>
+	
+</beans>

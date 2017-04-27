@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+    
+    <!-- Validacion de Formato de archivos: -->
+    
+    <bean id="validadorFormatoContext" class="mx.com.gseguros.portal.general.validacionformato.ValidadorFormatoContext">
+        <property name="validacionesFormatoStrategies">
+            <map key-type="mx.com.gseguros.portal.general.validacionformato.ValidadorFormatoContext.Strategy">
+                <entry key="VALIDACION_EXCEL" value-ref="excelValidacionesFormatoStrategyImpl" />
+                <entry key="VALIDACION_CSV" value-ref="csvValidacionesFormatoStrategyImpl" />
+            </map>
+        </property>
+	</bean>
+	
+	<bean id="excelValidacionesFormatoStrategyImpl" class="mx.com.gseguros.portal.general.validacionformato.ExcelValidacionesFormatoStrategyImpl"/>
+	
+	<bean id="csvValidacionesFormatoStrategyImpl" class="mx.com.gseguros.portal.general.validacionformato.CSVValidacionesFormatoStrategyImpl"/>
+	
+</beans>

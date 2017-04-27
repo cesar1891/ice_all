@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    
+    <package name="general" namespace="/general" extends="default">
+    
+        <action name="obtieneDatosAmbiente" class="environmentAction" method="obtieneDatosAmbiente">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="testFechasTimezone" class="environmentAction" method="testFechasTimezone">
+            <result name="success" type="json" />
+        </action>
+
+        <action name="ponFechas" class="environmentAction" method="ponFechas">
+            <result name="success" type="json" />
+        </action>
+    
+        <action name="includes/loadRecibos" class="recibosAction" method="loadRecibos">
+            <result name="success">/resources/scripts/consultaPolizas/includes/consultaRecibos.jsp</result>
+        </action>
+    
+        <action name="includes/obtieneRecibos" class="recibosAction" method="obtieneRecibos">
+            <result type="json"/>
+        </action>
+        
+        <action name="obtieneDetalleRecibo" class="recibosAction" method="obtieneDetalleRecibo">
+            <result type="json"/>
+        </action>
+        
+        <action name="reenvioDatosWS" class="webServicesAction">
+            <result>/jsp-script/general/reenvioDatosWS.jsp</result>
+        </action>
+        
+        <action name="obtienePeticionesWSFallidas" class="webServicesAction"
+			method="obtienePeticionesFallidasWS">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+					loadList.*,
+					success
+				</param>
+			</result>
+		</action>
+
+        <action name="obtienePayloadPeticionWS" class="webServicesAction"
+			method="obtienePayloadPeticionWS">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+					mensajeRespuesta,
+					success
+				</param>
+			</result>
+		</action>
+		
+        <action name="reenviaPeticionWS" class="webServicesAction"
+			method="reenviaPeticionWS">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+					mensajeRespuesta,
+					success
+				</param>
+			</result>
+		</action>
+
+        <action name="eliminaPeticionWS" class="webServicesAction"
+			method="eliminaPeticionWS">
+			<interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+					mensajeRespuesta,
+					success
+				</param>
+			</result>
+		</action>
+		
+		<action name="enviaCorreo" class="mailAction" method="enviaCorreo">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="error" class="endososAutoAction" method="buscarError">
+            <result name="success">/jsp-script/general/pantallaLogError.jsp</result>
+        </action>
+        
+        <action name="includes/loadRecibosSISA" class="recibosAction" method="loadRecibosSISA">
+            <result name="success">/resources/scripts/consultaPolizas/includes/consultaRecibosSISA.jsp</result>
+        </action>
+
+        <action name="loadRecibosSISA" class="recibosAction" method="loadRecibosSISA">
+            <result name="success">/resources/scripts/consultaPolizas/includes/consultaRecibosSISA.jsp</result>
+        </action>
+                        
+        <action name="obtenerDatosRecibosSISA" class="recibosAction" method="obtenerDatosRecibosSISA">
+            <result type="json"/>
+        </action>
+        
+        <action name="consolidarRecibos" class="recibosAction" method="consolidarRecibos">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result type="json" />
+        </action>
+        
+        <action name="desconsolidarRecibos" class="recibosAction" method="desconsolidarRecibos">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result type="json"/>
+        </action>
+        
+        <action name="obtieneDetalleReciboSISA" class="recibosAction" method="obtieneDetalleReciboSISA">
+            <result type="json"/>
+        </action>
+        
+        <action name="procesoObtencionReporte" class="recibosAction" method="procesoObtencionReporte">
+            <result name="success" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment; filename="${filename}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+        
+        <action name="procesoReporteRecibos" class="recibosAction" method="procesoReporteRecibos">
+            <result name="success" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment; filename="${filename}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+        
+        <action name="obtenerBitacoraConsolidacion" class="recibosAction" method="obtenerBitacoraConsolidacion">
+            <result type="json"/>
+        </action>
+        
+        <action name="obtenerLigaRecibo" class="recibosAction" method="obtenerLigaRecibo">
+            <result type="json"/>
+        </action>
+	</package>
+	
+</struts>

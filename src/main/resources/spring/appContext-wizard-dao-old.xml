@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="expresionesDAO" class="mx.com.gseguros.wizard.dao.ExpresionesDAO">
+       <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <bean id="ListaValoresDAO" class="mx.com.gseguros.wizard.configuracion.producto.dao.ListaValoresDAO">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <bean id="CatalogosWizardDAO" class="mx.com.gseguros.wizard.dao.CatalogosWizardDAO">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <bean id="atributosVariablesDao" class="mx.com.gseguros.wizard.configuracion.producto.dao.AtributoDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<bean id="productoDao" class="mx.com.gseguros.wizard.configuracion.producto.dao.ProductoDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<bean id="incisoDao" class="mx.com.gseguros.wizard.configuracion.producto.dao.IncisoDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<bean id="sumaAseguradaDAO" class="mx.com.gseguros.wizard.configuracion.producto.dao.SumaAseguradaDAO">
+       <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <bean id="tablaCincoClavesDAO" class="mx.com.gseguros.wizard.configuracion.producto.dao.TablaCincoClavesDAO">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+</beans>

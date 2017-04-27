@@ -1,0 +1,46 @@
+/* light header */
+/*
+#header {
+	background: #fff url(../images/header/gs_logo.gif) center no-repeat;
+}
+*/
+.header-dark #top {
+	color: #666;
+}
+
+#logo_left {
+	background: url(../images/header/light/logoleft.png) no-repeat;
+}
+
+#logo_right {
+	background: url(../images/header/light/logoright.png) no-repeat;
+}
+
+.font-selector,
+.width-selector {
+	background: url(../images/header/light/access-select.png) no-repeat;
+}
+
+.lrg .button {
+	background: url(../images/header/light/access-lrg.png);
+}
+
+.sml .button {
+	background: url(../images/header/light/access-sml.png);
+}
+
+.med .button {
+	background: url(../images/header/light/access-med.png);
+}
+
+.thin .button {
+	background: url(../images/header/light/access-thin.png);
+}
+
+.wide .button {
+	background: url(../images/header/light/access-wide.png);
+}
+
+.fluid .button {
+	background: url(../images/header/light/access-fluid.png);
+}

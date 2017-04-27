@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    
+    <package name="mesacontrol" namespace="/mesacontrol" extends="default">
+    
+        <action name="principal" class="MesaControlAction" method="principal">
+            <result name="success">/jsp/extjs4/mesacontrol/principal.jsp</result>
+        </action>
+        <action name="loadTareas" method="loadTareas" class="MesaControlAction">
+            <result name="success" type="json" />
+        </action>
+        <action name="guardarTramiteManual" method="guardarTramiteManual" class="MesaControlAction">
+            <result name="success" type="json" />
+        </action>
+        <action name="guardarTramiteDinamico" method="guardarTramiteDinamico" class="MesaControlAction">
+            <result name="success" type="json" />
+        </action>
+        <action name="actualizarStatusTramite" method="actualizarStatusTramite" class="MesaControlAction">
+            <result name="success" type="json" />
+        </action>
+        <action name="reasignarTramiteIndividual" method="reasignarTramiteIndividual" class="MesaControlAction">
+            <result name="success" type="json" />
+        </action>
+        <action name="turnarAutorizacionServicio" method="turnarAutorizacionServicio" class="MesaControlAction">
+            <result name="success" type="json" />
+        </action>
+        <action name="turnarAOperadorReclamacion" method="turnarAOperadorReclamacion" class="MesaControlAction">
+            <result name="success" type="json" />
+        </action>
+        <action name="actualizaComentariosTramite" method="actualizaComentariosTramite" class="MesaControlAction">
+            <result name="success" type="json" />
+        </action>
+        <action name="obtenerDetallesTramite" method="obtenerDetallesTramite" class="MesaControlAction">
+            <result name="success" type="json" />
+        </action>
+        <action name="finalizarDetalleTramiteMC" method="finalizarDetalleTramiteMC" class="MesaControlAction">
+            <result name="success" type="json" />
+        </action>
+		<action name="reversaTramite" method="regenerarReverso" class="MesaControlAction">
+            <result name="success" type="json" />
+        </action>
+        <action name="loadTareasSuper" method="loadTareasSuper" class="MesaControlAction">
+            <result name="success" type="json" />
+        </action>
+        <action name="mcdinamica" class="MesaControlAction" method="mcdinamica">
+            <result name="success">/jsp/extjs4/mesacontrol/mcdinamica.jsp</result>
+        </action>
+        <action name="loadTareasDinamico" method="loadTareasDinamico" class="MesaControlAction">
+            <result name="success" type="json" />
+        </action>
+        <action name="regresarEmisionEnAutori" method="regresarEmisionEnAutori" class="MesaControlAction">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result name="success" type="json" />
+        </action>
+        <action name="movimientoDetalleTramite" method="movimientoDetalleTramite" class="MesaControlAction">
+            <result name="success" type="json" />
+        </action>
+        <action name="validarAntesDeTurnar" class="MesaControlAction" method="validarAntesDeTurnar">
+            <result name="success" type="json" />
+        </action>
+        <action name="reasignarTramitesBloque" class="MesaControlAction" method="reasignarTramitesBloque">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result name="success" type="json" />
+        </action>
+    </package>
+
+</struts>

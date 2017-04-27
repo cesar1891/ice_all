@@ -1,0 +1,11 @@
+{
+    nivelReclamo: [
+        {
+            "key": "1",
+            "value": "Datos Generales"
+        },{
+            "key": "2",
+            "value": "Detalle Reclamo"
+        }
+    ]
+}

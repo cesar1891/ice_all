@@ -1,0 +1,103 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+	<include file="struts-default.xml" />
+
+	<package name="expresiones" extends="json-default" namespace="/expresiones">
+
+		<!--
+		Redireccionamiento de action a jsp 
+		-->
+		<action name="Expresiones" class="ExpresionesAction">
+			<result name="input">/WEB-INF/jsp/productos/expresiones/expresiones.jsp</result>
+		</action>
+		
+		<action name="ExpresionesWindow" class="ExpresionesAction">		
+			 <result name="input">/WEB-INF/jsp/productos/expresiones/expresionesDiv.jsp</result>			 
+		</action>
+		
+		<action name="Complex" class="ExpresionesAction">
+			<result name="input">/WEB-INF/jsp/productos/expresiones/complex.jsp</result>
+		</action>
+
+		<action name="ValidarExpresion" class="ExpresionesAction" method="validarExpresion">
+			<result name="success" type="json"/>				
+		</action>
+		
+		<action name="LimpiarSesion" class="ExpresionesAction" method="limpiarSesion">
+			<result name="success" type="json"/>				
+		</action>
+		
+		<!-- 
+		Configuracion del Action con tipo de respuesta JSON, esto generara a partir
+		de los atributos la respuesta en formato JSON para el Reader de ExtJs 
+		-->
+		<action name="Test" class="ExpresionesAction" method="test">
+			<result name="success" type="json"/>				
+		</action>
+		
+		
+		<action name="FuncionesArbol" class="ExpresionesAction" method="funcionesArbolJSON">
+			<result name="success" type="json">
+				<param name="root">listaFuncionesJson</param>
+			</result>
+		</action>
+		<action name="VariablesTemporalesArbol" class="ExpresionesAction" method=" variablesTemporalesArbolJSON">
+			<result name="success" type="json">
+				<param name="root">listaVariablesTemporalesJson</param>
+			</result>
+		</action>
+		<action name="CamposDelProductoArbol" class="ExpresionesAction" method="camposDelProductoArbolJSON">
+			<result name="success" type="json">
+				<param name="root">listaCamposDelProductoJson</param>
+			</result>
+		</action>
+		
+		<action name="ComboVariables" class="ExpresionesAction" method="listaComboVariablesJSON">
+			<result name="success" type="json"/>				
+		</action>
+		<action name="ComboTabla" class="ExpresionesAction" method="listaTablaJSON">
+			<result name="success" type="json"/>				
+		</action>
+		<action name="ComboColumna" class="ExpresionesAction" method="listaColumnaJSON">
+			<result name="success" type="json"/>				
+		</action>
+		<action name="ComboClave" class="ExpresionesAction" method="listaClaveJSON">
+			<result name="success" type="json"/>				
+		</action>
+		<!-- 
+		<action name="GridClave" class="ExpresionesAction" method="listaPropertyGridJSON">
+			<result name="success" type="json"/>				
+		</action>
+		 -->
+		<action name="AgregarClave" class="ExpresionesAction" method="llenarClave">
+			<result name="success" type="json"/>				
+		</action>
+		<action name="AgregarVariable" class="ExpresionesAction" method="agregarVariable">
+			<result name="success" type="json"/>				
+		</action>
+		<action name="AgregarExpresion" class="ExpresionesAction" method="agregarExpresion">
+			<result name="success" type="json"/>				
+		</action>
+		
+		<action name="EditarExpresion" class="ExpresionesAction" method="editarExpresion">
+			<result name="success" type="json"/>				
+		</action>
+		
+		<action name="EliminarVariable" class="ExpresionesAction" method="eliminarVariable">
+			<result name="success" type="json"/>				
+		</action>
+		
+		<action name="ExisteExpresion" class="ExpresionesAction" method="existeExpresion">
+			<result name="success" type="json"/>				
+		</action>
+		
+		<!-- <action name="EliminarExpresionSession" class="ExpresionesAction" method="eliminarExpresionSession">
+			<result name="success" type="json"/>				
+		</action> -->
+		
+	</package>
+
+</struts>
+

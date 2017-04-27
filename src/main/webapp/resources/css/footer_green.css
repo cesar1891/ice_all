@@ -1,0 +1,32 @@
+/* green footer */
+body.footer-green{
+	background: #698724;
+}
+
+#footer {
+	background: #698724 url(../images/footer/green/footer-bg.png) repeat-x;
+}
+
+#footer li {
+	border-bottom: 1px dotted #A1C746;
+}
+
+#footer div.moduletable {
+	color: #fff;
+}
+
+#the-footer {
+	color: #ccc;
+}
+
+body.footer-green #footer a {
+	color: #fff;
+}
+
+body.footer-green #footer a:hover {
+	color: #000;
+}
+
+body.footer-green #footer h3 {
+	color: #333;
+}

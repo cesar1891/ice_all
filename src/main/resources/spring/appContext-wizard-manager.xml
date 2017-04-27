@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="AplicacionManager" class="mx.com.gseguros.wizard.configuracion.producto.service.impl.TablaApoyoManagerImpl">
+    	<property name="wizardDAO" ref="WizardDAOImpl"/>
+    	<property name="tablaApoyo">
+    		<map>
+    			<entry key="TIPO_SEGURO">
+    				<value>CTIPOSEGUR</value>
+    			</entry>
+    			<entry key="NATURALEZA">
+    				<value>TNATURA</value>
+    			</entry>
+    			<entry key="OBLIGATORIEDAD_ROL">
+    				<value>CINCISOCOMP</value>
+    			</entry>
+    			<entry key="LEYENDA_SUMA_ASEGURADA">
+    				<value>LABELGAR</value>
+    			</entry>
+    		</map>
+    	</property>
+	</bean>
+	
+	<bean id="ExpresionesManager" class="mx.com.gseguros.wizard.configuracion.producto.service.impl.ExpresionesManagerImpl" parent="abstractManagerJdbcTemplateInvoke">
+        <property name="abstractDAO">
+            <ref bean="expresionesDAO"/>
+        </property>
+   	</bean>
+   	
+	<bean id="ListaDeValoresManagerJdbcTemplate" class="mx.com.gseguros.wizard.configuracion.producto.service.impl.ListaDeValoresManagerJdbcTemplateImpl" parent="abstractManagerJdbcTemplateInvoke">
+            <property name="abstractDAO">
+                <ref bean="ListaValoresDAO"/>
+            </property>
+    </bean>
+    
+    <bean id="CoberturaManager" class="mx.com.gseguros.wizard.configuracion.producto.service.impl.CoberturaManagerImpl" parent="abstractManagerJdbcTemplateInvoke">
+ 		<property name="abstractDAO">
+                <ref bean="CatalogosWizardDAO"/>
+        </property>
+	</bean>
+    
+    
+    <!-- PARA ENDPOINTS SIN COREGIR -->
+    
+    <bean id="AtributosVariablesManager" class="mx.com.gseguros.wizard.configuracion.producto.service.impl.AtributosVariablesManagerImpl" parent="abstractManagerJdbcTemplateInvoke">
+    	<property name="abstractDAO">
+    		<ref bean="atributosVariablesDao" />
+    	</property>
+    	
+	</bean>
+	
+	<bean id="TreeManager" class="mx.com.gseguros.wizard.configuracion.producto.service.impl.TreeManagerImpl" parent="abstractManagerJdbcTemplateInvoke">
+    	<property name="abstractDAO">
+    		<ref bean="productoDao" />
+    	</property>
+	</bean>
+    
+    <bean id="catalogManager" class="mx.com.gseguros.wizard.service.impl.CatalogServiceImpl" >
+    </bean>
+    
+    <bean id="ProductoManager" class="mx.com.gseguros.wizard.configuracion.producto.service.impl.ProductoManagerImpl" parent="abstractManagerJdbcTemplateInvoke">
+         
+        <property name="abstractDAO">
+    		<ref bean="productoDao" />
+    	</property>
+    </bean>
+	
+	<bean id="planesConfiguracionManager" class="mx.com.gseguros.wizard.configuracion.producto.planes.service.impl.PlanesConfiguracionManagerImpl"  parent="abstractManagerJdbcTemplateInvoke">
+		<property name="abstractDAO">
+    		<ref bean="productoDao" />
+    	</property>
+    </bean>
+    
+    <bean id="IncisoManager" class="mx.com.gseguros.wizard.configuracion.producto.service.impl.IncisoManagerImpl" parent="abstractManagerJdbcTemplateInvoke">
+    	<property name="abstractDAO">
+    		<ref bean="incisoDao" />
+    	</property>
+	</bean>
+	
+	<!-- sumaAseguradaManagerJdbcTemplateImpl -->
+	<bean id="sumaAseguradaManagerJdbcTemplateImpl" class="mx.com.gseguros.wizard.configuracion.producto.service.impl.SumaAseguradaManagerJdbcTemplateImpl" parent="abstractManagerJdbcTemplateInvoke">
+    	<property name="abstractDAO">
+        	<ref bean="sumaAseguradaDAO"/>
+		</property>
+	</bean>
+	
+    <bean id="TablaCincoClavesManagerJdbcTemplateImpl" class="mx.com.gseguros.wizard.configuracion.producto.service.impl.TablaCincoClavesManagerJdbcTemplateImpl" parent="abstractManagerJdbcTemplateInvoke">
+            <property name="abstractDAO">
+                <ref bean="tablaCincoClavesDAO"/>
+            </property>
+    </bean>
+   
+   
+    <bean id="ReglaNegocioManager" 
+		  class="mx.com.gseguros.wizard.configuracion.producto.service.impl.ReglaNegocioManagerImpl" scope="prototype">
+ 		<property name="wizardDAO" ref="WizardDAOImpl"/>
+	</bean>
+	
+	<bean id="ConceptosCoberturaManager" class="mx.com.gseguros.wizard.configuracion.producto.service.impl.ConceptosCoberturaManagerImpl"  scope="prototype">
+ 		<property name="wizardDAO" ref="WizardDAOImpl"/>
+	</bean>
+	
+	<bean id="RolManager" class="mx.com.gseguros.wizard.configuracion.producto.service.impl.RolManagerImpl" scope="prototype">
+ 		<property name="wizardDAO" ref="WizardDAOImpl"/>
+	</bean>
+	
+	<bean id="TipoObjetoManager" class="mx.com.gseguros.wizard.configuracion.producto.service.impl.TipoObjetoManagerImpl">
+ 		<property name="wizardDAO" ref="WizardDAOImpl"/>
+	</bean>
+	
+	<bean id="DatosFijosManager" class="mx.com.gseguros.wizard.configuracion.producto.service.impl.DatosFijosManagerImpl">
+ 		<property name="wizardDAO" ref="WizardDAOImpl"/>
+	</bean>
+	
+	<bean id="ReglaValidacionManager" class="mx.com.gseguros.wizard.configuracion.producto.service.impl.ReglaValidacionManagerImpl">
+ 		<property name="wizardDAO" ref="WizardDAOImpl"/>
+	</bean>
+	
+    
+</beans>

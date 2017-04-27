@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<package name="wizard" namespace="/wizard" extends="default">
+	
+	    <!-- ENTRADA A WIZARD DE PARAMETRIZACION: -->
+        <action name="parametrizador" class="ExpresionesAction" method="entrarWizard">
+            <result name="success">/jsp/wizard/indexWithIframe.jsp</result>
+        </action>
+	
+		<action name="ComboTabla" class="ExpresionesAction" method="listaTablaJSON">
+			<result name="success" type="json"/>				
+		</action>
+		<action name="ComboColumna" class="ExpresionesAction" method="listaColumnaJSON">
+			<result name="success" type="json"/>				
+		</action>
+		<action name="ComboClave" class="ExpresionesAction" method="listaClaveJSON">
+			<result name="success" type="json"/>				
+		</action>
+				
+				
+		<action name="LimpiarSesionCargaManual" class="ListaDeValoresAction" method="borraSesionCargaManual">
+            <result name="success" type="json"/>      
+        </action>
+        
+        <action name="CargaCombosCoberturas" class="PrincipalCoberturasAction" method="cargaCombosCoberturas">
+			<!-- <result name="input">/WEB-INF/jsp/productos/coberturas/principalCoberturas.jsp</result> -->
+            <result name="success" type="json"/>                
+		</action>
+		
+		<action name="AgregaCobertura" class="PrincipalCoberturasAction" method="agregaCobertura">
+			<!-- <result name="input">/WEB-INF/jsp/productos/coberturas/principalCoberturas.jsp</result> -->
+            <result name="success" type="json"/>                
+		</action>
+
+		<action name="ArbolListaProductos" class="ArbolProductosAction" method="listaProductosJson">
+			<result name="success" type="json">
+				<param name="root">listaProductos</param>
+			</result>
+		</action>
+		<action name="SubirCodigosASession" class="ArbolProductosAction" method="subirCodigosASession">
+			<result name="success" type="json"/>
+		</action>
+		
+		<action name="LlenandoProductos" class="ArbolProductosAction" method="llenandoEstructuraProducto">
+			<result name="success" type="json"/>
+		</action>
+		
+		<action name="RemueveCosasDeSessionEnLibrerias" class="PrincipalLibreriasAction" method="remueveCosasDeSessionEnLibrerias">
+            <result name="success" type="json"/>      
+		</action>
+		
+	</package>
+
+</struts>
+

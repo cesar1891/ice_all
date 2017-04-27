@@ -1,0 +1,45 @@
+/* dark header */
+#header {
+	background: #3c3c3c url(../images/header/dark/header-bg.png) repeat-x;
+}
+
+.header-dark #top {
+	color: #999;
+}
+
+#logo_left {
+	background: url(../images/header/dark/logoleft.png) no-repeat;
+}
+
+#logo_right {
+	background: url(../images/header/dark/logoright.png) no-repeat;
+}
+
+.font-selector,
+.width-selector {
+	background: url(../images/header/dark/access-select.png) no-repeat;
+}
+
+.lrg .button {
+	background: url(../images/header/dark/access-lrg.png);
+}
+
+.sml .button {
+	background: url(../images/header/dark/access-sml.png);
+}
+
+.med .button {
+	background: url(../images/header/dark/access-med.png);
+}
+
+.thin .button {
+	background: url(../images/header/dark/access-thin.png);
+}
+
+.wide .button {
+	background: url(../images/header/dark/access-wide.png);
+}
+
+.fluid .button {
+	background: url(../images/header/dark/access-fluid.png);
+}

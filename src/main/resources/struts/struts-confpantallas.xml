@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="confpantallas" namespace="/confpantallas" extends="struts-default, json-default">
+
+		<action name="grabapanel" class="mx.com.gseguros.confpantallas.action.GrabaPanel">
+			<result type="json"/>
+		</action>
+		
+		<action name="cargainfoFER" class="mx.com.gseguros.confpantallas.action.CargaInfo">
+			<result name="SUCCESS">/jsp/confpantallas/comboresp.jsp</result>
+		</action>
+		<action name="cargainfo" class="cargaInfoAction">
+            <result type="json"/>
+        </action>
+
+		<action name="cargaColumnas" class="mx.com.gseguros.confpantallas.action.CargaColumnasAction">
+            <result type="json"/>
+        </action>
+
+        
+		<action name="pintapanelFER" class="mx.com.gseguros.confpantallas.action.PintaPanel">
+			<result name="SUCCESS">/jsp/confpantallas/commonJson.jsp</result>
+		</action>
+		<action name="pintapanel" class="pintaPanelAction">
+            <result type="json"/>
+        </action>
+        
+		<action name="pintatreepanelFER" class="mx.com.gseguros.confpantallas.action.PintaTreePanel">
+			<result name="success">/jsp/confpantallas/treepanel.jsp</result>
+		</action>
+		<action name="pintatreepanel" class="pintaTreePanelAction">
+            <result type="json"/>
+        </action>
+		
+		<action name="buscacontrolFER" class="mx.com.gseguros.confpantallas.action.BuscaControl">
+            <result name="SUCCESS">/jsp/confpantallas/data.jsp</result>
+        </action>
+        <action name="buscacontrol" class="buscaControlAction">
+            <result type="json">
+                <param name="root">atributos</param>
+            </result>
+        </action>
+
+		<action name="pintajson" class="mx.com.gseguros.confpantallas.action.PintaJson">
+			<result name="SUCCESS">/jsp/confpantallas/commonJson.jsp</result>
+		</action>
+		
+		<action name="cotizacionDemo" class="CotizacionAction" method="pantallaCotizacionDemo">
+			<result name="success">/jsp-script/proceso/emision/cotizacionDemo.jsp</result>
+		</action>
+		
+		<action name="guardaPantalla" class="generadorPantallasAction" method="guardaPantalla">
+            <result name="success">/jsp-script/proceso/emision/cotizacionDemo.jsp</result>
+        </action>
+        
+		<action name="openpanel" class="mx.com.gseguros.confpantallas.action.AbrePanelAction">
+            <result type="json"/>
+        </action>
+        
+
+	</package>
+
+</struts>

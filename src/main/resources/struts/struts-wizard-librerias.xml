@@ -1,0 +1,73 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+	<include file="struts-default.xml" />
+
+	<package name="librerias" extends="json-default" namespace="/librerias">
+
+		<!--
+		Redireccionamiento de action a jsp 
+		-->
+		
+		<action name="PrincipalLibrerias" class="PrincipalLibreriasAction">
+			<result name="input">/WEB-INF/jsp/librerias/principal/principalLibrerias.jsp</result>
+		</action>
+		<!-- Carga de librerias -->
+		<action name="CargaReglaNegocio" class="PrincipalLibreriasAction" method="cargaReglaNegocio">
+            <result name="input">/WEB-INF/jsp/librerias/principal/principalLibrerias.jsp</result>
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="CargaComboTipo" class="PrincipalLibreriasAction" method="cargaComboTipo">
+            <result name="input">/WEB-INF/jsp/librerias/principal/principalLibrerias.jsp</result>
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="CargaExpresionReglaNegocio" class="PrincipalLibreriasAction" method="cargaExpresionReglaNegocio">
+            <result name="input">/WEB-INF/jsp/librerias/principal/principalLibrerias.jsp</result>
+            <result name="success" type="json"/>      
+		</action>
+		
+		<!-- insercion de librerias -->
+		<action name="InsertaReglaNegocio" class="PrincipalLibreriasAction" method="insertaReglaNegocio">
+            <result name="input">/WEB-INF/jsp/librerias/principal/principalLibrerias.jsp</result>
+            <result name="success" type="json"/>      
+		</action>
+		<action name="InsertaReglaNegocioExp" class="PrincipalLibreriasAction" method="insertaReglaNegocioExp">
+            <result name="input">/WEB-INF/jsp/librerias/principal/principalLibrerias.jsp</result>
+            <result name="success" type="json"/>      
+		</action>
+		
+		<!-- 
+		Configuracion del Action con tipo de respuesta JSON, esto generara a partir
+		de los atributos la respuesta en formato JSON para el Reader de ExtJs 
+		-->
+		<action name="ListaCatalogoVariablesProducto" class="PrincipalLibreriasAction" method="listaCatalogoVariablesProducto">
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="ListaVariablesAsociadasAlProducto" class="PrincipalLibreriasAction" method="listaVariablesAsociadasAlProducto">
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="AsociarVariableAlProducto" class="PrincipalLibreriasAction" method="asociarVariableAlProducto">
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="DesasociarVariableDelProducto" class="PrincipalLibreriasAction" method="desasociarVariableDelProducto">
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="GuardarVariablesTemporalesDelProducto" class="PrincipalLibreriasAction" method="guardarVariablesTemporalesDelProducto">
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="borraVariableTemporal" class="PrincipalLibreriasAction" method="borraVariableTemporal">
+            <result name="success" type="json"/>      
+		</action>
+		
+		
+	</package>
+
+</struts>

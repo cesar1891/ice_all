@@ -1,0 +1,21 @@
+.icon-stretch_horizontally {
+    background-image: url(../images/imageviewer/stretch_horizontally.png) !important;
+}
+.icon-stretch_vertically {
+    background-image: url(../images/imageviewer/stretch_vertically.png) !important;
+}
+.icon-stretch_optimally {
+    background-image: url(../images/imageviewer/stretch_optimally.png) !important;
+}
+.icon-zoom_in {
+    background-image: url(../images/imageviewer/zoom_in.png) !important;
+}
+.icon-zoom_out {
+    background-image: url(../images/imageviewer/zoom_out.png) !important;
+}
+.icon-arrow_rotate_clockwise {
+    background-image: url(../images/imageviewer/arrow_rotate_clockwise.png) !important;
+}
+.icon-arrow_rotate_anticlockwise {
+    background-image: url(../images/imageviewer/arrow_rotate_anticlockwise.png) !important;
+}

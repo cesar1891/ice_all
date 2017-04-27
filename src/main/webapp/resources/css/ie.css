@@ -1,0 +1,931 @@
+/* EMPIEZA : Estilos para CARATULA DE POLIZA de Soriana */
+.CaratulaPoliza{
+	border : 1 solid Black;
+	margin : 2 2 2 2;
+}
+
+.Sucursales{
+	color : Black;
+	vertical-align : top;
+	padding : 2 2 2 2;
+	font : 7 Arial, Helvetica, sans-serif;
+}
+.Titulo1{
+	font : bold 11 Arial, Helvetica, sans-serif;
+	letter-spacing : 1px;
+}
+.TituloIMPORTANTE{
+	font : bold 10 Arial, Helvetica, sans-serif;
+	letter-spacing : 1px;
+}
+.Titulo2-Centrado{
+	font : bold 11 Arial, Helvetica, sans-serif;
+	text-align : center;
+}
+.Titulo2-Izquierda{
+	font : bold 11 Arial, Helvetica, sans-serif;
+	text-align : left;
+}
+
+.Titulo4-Centrado{
+	font : 10 Arial, Helvetica, sans-serif;
+	text-align : center;
+}
+.Titulo4-Izquierda{
+	font : 10 Arial, Helvetica, sans-serif;
+	text-align : left;
+}
+
+.Titulo3-Izquierda{
+	font : bold 10 Arial, Helvetica, sans-serif;
+	text-align : left;
+}
+.Titulo3-Centrado{
+	font : bold 10 Arial, Helvetica, sans-serif;
+	text-align : center;
+}
+.Titulo5-Izquierda{
+	font : bold 8 Arial, Helvetica, sans-serif;
+	text-align : left;
+}
+.Titulo5-Centrado{
+	font : bold 8 Arial, Helvetica, sans-serif;
+	text-align : center;
+}
+.Resultado-Derecha{
+	font : 12 "Courier New", Courier, monospace;
+	text-align : right;
+}
+.Resultado-Izquierda{
+	font : 12 "Courier New", Courier, monospace;
+	text-align : left;
+}
+.Resultado-Centrado{
+	font : 12 "Courier New", Courier, monospace;
+	text-align : center;
+}
+/* TERMINA : Estilos para CARATULA DE POLIZA de Soriana */
+
+A
+{
+    COLOR: #1F72A4;
+    TEXT-DECORATION: underline
+}
+A:visited
+{
+    COLOR: #000000;
+    TEXT-DECORATION: underline
+}
+A:active
+{
+    COLOR: #1F72A4;
+    TEXT-DECORATION: underline
+}
+A:hover
+{
+    COLOR: #000000;
+    TEXT-DECORATION: underline
+}
+
+
+A.menu
+{
+    COLOR: #000000;
+    TEXT-DECORATION: none
+}
+A.menu:visited
+{
+    COLOR: #000000;
+    TEXT-DECORATION: underline
+}
+A.menu:active
+{
+    COLOR: #000000;
+    TEXT-DECORATION: none
+}
+A.menu:hover
+{
+    COLOR: #000000;
+    TEXT-DECORATION: none
+}
+
+A.paginas
+{
+    COLOR: #FFFFFF;
+    TEXT-DECORATION: underline
+}
+
+A.paginas:visited
+{
+    COLOR: #FFFFFF;
+    TEXT-DECORATION: underline
+}
+A.paginas:active
+{
+    COLOR: #FFFFFF;
+    TEXT-DECORATION: underline
+}
+A.paginas:hover
+{
+    COLOR: #BABABA;
+    TEXT-DECORATION: none
+}
+
+BODY.poliza
+{
+    MARGIN: -10px;
+    COLOR: #000000;
+    BACKGROUND-COLOR: #ffffff
+}
+
+
+.textjustify {text-align: justify;}	
+.textjustifyhome 
+ {
+   text-align: justify;
+   FONT-SIZE: 12px;
+   FONT-FAMILY: Arial, Helvetica, sans-serif;
+ }	
+
+TD.col3LineaInf
+{
+    FONT-SIZE: 11px;
+    COLOR: #000000;
+    BORDER-BOTTOM: olive 1px solid;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #E7E7E7;
+}
+TD.col2LineaInf
+{
+    FONT-SIZE: 11px;
+    COLOR: #000000;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+	BORDER-BOTTOM: olive 1px solid;
+    BACKGROUND-COLOR: #CBCBCB
+}
+TD.col3LineaInfLetraRoja
+{
+	FONT-SIZE: 11px;
+	COLOR: Red;
+	BORDER-BOTTOM: olive 1px solid;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	BACKGROUND-COLOR: #E7E7E7;
+}
+TD.colLineaSup
+{
+    FONT-SIZE: 11px;
+    COLOR: #000000;
+    BORDER-TOP: olive 1px solid;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #E7E7E7;
+}
+TABLE.tablaconborders
+{
+    BORDER-RIGHT: olive 1px solid;
+    BORDER-TOP: olive 1px solid;
+    FONT-SIZE: 11px;
+    BORDER-LEFT: olive 1px solid;
+    COLOR: #000000;
+    BORDER-BOTTOM: olive 1px solid;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #E7E7E7;
+}
+.tdnumpoliza
+{
+    BORDER-RIGHT: black 1px;
+    BORDER-TOP: black 1px;
+    MARGIN: 3px;
+    BORDER-LEFT: black 1px;
+    BORDER-BOTTOM: black 1px;
+	FONT-SIZE: 10px;
+}
+.tdsubseccion
+{
+    BORDER-RIGHT: #000000 1px solid;
+    BORDER-TOP: #000000 1px solid;
+    FONT-WEIGHT: 400;
+    FONT-SIZE: 12px;
+    BACKGROUND: #d2d2d2;
+    MARGIN-BOTTOM: 1px;
+    BORDER-LEFT: #000000 1px solid;
+    BORDER-BOTTOM: #000000 1px solid;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Arial, Courier New, Sans-serif
+}
+.tdcontenido
+{
+    BORDER-RIGHT: #000000 1px solid;
+    BORDER-TOP: #000000 1px solid;
+    FONT-WEIGHT: 400;
+    FONT-SIZE: 10px;
+    MARGIN-BOTTOM: 2px;
+    BORDER-LEFT: #000000 1px solid;
+    BORDER-BOTTOM: #000000 1px solid;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Arial, Courier New, Sans-serif
+}
+.tdcontenidojus
+{
+    BORDER-RIGHT: #000000 1px solid;
+    BORDER-TOP: #000000 1px solid;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 6px;
+    MARGIN-BOTTOM: 2px;
+    BORDER-LEFT: #000000 1px solid;
+    BORDER-BOTTOM: #000000 1px solid;
+    FONT-FAMILY: Arial, Courier New, Sans-serif;
+    TEXT-ALIGN: justify
+}
+.tdbenef
+{
+    BORDER-RIGHT: #000000 1px solid;
+    BORDER-TOP: #000000 1px solid;
+    FONT-WEIGHT: 700;
+    FONT-SIZE: 14px;
+    MARGIN-BOTTOM: 2px;
+    BORDER-LEFT: #000000 1px solid;
+    BORDER-BOTTOM: #000000 1px solid;
+    FONT-FAMILY: Arial, Courier New, Sans-serif;
+    TEXT-ALIGN: justify
+}
+.tdcontenidoEncontrac
+{
+ 	BORDER-RIGHT: #000000 1px solid;
+    BORDER-TOP: #000000 1px solid;
+    FONT-SIZE: 9px;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Arial, Courier New, Sans-serif;
+	MARGIN-BOTTOM: 2px;
+    BORDER-LEFT: #000000 1px solid;
+    BORDER-BOTTOM: #000000 1px solid;
+	TEXT-ALIGN: justify
+}
+
+.tdcontenido10
+{
+ 	FONT-SIZE: 9px;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Arial, Courier New, Sans-serif;
+}
+
+
+
+.tdcontenido10b
+{
+    FONT-SIZE: 10px;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Arial, Courier New, Sans-serif;
+	font-weight: 700;
+	
+}
+
+.tdcontenido14
+{
+    FONT-SIZE: 14px;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Arial, Courier New, Sans-serif
+}
+
+.tdcontenido8
+{
+    FONT-SIZE: 8px;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Arial, Courier New, Sans-serif
+}
+
+input.titular{
+    BORDER-RIGHT: olive 0px solid;
+    BORDER-TOP: olive 0px solid;
+    FONT-SIZE: 11px;
+    BORDER-LEFT: olive 0px solid;
+    COLOR: #000000;
+    BORDER-BOTTOM: olive 0px solid;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #E7E7E7;
+}
+
+input.ReadOnlyFondoLink{
+    BORDER-RIGHT: olive 0px solid;
+    BORDER-TOP: olive 0px solid;
+    FONT-SIZE: 11px;
+    BORDER-LEFT: olive 0px solid;
+    COLOR: #000000;
+    BORDER-BOTTOM: olive 0px solid;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: transparent;
+	CURSOR:HAND;
+	TEXT-DECORATION: UNDERLINE;
+}
+
+input.ReadOnlyFondoB{
+    BORDER-RIGHT: olive 0px solid;
+    BORDER-TOP: olive 0px solid;
+    FONT-SIZE: 11px;
+    BORDER-LEFT: olive 0px solid;
+    COLOR: #000000;
+    BORDER-BOTTOM: olive 0px solid;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #FFFFFF;
+}
+
+input.ReadOnlyFondoAlterno{
+    BORDER-RIGHT: olive 0px solid;
+    BORDER-TOP: olive 0px solid;
+    FONT-SIZE: 11px;
+    BORDER-LEFT: olive 0px solid;
+    COLOR: #000000;
+    BORDER-BOTTOM: olive 0px solid;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #E7E7E7;
+}
+
+input.BotonLetrasRojas{
+	FONT-SIZE: 11px;
+	COLOR: #DC143C;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	BACKGROUND-COLOR: #E7E7E7;
+}
+FIELDSET.Grupo
+{
+    HEIGHT: 50px
+}
+
+.default
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 11px;
+    COLOR: #000000;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Verdana;
+    TEXT-DECORATION: none
+}
+
+.hogar
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 11px;
+    COLOR: #000000;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+.hogar:hover
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 11px;
+    COLOR: #000000;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Arial;
+    TEXT-DECORATION: underline
+}
+.blanco
+{
+    FONT-SIZE: 10px;
+    COLOR: #FFFFFF;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.titpagina
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 12px;
+    COLOR: #83866e;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+.titpoliza
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 14px;
+    COLOR: #000000;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.pie
+{
+    FONT-WEIGHT: regular;
+    FONT-SIZE: 11px;
+    COLOR: #ffffff;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+INPUT
+{
+    FONT-SIZE: xx-small;
+	
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #e1e1e1
+}
+.azul
+{
+    FONT-SIZE: xx-small;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #1F72A4
+}
+
+.barranavegacion
+{
+    FONT-SIZE: 11px;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+	COLOR:#1F72A4;
+    BACKGROUND-COLOR: #E9E9E9
+}
+TEXTAREA
+{
+    FONT-SIZE: xx-small;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #e1e1e1
+}
+SELECT
+{
+    FONT-SIZE: 10px;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #e1e1e1
+}
+P
+{
+    FONT-SIZE: 11px;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+TD
+{
+    FONT-SIZE: 11px;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.legal
+{
+    FONT-SIZE: 11px;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+TD.bienvenido
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    BACKGROUND-IMAGE: url(/images/bienvenidos.gif);
+    COLOR: #ffffff;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #ffffff
+}
+TD.col1
+{
+    FONT-SIZE: 11px;
+    COLOR: #000000;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #D9D9D9 
+}
+TD.col2
+{
+    FONT-SIZE: 11px;
+    COLOR: #000000;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #E7E7E7
+}
+.col2
+{
+    FONT-SIZE: 11px;
+    COLOR: #000000;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #E7E7E7
+}
+TD.col3
+{
+    FONT-SIZE: 11px;
+    COLOR: #000000;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #CBCBCB
+}
+
+.col3
+{
+    FONT-SIZE: 11px;
+    COLOR: #000000;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #CBCBCB
+}
+
+TD.col3derecha
+{
+    FONT-SIZE: 11px;
+    COLOR: #000000;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #E7E7E7;
+text-align:right;
+	
+}
+
+
+
+
+.hreftabla
+{
+    FONT-SIZE: 11px;
+    COLOR: black;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+.hreftabla:hover
+{
+    FONT-SIZE: 11px;
+    COLOR: #004659;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: underline
+}
+.hreftabla:visited
+{
+    FONT-SIZE: 11px;
+    COLOR: black;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: underline
+}
+.ptitle
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.plista
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 10px;
+    COLOR: #585858;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.titabla
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 11px;
+    COLOR: #ffffff;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #6D001F
+}
+.titpag
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 14px;
+    COLOR: #6D001F;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+.titpag2
+{
+    FONT-WEIGHT: regular;
+    FONT-SIZE: 14px;
+    COLOR: #1F72A4;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+.titpag2_nvo
+{
+    FONT-WEIGHT: regular;
+    FONT-SIZE: 14px;
+    COLOR: #FFFFFF;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+.titedocta
+{
+    FONT-WEIGHT: regular;
+    FONT-SIZE: 14px;
+    COLOR: #6D001F;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+.titabla2
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 11px;
+    COLOR: #585858;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.collage
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 11px;
+    COLOR: #ccd6c0;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.collageb
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: #ccd6c0;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.usuario
+{
+    FONT-SIZE: 9px;
+    BACKGROUND: url(/images/home/u.gif) #ffffff fixed no-repeat left center;
+    COLOR: #000000;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.contrasena
+{
+    FONT-SIZE: 9px;
+    BACKGROUND: url(/images/home/c.gif) #ffffff fixed no-repeat left center;
+    COLOR: #000000;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+BODY.autos
+{
+    BACKGROUND-IMAGE: url(/images/autos/a_bg.gif);
+    MARGIN: 0px;
+    COLOR: #000000;
+    BACKGROUND-COLOR: #FFFFFF
+}
+TD.menutopautos
+{
+    BACKGROUND-ATTACHMENT: fixed;
+    BACKGROUND-IMAGE: url(/images/autos/a_ppp.gif);
+    BACKGROUND-REPEAT: no-repeat;
+    BACKGROUND-COLOR: #cad0d4
+}
+TD.menutopautosbg
+{
+    BACKGROUND-IMAGE: url(/images/autos/a_mld.gif)
+}
+.atitle
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: #6e859e;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+BODY.vida
+{
+    BACKGROUND-IMAGE: url(/images/vida/v_bg.gif);
+    MARGIN: 0px;
+    COLOR: #000000;
+    BACKGROUND-COLOR: #FFFFFF
+}
+TD.menutopvida
+{
+    BACKGROUND-ATTACHMENT: fixed;
+    BACKGROUND-IMAGE: url(/images/vida/v_ppp.gif);
+    BACKGROUND-REPEAT: no-repeat;
+    BACKGROUND-COLOR: #ccd6c0
+}
+TD.menutopvidabg
+{
+    BACKGROUND-IMAGE: url(/images/vida/v_mld.gif)
+}
+.vtitle
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: #586944;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+BODY.salud
+{
+    BACKGROUND-IMAGE: url(/images/salud/s_bg.gif);
+    MARGIN: 0px;
+    COLOR: #000000;
+    BACKGROUND-COLOR: #FFFFFF
+}
+TD.menutopsalud
+{
+    BACKGROUND-ATTACHMENT: fixed;
+    BACKGROUND-IMAGE: url(/images/salud/s_ppp.gif);
+    BACKGROUND-REPEAT: no-repeat;
+    BACKGROUND-COLOR: #e9f0f1
+}
+TD.menutopsaludbg
+{
+    BACKGROUND-IMAGE: url(/images/salud/s_mld.gif)
+}
+.satitle
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: #75a5ac;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+BODY.hogar
+{
+    BACKGROUND-IMAGE: url(/images/hogar/h_bg.gif);
+    MARGIN: 0px;
+    COLOR: #000000;
+    BACKGROUND-COLOR: #FFFFFF
+}
+TD.menutophogar
+{
+    BACKGROUND-ATTACHMENT: fixed;
+    BACKGROUND-IMAGE: url(/images/hogar/h_ppp.gif);
+    BACKGROUND-REPEAT: no-repeat;
+    BACKGROUND-COLOR: #dbd0ba
+}
+TD.menutophogarbg
+{
+    BACKGROUND-IMAGE: url(/images/hogar/h_mld.gif)
+}
+.htitle
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: #aa2800;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+BODY.fianzas
+{
+    BACKGROUND-IMAGE: url(/images/fianzas/f_bg.gif);
+    MARGIN: 0px;
+    COLOR: #000000;
+    BACKGROUND-COLOR: #FFFFFF
+}
+TD.menutopfianzas
+{
+    BACKGROUND-ATTACHMENT: fixed;
+    BACKGROUND-IMAGE: url(/images/fianzas/f_ppp.gif);
+    BACKGROUND-REPEAT: no-repeat;
+    BACKGROUND-COLOR: #c9c9bd
+}
+TD.menutopfianzasbg
+{
+    BACKGROUND-IMAGE: url(/images/fianzas/f_mld.gif)
+}
+.ftitle
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: #45452f;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+BODY.servicio
+{
+    BACKGROUND-IMAGE: url(/images/izq/i_bg.gif);
+    MARGIN: 0px;
+    COLOR: #000000;
+    BACKGROUND-COLOR: #FFFFFF
+}
+TD.menutopservicio
+{
+    BACKGROUND-ATTACHMENT: fixed;
+    BACKGROUND-IMAGE: url(/images/izq/i_ppp.gif);
+    BACKGROUND-REPEAT: no-repeat;
+    BACKGROUND-COLOR: #d2d5be
+}
+TD.menutopserviciobg
+{
+    BACKGROUND-IMAGE: url(/images/izq/i_mld.gif)
+}
+.stitle
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: #83866e;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+BODY.provedor
+{
+    BACKGROUND-IMAGE: url(/images/salud/s_bg.gif);
+    MARGIN: 0px;
+    COLOR: #000000;
+    BACKGROUND-COLOR: #FFFFFF
+}
+TD.menutopprovedor
+{
+    BACKGROUND-ATTACHMENT: fixed;
+    BACKGROUND-IMAGE: url(/images/salud/s_ppp.gif);
+    BACKGROUND-REPEAT: no-repeat;
+    BACKGROUND-COLOR: #e9f0f1
+}
+TD.menutopprovedorbg
+{
+    BACKGROUND-IMAGE: url(/images/provedores/d_mld.gif)
+}
+.prtitle
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: #75a5ac;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+BODY.empleado
+{
+    MARGIN: 0px;
+    COLOR: #000000;
+    BACKGROUND-COLOR: #ffffff
+}
+TD.menutopempleado
+{
+    BACKGROUND-ATTACHMENT: fixed;
+    BACKGROUND-IMAGE: url(/images/acceso/a_ppp.gif);
+    BACKGROUND-REPEAT: no-repeat;
+    BACKGROUND-COLOR: #cad0d4
+}
+TD.menutopempleadobg
+{
+    BACKGROUND-IMAGE: url(/images/acceso/e_mld.gif)
+}
+.etitle
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: #6e859e;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+BODY.patrimonial
+{
+    BACKGROUND-IMAGE: url(/images/vida/v_bg.gif);
+    MARGIN: 0px;
+    COLOR: #000000;
+    BACKGROUND-COLOR: #FFFFFF
+}
+TD.menutoppatrimonial
+{
+    BACKGROUND-ATTACHMENT: fixed;
+    BACKGROUND-IMAGE: url(/images/vida/v_ppp.gif);
+    BACKGROUND-REPEAT: no-repeat;
+    BACKGROUND-COLOR: #ccd6c0
+}
+TD.menutoppatrimonialbg
+{
+    BACKGROUND-IMAGE: url(/images/patrimoniales/p_mld.gif)
+}
+.patitle
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: #586944;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+BODY.reaseguro
+{
+    BACKGROUND-IMAGE: url(/images/hogar/h_bg.gif);
+    MARGIN: 0px;
+    COLOR: #000000;
+    BACKGROUND-COLOR: #FFFFFF
+}
+TD.menutopreaseguro
+{
+    BACKGROUND-ATTACHMENT: fixed;
+    BACKGROUND-IMAGE: url(/images/hogar/h_ppp.gif);
+    BACKGROUND-REPEAT: no-repeat;
+    BACKGROUND-COLOR: #dbd0ba
+}
+TD.menutopreasegurobg
+{
+    BACKGROUND-IMAGE: url(/images/reaseguro/r_mld.gif)
+}
+.rtitle
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: #aa2800;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+BODY.fianzasc
+{
+    BACKGROUND-IMAGE: url(/images/fianzas/f_bg.gif);
+    MARGIN: 0px;
+    COLOR: #000
+}
+
+TABLE.tablaconborders
+{
+    BORDER-RIGHT: olive 1px solid;
+    BORDER-TOP: olive 1px solid;
+	BORDER-COLOR: #1D73A6;
+    FONT-SIZE: 11px;
+    BORDER-LEFT: olive 1px solid;
+	BORDER-COLOR: #1D73A6;
+
+    BORDER-BOTTOM: olive 1px solid;
+	BORDER-COLOR: #1D73A6;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #FFFFFF
+}
+
+TD.popup
+{
+    FONT-SIZE: 12px;
+    COLOR: #000000;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #FFFFFF;
+	TEXT-ALIGN: justify
+}
+
+.homesabias {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #990033;
+}
+.homenoticias {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	color: #990033;
+}
+.homecotenido {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+}
+
+.NombreEmpleado {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: 990033;
+}
+.clima {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	font-weight: bold;
+}

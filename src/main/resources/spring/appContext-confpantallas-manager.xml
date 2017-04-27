@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="generadorPantallasManagerImpl" class="mx.com.gseguros.confpantallas.service.impl.GeneradorPantallasManagerImpl">
+        <property name="generadorPantallasDAO" ref="generadorPantallasDAOImpl"></property>
+    </bean>
+    
+    <bean id="cargaPanelesManagerImpl" class="mx.com.gseguros.confpantallas.delegate.CargaPanelesManagerImpl">
+        <property name="dinamicDAO" ref="dinamicDAOImpl"></property>
+    </bean>
+    
+    <bean id="buscaControlManagerImpl" class="mx.com.gseguros.confpantallas.delegate.BuscaControlManagerImpl">
+        <property name="dinamicDAO" ref="dinamicDAOImpl"></property>
+    </bean>
+    
+    <bean id="controlesPredeterminadosManagerImpl" class="mx.com.gseguros.confpantallas.delegate.ControlesPredeterminadosManagerImpl">
+        <property name="dinamicDAO" ref="dinamicDAOImpl"></property>
+    </bean>
+    
+    
+</beans>

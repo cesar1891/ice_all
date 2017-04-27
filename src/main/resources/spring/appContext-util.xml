@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">  
+    
+    
+    <!-- Documentos -->
+    <bean id="documentosPolizaAction" class="mx.com.gseguros.portal.general.util.DocumentosPolizaAction" scope="prototype">
+        <property name="consultasManager" ref="consultasManagerImpl"/>
+    </bean>
+    
+    
+    <!-- Envio de correos -->
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+       <property name="host" value="${mail.host}" />
+        <property name="port" value="${mail.port}" />
+        <property name="username" value="${mail.username}" />
+        <property name="password" value="${mail.password}" />
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.debug">${mail.debug}</prop>
+                <prop key="mail.smtp.auth">${mail.smtp.auth}</prop>
+                <prop key="mail.smtp.starttls.enable">${mail.smtp.starttls.enable}</prop>
+            </props>
+        </property>
+    </bean>
+    
+    <bean id="mailSenderForSms" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="gseguros.com.mx" />
+        <property name="port" value="25" />
+        <property name="username" value="sisa@gsalud.com.mx" />
+        <property name="password" value="Smtps1s4.2015" />
+        
+        <property name="javaMailProperties">
+            <props>
+            	<prop key="mail.debug">true</prop>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.starttls.enable">false</prop>
+            </props>
+        </property>
+    </bean>
+    
+    <!-- Mensaje de mail por default // TODO: Eliminar y obtener la info de BD -->
+    <bean id="defaultMailMessage" class="org.springframework.mail.SimpleMailMessage">
+        <!-- <property name="from" value="${mail.from}" /> -->
+        <property name="subject">
+            <value><![CDATA[ Cotización solicitada ]]></value>
+        </property>
+        <property name="text">
+            <value>
+                <![CDATA[
+                    Estimado(a) cliente,
+                    anexamos a este e-mail la cotización solicitada y nos ponemos a sus apreciables órdenes.
+                    
+                    Atte:
+                    General de Seguros
+                ]]>
+            </value>
+       </property>
+    </bean>
+    
+    
+    
+    <!-- Spring Mail -->
+    <!-- <bean id="mailUtil" class="mx.com.aon.utils.MailUtil">
+        <property name="sender"><ref bean="mailSender"/></property>
+        <property name="abstractDAO">
+                <ref bean="parametroGeneralDAO"/>
+        </property>
+    </bean>
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+    </bean> -->
+    
+        <!-- <bean id="ftpUtil" class="mx.com.aon.utils.FTPUtil">
+        <property name="abstractDAO">
+                <ref bean="parametroGeneralDAO"/>
+        </property>
+    </bean> -->
+    
+    <!-- <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="smtp.bizmail.yahoo.com" />
+        <property name="port" value="587" />
+        <property name="username" value="ventasavs.sza@biosnettcs.com" />
+        <property name="password" value="avsbiosnet2013" />
+        
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.auth">false</prop>
+                <prop key="mail.smtp.starttls.enable">false</prop>
+            </props>
+        </property>
+    </bean> -->
+    <!-- <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="smtp.gmail.com" />
+        <property name="port" value="587" />
+        <property name="username" value="biosnettcs@gmail.com" />
+        <property name="password" value="biosnettcs2013" />
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+                <prop key="mail.smtp.starttls.required">true</prop>
+            </props>
+        </property>
+    </bean> -->
+
+
+    <!-- Quartz -->
+    <!-- <bean id="alertaJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="alertasUsuarioManager" />
+        <property name="targetMethod" value="getAlertasEmail" />
+    </bean>
+    
+    <bean id="cronTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+        <property name="jobDetail" ref="alertaJobDetail"/>
+        <property name="startDelay" value="10000" />
+        <property name="repeatInterval" value="1000" />
+    </bean>
+    
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+        <list>
+            <ref bean="cronTrigger" />
+        </list>
+        </property>
+    </bean> -->
+    
+</beans>

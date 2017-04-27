@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    
+    <package name="flujocotizacion" namespace="/flujocotizacion" extends="default">
+        
+        <action name="obtenCotizacion4" class="cotizacionVital" method="obtenerResultadosCotizacion">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="comprarCotizacion4" class="cotizacionVital" method="comprarCotizacion">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="resultadoCotizacionVital" class="cotizacionVital" method="cotizar">
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="ignoreSMDMethodInterfaces">false</param>
+            </interceptor-ref>
+            <result name="success" type="json" />
+            <!--<result  name="input">/jsp/flujos/cotizacion/resultCotizacion.jsp</result>-->
+            <!--<result  name="error">/jsp/flujos/cotizacion/capturaCotizacion.jsp</result>-->
+        </action>
+        
+        <!-- jtezva agregado -->
+        <action name="obtenerCoberturas4" class="cotizacionVital" method="obtenerCoberturas">
+            <result name="success" type="json" />
+        </action>
+        <action name="obtenerAyudaCoberturas4" class="cotizacionVital" method="obtenerAyudaCoberturas">
+            <result name="success" type="json" />
+        </action>
+        <!-- jtezva agregado -->
+        
+        
+        <!-- ######### Ejemplo de componentes de EXTJS #####################-->
+        <action name="ejemploComponentes" class="cotizarAction" method="entrarEjemplo" >
+              <result name="input">/jsp/flujos/cotizacion/componentesTest.jsp</result>
+        </action>
+        
+        <action name="generaDataEjemplo" class="cotizarAction" method="generaDataEjemplo" >
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="getDataEjemplo" class="cotizarAction" method="obtieneDataEjemplo" >
+            <result name="success" type="json" />
+        </action>
+        
+        <!-- <action name="cargarCatalogos" class="beanCatalogosAction" method="cargar">
+          <result name="success" type="json" />
+        </action> -->
+        
+        <!-- pantalla inicial -->
+        <action name="principal" class="agentesAction" method="principal">
+            <result name="success">/jsp/consultas/agentes/consultaAgentes.jsp</result>
+        </action>
+        
+        <action name="consultaDatosPolizaAgente" class="agentesAction"
+			method="obtieneAgentesPolizas">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+                    datosPolizaAgente.*,
+                    success
+                </param>
+			</result>
+		</action>
+
+        <action name="obtenerAgentePolizaPorPuntos" class="agentesAction"
+			method="obtenerAgentePolizaPorPuntos">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+                    datosPolizaAgente.*,
+                    success
+                </param>
+			</result>
+		</action>
+
+		 <action name="consultaGeneralAgente" class="agentesAction"
+			method="obtieneTiposAgente">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+                    datosGeneralesAgente.*,
+                    success
+                </param>
+			</result>
+		</action>
+                
+		<action name="guardaPorcentajeAgentes" class="agentesAction" method="guardaPorcentajeAgentes">
+	        <interceptor-ref name="json">
+	            <param name="enableSMD">true</param>
+	            <param name="ignoreSMDMethodInterfaces">false</param>
+	        </interceptor-ref>
+	        <result name="success" type="json"/>
+		</action>
+
+		<action name="guardaPorcentajeAgentesPorPuntos" class="agentesAction" method="guardaPorcentajeAgentesPorPuntos">
+	        <interceptor-ref name="json">
+	            <param name="enableSMD">true</param>
+	            <param name="ignoreSMDMethodInterfaces">false</param>
+	        </interceptor-ref>
+	        <result name="success" type="json"/>
+		</action>
+		
+		<action name="guardaEliminaPorcentajeAgentes" class="agentesAction" method="guardaEliminaPorcentajeAgentes">
+	         <result name="success" type="json" />
+        </action>
+
+		<action name="guardaEliminaPorcentajeAgentesPorPuntos" class="agentesAction" method="guardaEliminaPorcentajeAgentesPorPuntos">
+	         <result name="success" type="json" />
+        </action>
+		
+    </package>
+
+</struts>

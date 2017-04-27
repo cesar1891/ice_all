@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="seguridad" namespace="/seguridad" extends="struts-default, json-default">
+
+		<interceptors>
+			<interceptor name="authenticationInterceptor" class="authenticationInterceptor" />
+			<interceptor name="deviceInterceptor"         class="deviceInterceptor"/>
+			<interceptor-stack name="loggingStack">
+			    <interceptor-ref name="deviceInterceptor"/>
+				<interceptor-ref name="authenticationInterceptor" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		
+		
+		<action name="ArbolRolCliente" class="loadClientesRolesAction" method="jsonObtenRolesClientes">
+            <result name="success" type="json">         
+                <param name="root">listaRolCliente</param>
+            </result>
+        </action>
+        
+        <action name="regresaCodigo" class="loadClientesRolesAction" method="obtenCodigoTree">
+            <result name="success" type="json">
+                <param name="ignoreHierarchy">false</param>
+            </result>
+            <result name="input">/jsp/portal/treeRolElemento.jsp</result>
+            <result name="confcompleta" type="json">
+                <param name="ignoreHierarchy">false</param>
+            </result>
+        </action>
+        
+        <action name="seleccionaRolClienteJson" class="loadClientesRolesAction" method="obtenRolesClientes">
+            <result name="success" type="json" />
+            <result name="load"    type="json" />
+        </action>
+
+		<action name="login">
+			<interceptor-ref name="loggingStack"></interceptor-ref>
+			<result name="loginform">/jsp/portal/login.jsp</result>
+			<result name="loginform_movil" type="redirectAction">
+                <param name="actionName">application</param>
+                <param name="namespace">/touchApp</param>
+            </result>
+			<result name="tree" type="redirectAction">
+                <param name="actionName">seleccionaRolCliente</param>
+                <param name="namespace">/</param>
+            </result>
+            <result name="tree_movil" type="redirectAction">
+                <param name="actionName">application</param>
+                <param name="namespace">/touchApp</param>
+                <param name="estadoSesion">arbol</param>
+            </result>
+			<result name="load" type="redirectAction">
+                <param name="actionName">load</param>
+                <param name="namespace">/</param>
+            </result>
+            <result name="load_movil" type="redirectAction">
+                <param name="actionName">application</param>
+                <param name="namespace">/touchApp</param>
+                <param name="estadoSesion">menu</param>
+            </result>
+		</action>
+		
+		<action name="logout" class="autenticacionAction"
+            method="logoutUsuario">
+            <result name="success">/jsp/portal/login.jsp</result>
+        </action>
+        
+        <action name="mantenerSesionActiva" class="autenticacionAction" method="mantenerSesionActiva">
+            <result name="success">/jsp/portal/login.jsp</result>
+        </action>
+        
+        <action name="mantenerSesionUnica" class="autenticacionAction" method="mantenerSesionUnica">
+            <result type="json" />
+        </action>
+        
+        <action name="logoutJson" class="autenticacionAction" method="logoutUsuario">
+            <result type="json" />
+        </action>
+
+		<action name="existeUsuarioLDAP" class="autenticacionAction"
+			method="existeUsuarioLDAP">
+			<result name="success" type="json" />
+		</action>
+		
+		<action name="autenticaUsuario" class="autenticacionAction"
+			method="autenticaUsuario">
+			<result name="success" type="json" />
+		</action>
+		
+		<!-- Acceso directo desde la Oficina Virtual de GS para acceder sin el login: -->
+        <action name="accesoDirecto" class="accesoDirectoAction" method="accesoDirecto">
+            <result name="codigosPostales" type="redirectAction">
+                <param name="namespace">/catalogos</param>
+                <param name="actionName">codigosPostales</param>
+            </result>
+            <result name="login" type="redirectAction">
+                <param name="namespace">/seguridad</param>
+                <param name="actionName">login</param>
+            </result>
+            <result name="cotizador" type="redirectAction">
+                <param name="namespace">/emision</param>
+                <param name="actionName">cotizacion</param>
+                <param name="smap1.cdramo">${params.cdramo}</param>
+                <param name="smap1.cdtipsit">${params.cdtipsit}</param>
+            </result>
+            <result name="cotizadorAutoIndividual" type="redirectAction">
+                <param name="namespace">/emision</param>
+                <param name="actionName">cotizacionAutoIndividual</param>
+                <param name="smap1.cdramo">${params.cdramo}</param>
+                <param name="smap1.cdtipsit">${params.cdtipsit}</param>
+            </result>
+            <result name="cotizadorAutoFlotilla" type="redirectAction">
+                <param name="namespace">/emision</param>
+                <param name="actionName">cotizacionAutoFlotilla</param>
+                <param name="smap1.cdramo">${params.cdramo}</param>
+                <param name="smap1.cdtipsit">${params.cdtipsit}</param>
+                <param name="smap1.tipoflot">${params.tipoflot}</param>
+                <param name="smap1.turistas">${params.turistas}</param>
+            </result>
+            <result name="cotizadorGrupo" type="redirectAction">
+                <param name="namespace">/emision</param>
+                <param name="actionName">cotizacionGrupo</param>
+                <param name="smap1.cdramo">${params.cdramo}</param>
+                <param name="smap1.cdtipsit">${params.cdtipsit}</param>
+            </result>
+            <result name="cotizadorGrupo2" type="redirectAction">
+                <param name="namespace">/emision</param>
+                <param name="actionName">cotizacionGrupo2</param>
+                <param name="smap1.cdramo">${params.cdramo}</param>
+                <param name="smap1.cdtipsit">${params.cdtipsit}</param>
+            </result>
+		    <result name="consultaPolizas">/jsp/consultas/containerConsultasPolizas.jsp</result>
+		    <result name="consultaAsegurados" type="redirectAction">
+		    	<param name="namespace">/consultasAsegurado</param>
+		    	<param name="actionName">pantallaConsultasAsegurado</param>
+		    	<param name="params.nmpoliex">${params.nmpoliex}</param>
+				<param name="params.icodpoliza">${params.icodpoliza}</param>
+				<param name="params.cdperson">${params.cdperson}</param>
+				<param name="params.nmsituac">${params.nmsituac}</param>
+		    </result>
+		    <result name="rolInvalido">/jsp-script/general/rolInvalido.jsp</result>
+		    <result name="clienteUnico" type="redirectAction">
+                <param name="namespace">/catalogos</param>
+		        <param name="actionName">personas</param>
+                <param name="smap1.esSaludDanios">${params.esSaludDanios}</param>
+                <param name="smap1.ocultaBusqueda">${params.ocultaBusqueda}</param>
+                <param name="smap1.esCargaClienteNvo">${params.esCargaClienteNvo}</param>
+                <param name="smap1.cargaCP">${params.cargaCP}</param>
+                <param name="smap1.cargaTipoPersona">${params.cargaTipoPersona}</param>
+                <param name="smap1.modoRecuperaDanios">${params.modoRecuperaDanios}</param>
+                <param name="smap1.cveModo">${params.cveModo}</param>
+                <param name="smap1.tomarUnDomicilio">${params.tomarUnDomicilio}</param>
+                <param name="smap1.domicilioSimple">${params.domicilioSimple}</param>
+                <param name="smap1.cargaOrdDomicilio">${params.cargaOrdDomicilio}</param>
+		    </result>
+		    <result name="endosoPolizasNoSICAPS" type="redirectAction">
+                <param name="namespace">/endosos</param>
+                <param name="actionName">polizasNoSICAPS</param>
+            </result>
+            <result name="endosoDomicilioNOSICAPS" type="redirectAction">
+                <param name="namespace">/endosos</param>
+                <param name="actionName">endosoDomicilioNOSICAPS</param>
+            </result>
+		    <result name="endososAutos" type="redirectAction">
+                <param name="namespace">/endosos</param>
+                <param name="actionName">marcoEndosos</param>
+            </result>
+		    <result name="menuPrincipal" type="redirectAction">
+                <param name="namespace">/seguridad</param>
+                <param name="actionName">login</param>
+            </result>
+            <result name="mesaControlAgentes" type="redirectAction">
+                <param name="namespace">/mesacontrol</param>
+                <param name="actionName">mcdinamica</param>
+                <param name="smap1.gridTitle">${params.gridTitle}</param>    <!-- POLIZAS -->
+                <param name="smap2.pv_cdtiptra_i">${params.cdtiptra}</param> <!-- 1 -->
+                <param name="smap1.cddos">${params.cdramo}</param>           <!-- 2 -->
+                <param name="smap1.cdtres">${params.cdtipsit}</param>        <!-- SL -->
+                <param name="smap1.cdsiete">${params.mc}</param>             <!-- MCAGENTES -->
+            </result>
+            <result name="flujoMesaControl" type="redirectAction">
+                <param name="namespace">/flujomesacontrol</param>
+                <param name="actionName">mesaControl</param>
+                <param name="params.AGRUPAMC">${params.agrupamc}</param>
+            </result>
+            <result name="impresionDocumentos" type="redirectAction">
+                <param name="namespace">/consultas</param>
+                <param name="actionName">pantallaExplotacionDocumentos</param>
+            </result>
+            <result name="impresionRecibos" type="redirectAction">
+                <param name="namespace">/consultas</param>
+                <param name="actionName">pantallaExplotacionRecibos</param>
+            </result>
+            <result name="redirectSimple" type="redirectAction">
+                <param name="namespace">${params.namespace}</param>
+                <param name="actionName">${params.actionName}</param>
+            </result>
+            <result name="RstnCotiSalInd" type="redirectAction">
+                <param name="namespace">/emision</param>
+                <param name="actionName">cotizacion</param>
+                <param name="smap1.cdramo">${params.cdramo}</param>
+                <param name="smap1.cdtipsit">${params.cdtipsit}</param>
+                <param name="smap1.rstn">S</param>
+                <param name="smap1.caseIdRstn">${params.caseId}</param>
+            </result>
+            <result name="RstnCompSalInd" type="redirectAction">
+                <param name="namespace">/</param>
+                <param name="actionName">datosComplementarios</param>
+                <param name="map1.rstn">S</param>
+                <param name="map1.ntramite">${params.showCase}</param>
+                <param name="map1.caseIdRstn">${params.caseId}</param>
+            </result>
+            <result name="RstnCotiSalCol" type="redirectAction">
+                <param name="namespace">/emision</param>
+                <param name="actionName">cotizacionGrupo2</param>
+                <param name="smap1.cdramo">${params.cdramo}</param>
+                <param name="smap1.cdtipsit">${params.cdtipsit}</param>
+                <param name="smap1.rstn">S</param>
+                <param name="smap1.caseIdRstn">${params.caseId}</param>
+            </result>
+            <result name="RstnCompSalCol" type="redirectAction">
+                <param name="namespace">/emision</param>
+                <param name="actionName">cotizacionGrupo2</param>
+                <param name="smap1.rstn">S</param>
+                <param name="smap1.ntramiteRstn">${params.showCase}</param>
+                <param name="smap1.emitirRstn">${params.issue}</param>
+                <param name="smap1.caseIdRstn">${params.caseId}</param>
+            </result>
+            <result name="RstnConsAseg" type="redirectAction">
+                <param name="namespace">/consultasPoliza</param>
+                <param name="actionName">initConsultaAseguradosPoliza</param>
+                <param name="params.ntramite">${params.showCase}</param>
+            </result>
+            <result name="RstnAutorizacionServ" type="redirectAction">
+                <param name="namespace">/siniestros</param>
+                <param name="actionName">autorizacionServicios</param>
+                <param name="params.caseIdRstn">${params.caseId}</param>
+            </result>
+            <result name="RstnAltaTramitePrevio" type="redirectAction">
+                <param name="namespace">/siniestros</param>
+                <param name="actionName">altaTramitePrevio</param>
+                <param name="params.caseIdRstn">${params.caseId}</param>
+            </result>
+            <result name="RstnAltaTramiteComplemento" type="redirectAction">
+                <param name="namespace">/siniestros</param>
+                <param name="actionName">complementoAltaTramite</param>
+                <param name="params.ntramite">${params.ntramite}</param>
+                <param name="params.caseIdRstn">${params.caseId}</param>
+            </result>
+            <result name="RstnConsutaSiniestros" type="redirectAction">
+                <param name="namespace">/consultasSiniestro</param>
+                <param name="actionName">consultaSiniestros</param>
+            </result>
+        </action>
+        
+        <action name="descargaDocInline" class="documentosPolizaAction" method="descargaDocumento">
+            <result name="success" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">inline; filename="${filename}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+        
+        <!-- crear carpeta desde Base de Datos -->
+        <action name="creaCarpeta" class="documentosPolizaAction" method="creaCarpeta">
+            <result name="success" type="json" />
+        </action>
+        <!-- lista archivos de un directorio -->
+        <action name="listarDirectorio" class="documentosPolizaAction" method="listarDirectorio">
+            <result name="success" type="json" />
+        </action>
+        <!-- crear carpeta desde Base de Datos -->
+        <action name="validaAgenteSIGS" class="renovacionAction" method="validaAgenteSIGS">
+            <result name="success" type="json" />
+        </action>
+        <!-- Lanzar recibos desde SIGS -->
+        <action name="manualWSrecibos" class="beanDatosComplementarios" method="ejecutaWSManualRecibos">
+            <result name="success" type="json" />
+        </action>
+	</package>
+	
+	<package name="loginApp" namespace="/touchApp" extends="struts-default, json-default">
+        <action name="application" class="ExternoAction" method="aplicacionMovil">
+            <result name="success">/touchApp/index.jsp</result>
+        </action>
+    </package>
+
+</struts>

@@ -1,0 +1,62 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+	<include file="struts-default.xml" />
+
+	<package name="tipoObjeto" extends="json-default" namespace="/tipoObjeto">
+
+		<!-- 
+		Configuracion del Action con tipo de respuesta JSON, esto generara a partir
+		de los atributos la respuesta en formato JSON para el Reader de ExtJs 
+		-->
+		<action name="TipoObjeto" class="TipoObjetoAction">
+			<result name="input">/WEB-INF/jsp/productos/tipoObjetos/principalTipoObjetos.jsp</result>
+		</action>
+		
+		<action name="CatalogoTipoDeObjeto" class="TipoObjetoAction" method="catalogoTipoDeObjeto">
+			<result name="input">/WEB-INF/jsp/productos/tipoObjetos/principalTipoObjetos.jsp</result>
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="AgregaTipoObjetoCatalogo" class="TipoObjetoAction" method="agregaTipoObjetoCatalogo">
+			<result name="input">/WEB-INF/jsp/productos/tipoObjetos/principalTipoObjetos.jsp</result>
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="CargaListaDatosVariablesObjeto" class="TipoObjetoAction" method="listaDatosVariablesObjetos">
+			<result name="input">/WEB-INF/jsp/productos/tipoObjetos/principalTipoObjetos.jsp</result>
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="AgregaDatosVariablesObjeto" class="TipoObjetoAction" method="agregarDatoVariableObjeto">
+			<result name="input">/WEB-INF/jsp/productos/tipoObjetos/principalTipoObjetos.jsp</result>
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="EliminaDatoVariableObjeto" class="TipoObjetoAction" method="eliminarDatoVariableObjeto">
+			<result name="input">/WEB-INF/jsp/productos/tipoObjetos/principalTipoObjetos.jsp</result>
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="ValidaHijosAtributoVariableObjeto" class="TipoObjetoAction" method="validaHijosAtributoVariableObjeto">
+            <result name="success" type="json"/>
+		</action>
+		
+		<action name="AgregaTipoObjetoInciso" class="TipoObjetoAction" method="insertaTipoObjetoInciso">
+			<result name="input">/WEB-INF/jsp/productos/tipoObjetos/principalTipoObjetos.jsp</result>
+            <result name="success" type="json"/>      
+		</action>
+		
+		<action name="BorraTipoObjetoInciso" class="TipoObjetoAction" method="eliminaTipoObjetoInciso">
+			<result name="input">/WEB-INF/jsp/productos/tipoObjetos/principalTipoObjetos.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		
+		<action name="LimpiarSesionesTipoObjeto" class="TipoObjetoAction" method="borraSesionesTipoObjeto">
+			<result name="input">/WEB-INF/jsp/productos/tipoObjetos/principalTipoObjetos.jsp</result>
+            <result name="success" type="json"/>      
+		</action>
+	</package>
+
+</struts>

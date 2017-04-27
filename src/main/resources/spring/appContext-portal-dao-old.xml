@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="combosDAO" class="mx.com.aon.portal.dao.CombosDAO">
+       <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <bean id="usuarioDAO" class="mx.com.aon.portal.dao.UsuarioDAO">
+       <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <bean id="paginaPrincipalDAO" class="mx.com.aon.portal.dao.PaginaPrincipalDAO">
+       <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <bean id="principalDAO" class="mx.com.aon.portal.dao.PrincipalDAO">
+       <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <bean id="procesoDao" class="mx.com.aon.portal.dao.ProcesoDAO">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <bean id="menuPrincipalDAO" class="mx.com.aon.portal.dao.MenuPrincipalDAO">
+       <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+</beans>

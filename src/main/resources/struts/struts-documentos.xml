@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="documentos" namespace="/documentos" extends="default">
+
+		<action name="descargaDocInline" class="documentosPolizaAction" method="descargaDocumento">
+			<result name="success" type="stream">
+				<param name="contentType">${contentType}</param>
+				<param name="inputName">fileInputStream</param>
+				<param name="contentDisposition">inline; filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		<action name="descargaDoc" class="documentosPolizaAction" method="descargaDocumento">
+            <result name="success" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment; filename="${filename}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+		
+		<action name="ventanaDocumentosPoliza" class="documentosPolizaAction" method="ventanaDocumentosPoliza">
+		    <result name="success">/jsp/extjs4/ventanaDocumentosPoliza.jsp</result>
+		</action>
+		
+		<action name="ventanaDocumentosPolizaClon" class="documentosPolizaAction" method="ventanaDocumentosPoliza">
+            <result name="success">/jsp/extjs4/ventanaDocumentosPoliza.jsp</result>
+        </action>
+		
+		<action name="ventanaDocumentosPolizaLoad" class="beanSubirArchivo" method="ventanaDocumentosPolizaLoad">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="generarContrarecibo" class="beanSubirArchivo" method="generarContrarecibo">
+            <result name="success" type="json" />
+        </action>
+
+        <action name="habilitaSigRec" class="beanSubirArchivo" method="habilitaSigRecibo">
+            <result name="success" type="json" />
+        </action>
+
+        <action name="regeneraReporte" class="documentosPolizaAction" method="regeneraReporte">
+            <result name="success" type="json" />
+        </action>
+
+        <action name="regeneraDocumentosEndoso" class="documentosPolizaAction" method="regeneraDocumentosEndoso">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="fusionarDocumentos" class="documentosPolizaAction" method="fusionarDocumentos">
+            <result name="error">/jsp-script/general/errorPantalla.jsp</result>
+            <result name="success" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment; filename="${filename}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+
+        <action name="actualizarNombreDocumento" class="beanSubirArchivo" method="actualizarNombreDocumento">
+            <result name="success" type="json" />
+        </action>
+
+        <action name="borrarDocumento" class="beanSubirArchivo" method="borrarDocumento">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="documentosXFamilia" class="documentosPolizaAction" method="documentosXFamilia">
+            <result name="success" type="json" />
+        </action>
+        
+        <action name="ejecutaFusionFam" class="documentosPolizaAction" method="ejecutaFusionFam">
+            <result name="success" type="json" />
+        </action>
+	</package>
+
+</struts>

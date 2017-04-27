@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="renovacionManagerImpl" class="mx.com.gseguros.portal.renovacion.service.impl.RenovacionManagerImpl">
+        <property name="renovacionDAO" ref="renovacionDAOImpl" />
+        <property name="pantallasDAO"  ref="pantallasDAOImpl"  />
+        <property name="cotizacionDAO" ref="cotizacionDAOImpl" />
+        <property name="ice2sigsService"         ref="ice2sigsServiceImpl"         />
+        <property name="recibosSigsService"      ref="recibosSigsServiceImpl"      />
+    </bean>
+</beans>

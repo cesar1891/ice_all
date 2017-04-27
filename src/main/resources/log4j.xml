@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <!-- Application appender -->
+    <!-- <appender name="app" class="org.apache.log4j.RollingFileAppender">
+        <param name="Threshold" value="INFO" />
+        <param name="File" value="/RES/ice_all/logs/gseguros/application.log" />
+        <param name="Append" value="true" />
+        <param name="MaxFileSize" value="50MB"/>
+        <param name="MaxBackupIndex" value="10"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} [%3.3t] %5.5p %18C{1} %X - %m%n" />
+        </layout>
+    </appender> -->
+    
+    <!-- Developer Appender (Ver todo) -->
+    <appender name="dev" class="org.apache.log4j.RollingFileAppender">
+        <param name="Threshold" value="DEBUG" />
+        <param name="File" value="/RES/ice_all/logs/gseguros/dev.log" />
+        <param name="Append" value="true" />
+        <param name="MaxFileSize" value="50MB"/>
+        <param name="MaxBackupIndex" value="10"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} [%X{USERID}] %-5p %-18C{1} - %m%n" />
+        </layout>
+    </appender>
+    
+    <!-- Error Appender (Errores) -->
+    <appender name="err" class="org.apache.log4j.RollingFileAppender">
+        <param name="Threshold" value="WARN" />
+        <param name="File" value="/RES/ice_all/logs/gseguros/err.log" />
+        <param name="Append" value="true" />
+        <param name="MaxFileSize" value="50MB"/>
+        <param name="MaxBackupIndex" value="10"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} [%X{USERID}] %-5p %-18C{1} - %m%n" />
+        </layout>
+    </appender>
+    
+    <!-- SQL Appender (Sentencias SQL) -->
+    <appender name="sql" class="org.apache.log4j.RollingFileAppender">
+        <param name="Threshold" value="INFO" />
+        <param name="File" value="/RES/ice_all/logs/gseguros/sql.log" />
+        <param name="Append" value="true" />
+        <param name="MaxFileSize" value="50MB"/>
+        <param name="MaxBackupIndex" value="10"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} [%X{USERID}] %-5p %-18C{1} - %m%n" />
+        </layout>
+    </appender>
+    
+    <!-- Console Appender -->
+    <appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+        <param name="Threshold" value="DEBUG" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} [%X{USERID}] %-5p %-18C{1} - %m%n" />
+        </layout>
+    </appender>
+    
+
+    <logger name="com.peritaje">
+        <level value="DEBUG" />
+        <!-- <appender-ref ref="app" /> -->
+        <appender-ref ref="dev" />
+        <appender-ref ref="err" />
+        <appender-ref ref="stdout" />
+    </logger>
+
+    <logger name="mx">
+        <level value="DEBUG" />
+        <!-- <appender-ref ref="app" /> -->
+        <appender-ref ref="dev" />
+        <appender-ref ref="err" />
+        <appender-ref ref="stdout" />
+    </logger>
+    
+    <logger name="org.apache">
+        <level value="INFO" />
+        <!-- <appender-ref ref="app" /> -->
+        <appender-ref ref="dev" />
+        <appender-ref ref="err" />
+        <appender-ref ref="stdout" />
+    </logger>
+    
+    <logger name="org.springframework.jdbc">
+        <level value="INFO" />
+        <!-- <appender-ref ref="app" /> -->
+        <appender-ref ref="dev" />
+        <appender-ref ref="err" />
+        <appender-ref ref="sql" />
+        <appender-ref ref="stdout" />
+    </logger>
+
+    <logger name="java.sql">
+        <level value="DEBUG" />
+        <!-- <appender-ref ref="app" /> -->
+        <appender-ref ref="dev" />
+        <appender-ref ref="err" />
+        <appender-ref ref="stdout" />
+    </logger>
+    
+    <logger name="mx.com.aon.portal.dao">
+        <level value="INFO" />
+        <appender-ref ref="sql" />
+    </logger>
+    
+    <logger name="mx.com.gseguros.portal.dao">
+        <level value="INFO" />
+        <appender-ref ref="sql" />
+    </logger>
+    
+    <root> 
+        <priority value="DEBUG" />
+    </root>
+    
+</log4j:configuration>
